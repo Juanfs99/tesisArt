@@ -10,7 +10,7 @@ export class HomePage implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(`Is Init`)
+    console.log(`Is Init from PC`)
   }
 
 }
