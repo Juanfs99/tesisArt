@@ -20,6 +20,10 @@ const routes: Routes = [
     path: 'ar',
     loadChildren: () => import('./pages/ar/ar.module').then( m => m.ArPageModule)
   },
+  {
+    path: 'sculptures',
+    loadChildren: () => import('./pages/sculptures/sculptures.module').then( m => m.SculpturesPageModule)
+  },
 ];
 
 @NgModule({

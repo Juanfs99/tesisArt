@@ -1,5 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
+  constructor( public http: HttpClientModule) { }
 
   ngOnInit() {
     console.log(`Is Init from PC`)
