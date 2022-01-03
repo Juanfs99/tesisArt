@@ -1,0 +1,5 @@
+*.glb filter=lfs dif=lfs merge=lfs -text
+*.usdz filter=lfs dif=lfs merge=lfs -text
+*.jpg filter=lfs dif=lfs merge=lfs -text
+*.svg filter=lfs dif=lfs merge=lfs -text
+*.png filter=lfs dif=lfs merge=lfs -text
