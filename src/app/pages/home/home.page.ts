@@ -5,7 +5,11 @@ interface Categorias {
   nombre: string;
   imagen: any;
 }
-
+interface Artistas{
+  direccion: string;
+  nombre: string;
+  imagen: any;
+}
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -31,6 +35,28 @@ export class HomePage implements OnInit {
    imagen: 'assets/cuadrado.jpeg',
 
   },
+ ]
+ artistas: Artistas[]=[
+   {
+     direccion: '',
+     nombre: 'Roberto',
+     imagen: 'assets/cuadrado.jpeg',
+    },
+    {
+      direccion: '',
+      nombre: 'Ana',
+      imagen: 'assets/cuadrado.jpeg',
+     },
+     {
+      direccion: '',
+      nombre: 'Juan',
+      imagen: 'assets/cuadrado.jpeg',
+     },
+     {
+      direccion: '',
+      nombre: 'Patricia',
+      imagen: 'assets/cuadrado.jpeg',
+     }
  ]
   constructor( ) { }
 

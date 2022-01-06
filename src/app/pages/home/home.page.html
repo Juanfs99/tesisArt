@@ -62,8 +62,9 @@
       <ion-col size="6" size-lg="3" size-md="4" size-sm="2" *ngFor="let c of categorias" [routerLink]="c.direccion">
 
         <ion-card href="/inicio" class="ion-no-margin" style="background-color: none;">
-
-          <img src="{{c.imagen}}" class="img_card_cat" />
+          <div class="artists">
+            <img src="{{c.imagen}}" class="img_card_cat" />
+          </div>
           <!-- <div class="card-title">Sculptures</div> -->
           <ion-card-title class="card-title">{{c.nombre}}</ion-card-title>
 
@@ -90,15 +91,18 @@ font-weight: 600;">ART</span>ist
 
   <ion-grid style="display: inline-block; padding-top: 5%;">
     <ion-row>
-      <ion-col size="6" size-lg="3" size-md="4" size-sm="2" *ngFor="let c of categorias" [routerLink]="c.direccion">
+      <ion-col size="6" size-lg="3" size-md="4" size-sm="2" *ngFor="let a of artistas" [routerLink]="a.direccion">
 
         <ion-card href="/inicio" class="ion-no-margin" style="background-color: none;">
-
-          <img src="{{c.imagen}}" class="img_card_cat" />
+          <div class="artists">
+            <img src="{{a.imagen}}" class="img_card_cat" />
+          </div>
           <!-- <div class="card-title">Sculptures</div> -->
-          <ion-card-title class="card-title">{{c.nombre}}</ion-card-title>
+          <ion-card-title class="card-title">{{a.nombre}}</ion-card-title>
 
         </ion-card>
+
+
 
       </ion-col>
 
