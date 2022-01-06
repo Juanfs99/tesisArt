@@ -46,36 +46,23 @@
   </ion-row>
   <h3 style="
       font-family: proxima-nova, sans-serif;
-      font-weight: 600;
+      font-weight: 400;
       font-style: normal;
       padding-left: 5%;
-      float: left;
+      
     ">
-    Find your <h2 style="font-family: proxima-nova, sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    color: #6361ea;
-    ">ART</h2>
+    Find your <span style="color: #6361ea; font-family: proxima-nova, sans-serif;
+    font-weight: 600;">ART</span>  
   </h3>
-  <h3 style="
-      padding-left: 5%;
-      font-family: proxima-nova, sans-serif;
-      font-weight: 600;
-      font-style: normal;
-      padding-left: 5%;
-      margin-left: 2%;
-      color: #6361ea;
-    ">
-    ART
-  </h3>
+
+<!--   
   <ion-card href="/ar">
     <img src="assets/robotimage.jpg" />
     <ion-grid fixed>
       <ion-row>
         <ion-col size="9">
           <ion-card-header>
-            <ion-card-subtitle>Juanito</ion-card-subtitle>
-            <ion-card-title>Robot 1 AR</ion-card-title>
+            <ion-card-title>Sculptures</ion-card-title>
           </ion-card-header>
         </ion-col>
         <ion-col size="3"> </ion-col>
@@ -95,82 +82,24 @@
         <ion-col size="3"> </ion-col>
       </ion-row>
     </ion-grid>
-  </ion-card>
-  
-  <ion-grid>
+  </ion-card> -->
+
+  <ion-grid style="display: inline-block; padding-top: 5%;" >
     <ion-row>
-        <ion-col size="6" size-lg="3" size-md="4" size-sm="2" 
-                 >
-            <!--
-               size="12" - tamaño de la columna por default sería 12  (aplicaría a dispositivos que no son lg, md, sm, etc.)
-               size-lg="3" - talla lg, el tamaño de cada columna sería 3, es decir cabrían 4col
-               size-md="4" - talla md, el tamaño de cada columna sería 4, es decir cabrían 3col
-               size-sm="6" - talla sm, el tamaño de cada columna sería 6, es decir cabrían 2col
-            -->
+      <ion-col size="6" size-lg="3" size-md="4" size-sm="2" *ngFor="let item of [1,2,3]"> 
 
-            <ion-card href="/inicio" >
-              <img src="assets/robotimage.jpg" />
-              <ion-grid fixed>
-                <ion-row>
-                  <ion-col size="9">
-                    <ion-card-header>
-                      <ion-card-subtitle>Juanito</ion-card-subtitle>
-                      <ion-card-title>Robot MAIN</ion-card-title>
-                    </ion-card-header>
-                  </ion-col>
-                  <ion-col size="3"> </ion-col>
-                </ion-row>
-              </ion-grid>
-            </ion-card>
-        </ion-col>
-        <ion-col size="6" size-lg="3" size-md="4" size-sm="2" >
-          <ion-card href="/inicio">
-            <img src="assets/robotimage.jpg" />
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="9">
-                  <ion-card-header>
-                    <ion-card-subtitle>Juanito</ion-card-subtitle>
-                    <ion-card-title>Robot MAIN</ion-card-title>
-                  </ion-card-header>
-                </ion-col>
-                <ion-col size="3"> </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card>
-        </ion-col>
-        <ion-col size="6" size-lg="3" size-md="4" size-sm="2" >
-          <ion-card href="/inicio">
-            <img src="assets/robotimage.jpg" />
-            <ion-grid fixed>
-              <ion-row>
-                <ion-col size="9">
-                  <ion-card-header>
-                    <ion-card-subtitle>Juanito</ion-card-subtitle>
-                    <ion-card-title>Robot MAIN</ion-card-title>
-                  </ion-card-header>
-                </ion-col>
-                <ion-col size="3"> </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card>
-        </ion-col>
-    </ion-row>
-</ion-grid>
+        <ion-card href="/inicio" class="ion-no-margin" style="background-color: none;" >
+          
+          <img src="assets/cuadrado.jpeg" class="img_card_cat" />
+          <!-- <div class="card-title">Sculptures</div> -->
+          <ion-card-title class="card-title" >Sculptures</ion-card-title>
+         
+        </ion-card>
 
-<ion-grid>
-  <ion-row>
-    <ion-col size-lg="3" size-md="4" size-sm="6" size="12" >
-      <ion-card>
-       
-        <ion-card-header>
-          <ion-card-subtitle>dasdasdasda</ion-card-subtitle>
-        </ion-card-header>
-      </ion-card>
-      
-    </ion-col>
-    
-  </ion-row>
-</ion-grid>
+      </ion-col>
+     
+      </ion-row>
+  </ion-grid>
 
+  
 </ion-content>
