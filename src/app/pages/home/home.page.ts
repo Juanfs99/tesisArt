@@ -1,6 +1,11 @@
-import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+
+interface Categorias {
+  direccion: string;
+  nombre: string;
+  imagen: any;
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -8,10 +13,28 @@ import { Observable } from 'rxjs';
 })
 export class HomePage implements OnInit {
 
-  constructor( public http: HttpClientModule) { }
+  
+ categorias: Categorias[]=[
+   {
+     direccion: '',
+    nombre: 'Sculptures',
+    imagen: 'assets/cuadrado.jpeg',
+   },
+   {
+    direccion: '',
+   nombre: 'Paintings',
+   imagen: 'assets/cuadrado.jpeg',
+   
+  },{
+    direccion: '',
+   nombre: 'Others',
+   imagen: 'assets/cuadrado.jpeg',
+
+  },
+ ]
+  constructor( ) { }
 
   ngOnInit() {
-    console.log(`Is Init from PC`)
   }
 
 }
