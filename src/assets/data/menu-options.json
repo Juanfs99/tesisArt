@@ -1,0 +1,16 @@
+[{
+    "icono": "apps-outline",
+    "nombre": "Action sheet",
+    "direccion": "/acciones"
+},
+{
+    "icono": "warning-outline",
+    "nombre": "Alertas",
+    "direccion": "/alertas"
+},
+{
+    "icono": "person-outline",
+    "nombre": "Avatar",
+    "direccion": "/avatar"
+}
+]
