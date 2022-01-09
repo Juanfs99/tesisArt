@@ -16,7 +16,7 @@
 .header-content{
     position: absolute;
     top: 3%;
-    left: 10%;
+    left: 7%;
     display: flex;
     align-items: center;
     img{
@@ -24,5 +24,43 @@
         height: 30%;
         border-radius: 50%;
         border: 3px solid white;
+        margin-right: 2%;
+    }
+    h2{
+        font-weight: 300;
+        color: white;
+    }
+    p{
+        font-size: 15px;
+        color: rgb(234, 239, 248);
+        font-weight: 200;
+        letter-spacing: 0.4px;
+    }
+}
+.action-button{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15%;
+    ion-button{
+        text-transform: capitalize;
+        font-weight: 300;
+        --background: #6361ea;
+        --border-radius: 7px;
+        --box-shadow: none;
+    }
+    ion-icon{
+        margin-right: 1px;
+    }
+}
+.menu-items{
+    margin: 0%;
+
+    ion-icon{
+        margin-right: 10%;
+        color: #6361ea;
+    }
+    ion-item{
+        padding-left: 20%;
+        margin-bottom: 15%;
     }
 }
