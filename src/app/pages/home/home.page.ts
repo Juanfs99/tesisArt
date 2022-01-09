@@ -20,17 +20,17 @@ export class HomePage implements OnInit {
   
  categorias: Categorias[]=[
    {
-     direccion: '',
+     direccion: '/sculptures',
     nombre: 'Sculptures',
     imagen: 'assets/cuadrado.jpeg',
    },
    {
-    direccion: '',
+    direccion: '/paintings',
    nombre: 'Paintings',
    imagen: 'assets/cuadrado.jpeg',
    
   },{
-    direccion: '',
+    direccion: '/others',
    nombre: 'Others',
    imagen: 'assets/cuadrado.jpeg',
 

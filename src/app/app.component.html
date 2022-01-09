@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-menu contentId="main" menuId="first" side="start" type="overlay">
+  <ion-menu contentId="main" menuId="first" side="start" type="overlay" autohide="false">
     <ion-content>
       <div class="menu-header-bg"></div>
       <div class="header-content">
@@ -7,22 +7,25 @@
         <ion-label>
           <h2>
             Nombre de usuario
-          </h2>
+          </h2> 
           <p>artist</p>
         </ion-label>
       </div>
-      <ion-list class="menu-items" lines="none">
-        <ion-item *ngFor="let m of menu"> 
-          <ion-icon name="{{m.icono}}"></ion-icon>{{m.nombre}}
-        </ion-item>
-      </ion-list>
+      <ion-menu-toggle>
+        <ion-list class="menu-items" lines="none">
+          <ion-item *ngFor="let c of componentes |async" [routerLink]="c.direccion">
+            <ion-icon name="{{c.icono}}"></ion-icon>{{c.nombre}}
+          </ion-item>
+        </ion-list>
+      </ion-menu-toggle>
+
       <div class="action-button">
         <ion-button>
           <ion-icon slot="start" name="add"></ion-icon>
           Click me
         </ion-button>
       </div>
-      
+
     </ion-content>
   </ion-menu>
   <ion-router-outlet id="main"></ion-router-outlet>

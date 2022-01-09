@@ -1,16 +1,26 @@
 [{
-    "icono": "apps-outline",
-    "nombre": "Action sheet",
-    "direccion": "/acciones"
+    "icono": "home-outline",
+    "nombre": "Home",
+    "direccion": "/home"
 },
 {
-    "icono": "warning-outline",
-    "nombre": "Alertas",
-    "direccion": "/alertas"
+    "icono": "body-outline",
+    "nombre": "Sculptures",
+    "direccion": "/sculptures"
 },
 {
-    "icono": "person-outline",
-    "nombre": "Avatar",
-    "direccion": "/avatar"
+    "icono": "brush-outline",
+    "nombre": "Paintings",
+    "direccion": "/paintings"
+},
+{
+    "icono": "trophy-outline",
+    "nombre": "Top Artists",
+    "direccion": "/artists"
+},
+{
+    "icono": "help-circle-outline",
+    "nombre": "How to Art?",
+    "direccion": "/how-art"
 }
 ]

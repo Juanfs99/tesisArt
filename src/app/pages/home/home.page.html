@@ -67,7 +67,7 @@
     <ion-row>
       <ion-col size="6" size-lg="3" size-md="4" size-sm="2" *ngFor="let c of categorias" [routerLink]="c.direccion">
 
-        <ion-card href="/inicio" class="ion-no-margin" style="background-color: none;">
+        <ion-card [routerLink]="c.direccion" class="ion-no-margin" style="background-color: none;">
           <div class="artists">
             <img src="{{c.imagen}}" class="img_card_cat" />
           </div>

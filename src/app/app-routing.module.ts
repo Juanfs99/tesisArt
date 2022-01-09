@@ -24,6 +24,22 @@ const routes: Routes = [
     path: 'sculptures',
     loadChildren: () => import('./pages/sculptures/sculptures.module').then( m => m.SculpturesPageModule)
   },
+  {
+    path: 'paintings',
+    loadChildren: () => import('./pages/paintings/paintings.module').then( m => m.PaintingsPageModule)
+  },
+  {
+    path: 'artists',
+    loadChildren: () => import('./pages/artists/artists.module').then( m => m.ArtistsPageModule)
+  },
+  {
+    path: 'how-art',
+    loadChildren: () => import('./pages/how-art/how-art.module').then( m => m.HowArtPageModule)
+  },
+  {
+    path: 'others',
+    loadChildren: () => import('./pages/others/others.module').then( m => m.OthersPageModule)
+  },
 ];
 
 @NgModule({
