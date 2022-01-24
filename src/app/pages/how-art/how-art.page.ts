@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-how-art',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HowArtPage implements OnInit {
 
-  constructor() { }
+  
+  constructor(private route: Router) { }
 
   ngOnInit() {
+  }
+  onClickHome(){
+    this.route.navigate(['/home']);
   }
 
 }
