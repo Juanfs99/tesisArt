@@ -1,19 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-interface Sculptures {
+
+
+interface Digital {
   direccion: string;
   nombre: string;
   imagen: any;
   precio: any;
 }
 @Component({
-  selector: 'app-sculptures',
-  templateUrl: './sculptures.page.html',
-  styleUrls: ['./sculptures.page.scss'],
+  selector: 'app-digital',
+  templateUrl: './digital.page.html',
+  styleUrls: ['./digital.page.scss'],
 })
-export class SculpturesPage implements OnInit {
+export class DigitalPage implements OnInit {
 
-  sculptures: Sculptures[]=[
+  digital: Digital[]=[
     {
       direccion: '/sculptures',
      nombre: 'MantaRaya',
@@ -33,13 +35,11 @@ export class SculpturesPage implements OnInit {
     precio: '3000'
    },
   ]
-
-  constructor(private route: Router) { }
+  constructor( private route: Router) { }
 
   ngOnInit() {
   }
   onClickHome(){
     this.route.navigate(['/home']);
   }
-
 }

@@ -30,8 +30,8 @@ export class HomePage implements OnInit {
    imagen: 'assets/cuadrado.jpeg',
    
   },{
-    direccion: '/others',
-   nombre: 'Others',
+    direccion: '/digital',
+   nombre: 'Digital',
    imagen: 'assets/cuadrado.jpeg',
 
   },

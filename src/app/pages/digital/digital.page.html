@@ -21,17 +21,17 @@
     ">
      <span style="color: #6361ea; font-family: proxima-nova, sans-serif;
     font-weight: 600;">ARt</span>
-    Sculptures
+    Digital
   </h3>
 
-  <ion-list *ngFor="let s of sculptures" >
+  <ion-list *ngFor="let d of digital" >
     <ion-card class="ion-no-margin" style="background-color: none;" >
       <div class="artists">
-        <img src="{{s.imagen}}" class="img_card_cat" />
+        <img src="{{d.imagen}}" class="img_card_cat" />
       </div>
       <!-- <div class="card-title">Sculptures</div> -->
-      <ion-card-title class="card-title">{{s.nombre}}</ion-card-title>
-      <ion-card-subtitle class="card-subtitle">${{s.precio}}</ion-card-subtitle>
+      <ion-card-title class="card-title">{{d.nombre}}</ion-card-title>
+      <ion-card-subtitle class="card-subtitle">${{d.precio}}</ion-card-subtitle>
 
     </ion-card>
   </ion-list>

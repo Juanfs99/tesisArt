@@ -24,11 +24,16 @@ ion-card {
 
   .card-title {
     position: absolute;
-    bottom: 5%;
-    padding-right: 20%;
+    bottom: 7%;
+    padding-right: 40%;
+    margin-left: 10%;
     width: 100%;
     color: #fff;
     font-size: 1.5em;
+    font-family: proxima-nova, 
+    sans-serif;
+    font-weight: 600;
+    text-align: left;
   }
 
   .artists {
