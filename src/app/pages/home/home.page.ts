@@ -38,22 +38,22 @@ export class HomePage implements OnInit {
  ]
  artistas: Artistas[]=[
    {
-     direccion: '',
+     direccion: '/artistainfo',
      nombre: 'Roberto',
      imagen: 'assets/cuadrado.jpeg',
     },
     {
-      direccion: '',
+      direccion: '/artistainfo',
       nombre: 'Ana',
       imagen: 'assets/cuadrado.jpeg',
      },
      {
-      direccion: '',
+      direccion: '/artistainfo',
       nombre: 'Juan',
       imagen: 'assets/cuadrado.jpeg',
      },
      {
-      direccion: '',
+      direccion: '/artistainfo',
       nombre: 'Patricia',
       imagen: 'assets/cuadrado.jpeg',
      }

@@ -52,6 +52,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/digital/digital.module').then((m) => m.DigitalPageModule),
   },
+  {
+    path: 'artistainfo',
+    loadChildren: () => import('./pages/artistainfo/artistainfo.module').then( m => m.ArtistainfoPageModule)
+  },
 ];
 
 @NgModule({
