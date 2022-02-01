@@ -1,24 +1,10 @@
 *{
     font-family: proxima-nova, sans-serif;
 }
-.menu-header-bg{
-    height: 180px;
-    width: 350px;
-    background:#6361ea ;
-    background: linear-gradient(90deg, #6361ea 0%, #3f3ceb 100%);
-    box-shadow: 0px 1px 10px rgba(98, 140, 255, 0.5);
-    transform: rotate(-15deg);
-    border-radius: 10% 10% 10% 50%;
-    margin-left: -10%;
-    margin-top: -15%;
-    margin-bottom: 25%;
-}
+
 .header-content{
-    position: absolute;
-    top: 3%;
-    left: 7%;
-    display: flex;
-    align-items: center;
+   
+    
     img{
         width: 30%;
         height: 30%;
@@ -28,11 +14,10 @@
     }
     h2{
         font-weight: 300;
-        color: white;
+        color: #6361ea;
     }
-    p{
-        font-size: 15px;
-        color: rgb(234, 239, 248);
+    h6{
+        color: #6361ea;
         font-weight: 200;
         letter-spacing: 0.4px;
     }
@@ -54,7 +39,10 @@
 }
 .menu-items{
     margin: 0%;
-
+align-items: center;
+margin-right: auto;
+margin-left: auto;
+text-align: center;
     ion-icon{
         margin-right: 10%;
         color: #6361ea;
