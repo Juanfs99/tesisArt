@@ -3,6 +3,7 @@ import { DataService } from './services/data.service';
 import { Componentes } from 'src/assets/interfaces/interfaces';
 import { Observable } from 'rxjs/internal/Observable';
 
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,14 +13,13 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class AppComponent {
 
-
-  
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, private route: Router) { }
 
   componentes: Observable<Componentes[]>;
 
   ngOnInit() {
     this.componentes = this.dataService.getMenuOptions();
   }
+
 }
 

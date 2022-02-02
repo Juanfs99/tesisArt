@@ -15,32 +15,31 @@ interface Paintings {
 })
 export class PaintingsPage implements OnInit {
 
-  paintings: Paintings[]=[
+  paintings: Paintings[] = [
     {
       direccion: '/articulo',
-     nombre: 'MantaRaya',
-     imagen: 'assets/cuadrado.jpeg',
-     precio: '3000'
+      nombre: 'MantaRaya',
+      imagen: 'assets/cuadrado.jpeg',
+      precio: '3000'
     },
     {
-     direccion: '/articulo',
-    nombre: 'VidaSolar',
-    imagen: 'assets/cuadrado.jpeg',
-    precio: '3000'
-    
-   },{
-     direccion: '/articulo',
-    nombre: 'SaltoAlto',
-    imagen: 'assets/cuadrado.jpeg',
-    precio: '3000'
-   },
+      direccion: '/articulo',
+      nombre: 'VidaSolar',
+      imagen: 'assets/cuadrado.jpeg',
+      precio: '3000',
+    }, {
+      direccion: '/articulo',
+      nombre: 'SaltoAlto',
+      imagen: 'assets/cuadrado.jpeg',
+      precio: '3000',
+    },
   ]
 
   constructor(private route: Router) { }
 
   ngOnInit() {
   }
-  onClickHome(){
+  onClickHome() {
     this.route.navigate(['/home']);
   }
 }
