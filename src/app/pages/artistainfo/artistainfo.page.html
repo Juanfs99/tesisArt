@@ -59,7 +59,7 @@
    "El arte es mi forma de vida, trabajo en ello vivo para ello"
   </h6>  
   <ion-list *ngFor="let s of sculptures" >
-    <ion-card class="ion-no-margin" style="background-color: none;" >
+    <ion-card  [routerLink]="s.direccion" class="ion-no-margin" style="background-color: none;" >
       <div class="artists">
         <img src="{{s.imagen}}" class="img_card_cat" />
       </div>

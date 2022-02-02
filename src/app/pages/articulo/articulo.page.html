@@ -1,0 +1,103 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-button (click)="onClickBack()" fill="clear">
+      <ion-icon slot="start" name="chevron-back-outline"></ion-icon>
+
+    </ion-button>
+
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <h4 style="
+  text-align: center;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  color: #6361ea;
+  font-family: proxima-nova, sans-serif;
+
+  font-weight: 600;
+
+  font-style: normal;
+">
+    Nombre de escultura
+  </h4>
+
+  <div id="container" class="ion-padding">
+    <model-viewer alt="PruebaRobot" src="/assets/mantaraya.glb" ios-src="/assets/mantaraya.usdz" ar unestable-webxr
+      quick-lock-browsers="safari chrome" shadow-intensity="1" interaction-prompt="auto" auto-rotate ar magic-leap
+      camera-controls>
+    </model-viewer>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+
+      <ion-card-title style="text-align: center; color: #6361ea;" class="ion-padding">Información</ion-card-title>
+      <h5 style="color: black; font-weight: 600;">Material</h5>
+      <ion-card-content>
+        Obra creada con materiales reciclados, tecnología desechada
+      </ion-card-content>
+      <h5 style="color: black; font-weight: 600;">Dimensiones</h5>
+      <ion-card-content>
+        1.2 metros de alto, 2 metros de ancho y 3 metros de profundidad
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
+  <ion-slides [options]="option" class="ion-margin-top">
+
+
+    <ion-slide>
+      <ion-card class="cardImg">
+        <img src="assets/cuadrado.jpeg">
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card class="cardImg">
+        <img src="assets/cuadrado.jpeg">
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card class="cardImg">
+        <img src="assets/cuadrado.jpeg">
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card class="cardImg">
+        <img src="assets/cuadrado.jpeg">
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card class="cardImg">
+        <img src="assets/cuadrado.jpeg">
+      </ion-card>
+    </ion-slide>
+
+
+  </ion-slides>
+  
+  <ion-card class="cardArtist">
+    <ion-card-header>
+      <div class="img-wrapper">
+        <img src="assets/cuadrado.jpeg" />
+        
+      </div>
+      <ion-card-title>Awesome Title</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content class="ion-text-center">
+      <h2>Zahra Zamin</h2>
+      <ion-text >
+        <div style="display: flex;" class="ion-justify-content-center">
+         
+         
+          <p>2345 Street, Ohio, USA.</p>
+        </div>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

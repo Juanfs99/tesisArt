@@ -18,19 +18,19 @@ export class ArtistainfoPage implements OnInit {
 
   sculptures: Sculptures[]=[
     {
-      direccion: '',
+      direccion: '/articulo',
      nombre: 'MantaRaya',
      imagen: 'assets/cuadrado.jpeg',
      precio: '3000'
     },
     {
-     direccion: '',
+     direccion: '/articulo',
     nombre: 'VidaSolar',
     imagen: 'assets/cuadrado.jpeg',
     precio: '3000'
     
    },{
-     direccion: '',
+     direccion: '/articulo',
     nombre: 'SaltoAlto',
     imagen: 'assets/cuadrado.jpeg',
     precio: '3000'
