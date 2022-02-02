@@ -13,10 +13,10 @@
 </ion-header>
 <ion-content>
 
-<h4 style="
+<h2 style="
       text-align: center;
       padding-top: 10%;
-      padding-bottom: 10%;
+      padding-bottom: 5%;
       color: #000000;
       font-family: proxima-nova, sans-serif;
 
@@ -25,16 +25,70 @@
       font-style: normal;
     ">
     How to <span style="color: #6361ea;"> ARt </span>
-  </h4>
+  </h2>
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      <ion-card-title>Card Title</ion-card-title>
+      <h3 style="color: #6361ea; font-weight: 600; text-align: center;" >Como publicar en Art</h3>
     </ion-card-header>
-  
-    <ion-card-content>
-      Keep close to Nature's heart... and break clear away, once in awhile,
-      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    <ion-card-content style="text-align: justify; color: black;">
+      Para publicar en Art debes ingresar a tu cuenta desde una computadora para poder subir tu arte, en conjunto al archivo 3D y escoge el plan que más quieras
     </ion-card-content>
+    <ion-card-header>
+      <h3 style="color: #6361ea; font-weight: 600; text-align: center;" >¿Por qué Realidad Aumentada?</h3>
+    </ion-card-header>
+    <ion-card-content style="text-align: justify; color: black;">
+      Para publicar en Art debes ingresar a tu cuenta desde una computadora para poder subir tu arte, en conjunto al archivo 3D y escoge el plan que más quieras
+    </ion-card-content>
+  
   </ion-card>
+
+  <div id="container" class="ion-padding">
+    <model-viewer alt="PruebaRobot" src="/assets/mantaraya.glb" ios-src="/assets/mantaraya.usdz" ar unestable-webxr
+      quick-lock-browsers="safari chrome" shadow-intensity="1" interaction-prompt="auto" auto-rotate ar magic-leap
+      camera-controls>
+    </model-viewer>
+  </div>
+
+  <h2 style="color: #6361ea; font-weight: 600; text-align: center;">Planes de Pago</h2>
+
+  <ion-list>
+    <ion-card class="planes ion-no-margin" style="background-color: #56B4E5"> 
+      <ion-card-header>
+        <ion-card-title class="ion-padding" style="color: white;">PLAN POR OBRA</ion-card-title>
+      </ion-card-header>
+      <ion-card-content style="color: white;">
+        <ion-card style="height: auto; width: 30%; float: left; margin-bottom: 10%;">
+          
+            <ion-card-title class="ion-padding" style="color:#6361ea ;">$5</ion-card-title>
+        </ion-card>
+       El plan por obra te permite subir tu modelo 3D y se te cobrará mensualmente mientras la obra esté exhibida
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="planes ion-no-margin" style="background-color: #FDB807"> 
+      <ion-card-header>
+        <ion-card-title class="ion-padding" style="color: white;">PLAN MENSUAL</ion-card-title>
+
+      </ion-card-header>
+      <ion-card-content style="color: white;">
+        <ion-card style="height: auto; width: 30%; float: left; margin-bottom: 10%;">
+          
+            <ion-card-title class="ion-padding" style="color:#6361ea ;">$15</ion-card-title>
+        </ion-card>
+      
+          El plan mensual te permite tener 5 obras activas y se te cobrará mensualmente     
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="planes ion-no-margin" style="background-color: #E05497"> 
+      <ion-card-header>
+        <ion-card-title class="ion-padding" style="color: white;">PLAN GALERIA</ion-card-title>
+
+      </ion-card-header>
+      <ion-card-content style="color: white;">
+        <ion-card style="height: auto; width: 30%; float: left; margin-bottom: 10%;">
+          
+            <ion-card-title class="ion-padding" style="color:#6361ea ;">$65</ion-card-title>
+        </ion-card>
+        El plan corporativo te permite tener 15 obras activas y se te cobrará mensualmente       </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>

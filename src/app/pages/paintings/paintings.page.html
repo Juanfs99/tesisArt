@@ -28,7 +28,7 @@
   </h3>
 
   <ion-list *ngFor="let p of paintings" >
-    <ion-card class="ion-no-margin" style="background-color: none;" >
+    <ion-card class="ion-no-margin" [routerLink]="p.direccion"  style="background-color: none;" >
       <div class="artists">
         <img src="{{p.imagen}}" class="img_card_cat" />
       </div>

@@ -25,7 +25,7 @@
   </h3>
 
   <ion-list *ngFor="let d of digital" >
-    <ion-card class="ion-no-margin" style="background-color: none;" >
+    <ion-card [routerLink]="d.direccion"  class="ion-no-margin" style="background-color: none;" >
       <div class="artists">
         <img src="{{d.imagen}}" class="img_card_cat" />
       </div>

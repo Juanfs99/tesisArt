@@ -15,19 +15,19 @@ export class SculpturesPage implements OnInit {
 
   sculptures: Sculptures[]=[
     {
-      direccion: '/sculptures',
+      direccion: '/articulo',
      nombre: 'MantaRaya',
      imagen: 'assets/cuadrado.jpeg',
      precio: '3000'
     },
     {
-     direccion: '/paintings',
+     direccion: '/articulo',
     nombre: 'VidaSolar',
     imagen: 'assets/cuadrado.jpeg',
     precio: '3000'
     
    },{
-     direccion: '/others',
+     direccion: '/articulo',
     nombre: 'SaltoAlto',
     imagen: 'assets/cuadrado.jpeg',
     precio: '3000'
