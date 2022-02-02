@@ -17,7 +17,7 @@ export class LoginPage implements OnInit {
   }
 
   onClickPassword() {
-    this.route.navigate(['/forgot']);
+    this.route.navigate(['/forgotpassword']);
   }
   login() {
     this.route.navigate(['/profile']);
@@ -27,4 +27,5 @@ export class LoginPage implements OnInit {
     this.route.navigate(['/signup']);
 
   }
+
 }

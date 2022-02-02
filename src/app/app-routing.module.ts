@@ -75,6 +75,10 @@ const routes: Routes = [
     path: 'myart',
     loadChildren: () => import('./pages/myart/myart.module').then( m => m.MyartPageModule)
   },
+  {
+    path: 'forgotpassword',
+    loadChildren: () => import('./pages/forgotpassword/forgotpassword.module').then( m => m.ForgotpasswordPageModule)
+  },
 
 ];
 
