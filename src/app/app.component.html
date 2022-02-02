@@ -2,19 +2,20 @@
   <ion-menu contentId="main" menuId="first" side="start" type="overlay" autohide="false" style="--min-width:100%">
     <ion-content>
 
-      <div style="margin-left: 5%; margin-bottom: 20%;" class="header-content">
-        <!-- <img src="assets/cuadrado.jpeg" alt=""> -->
-
-        <p>Eres artista?</p>
-        <h2 routerLink="/login">
-          Iniciar sesión
-        </h2>
-
-
-
-
-      </div>
+      
       <ion-menu-toggle>
+        <div style="margin-left: 5%; margin-bottom: 20%;" class="header-content">
+          <!-- <img src="assets/cuadrado.jpeg" alt=""> -->
+  
+          <p>Eres artista?</p>
+          <h2 routerLink="/login">
+            Iniciar sesión
+          </h2>
+  
+  
+  
+  
+        </div>
         <ion-list class="menu-items" lines="none">
           <ion-item *ngFor="let c of componentes |async" [routerLink]="c.direccion">
             <ion-icon name="{{c.icono}}"></ion-icon>{{c.nombre}}
