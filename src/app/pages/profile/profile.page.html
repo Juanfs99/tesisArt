@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form class="ion-padding">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div class="ion-padding">
+
+
+
+            <img src="assets/cuadrado.jpeg" class="artistimg"
+              style="height:150px; border-radius: 50%; border: 5px solid #6361ea">
+            <ion-item>
+
+              <ion-input disabled="true" name="Nombre" type="text" placeholder="Nombre">
+                <ion-icon class="ion-padding" slot="icon-only" name="person-outline" style="color: #6361ea"></ion-icon>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input disabled="true" name="Apellido" type="text" placeholder="Apellido">
+                <ion-icon class="ion-padding" slot="icon-only" name="person-outline" style="color: #6361ea"></ion-icon>
+
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input disabled="true" name="Cedula" type="number" placeholder="Número de Cédula">
+                <ion-icon class="ion-padding" slot="icon-only" name="card-outline" style="color: #6361ea"></ion-icon>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input disabled="true" name="Email" type="email" placeholder="Email">
+                <ion-icon class="ion-padding" slot="icon-only" name="mail-outline" style="color: #6361ea"></ion-icon>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input disabled="true" name="Telefono" type="number" placeholder="Número Telefónico">
+                <ion-icon class="ion-padding" slot="icon-only" name="call-outline" style="color: #6361ea"></ion-icon>
+              </ion-input>
+            </ion-item>
+
+
+
+          </div>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+
+
+    <ion-row>
+
+
+      <div class="ion-padding" style="margin-left: auto; margin-right: auto;">
+        <ion-button class="ion-text-capitalize" color="tertiary">Mi ARte</ion-button>
+      </div>
+      <div class=" ion-padding" style="margin-left: auto; margin-right: auto;">
+        <ion-button class="ion-text-capitalize">Cerrar sesión</ion-button>
+      </div>
+    </ion-row>
+  </form>
+</ion-content>
