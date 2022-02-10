@@ -1,3 +1,13 @@
+@media screen and (max-width: 700px){
+  .menuDesktop{
+    display: none;
+  }
+}
+@media screen and (min-width: 700px){
+  .menuPhone{
+    display: none;
+  }
+}
 #container a {
   text-decoration: none;
 }
@@ -30,7 +40,7 @@ ion-card {
     width: 100%;
     color: #fff;
     font-size: 1.5em;
-    font-family: proxima-nova, 
+    font-family: proxima-nova,
     sans-serif;
     font-weight: 600;
     text-align: left;
@@ -58,5 +68,5 @@ ion-card {
       margin-bottom: -5px;
     }
   }
- 
+
 }

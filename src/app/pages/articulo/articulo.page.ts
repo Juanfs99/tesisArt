@@ -19,6 +19,7 @@ export class ArticuloPage implements OnInit {
   ngOnInit() {
   }
   onClickBack() {
+    // eslint-disable-next-line no-underscore-dangle
     this._location.back();
 
 
