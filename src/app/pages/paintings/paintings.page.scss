@@ -4,8 +4,8 @@ ion-card {
   overflow: hidden;
   margin-top: 2%;
   margin-bottom: 2%;
-  box-shadow:none !important;
-border-radius: 0%;
+  box-shadow: none !important;
+  border-radius: 0%;
   .card-title {
     position: absolute;
     bottom: 25%;
@@ -14,12 +14,11 @@ border-radius: 0%;
     width: 100%;
     color: #fff;
     font-size: 1.5em;
-    font-family: proxima-nova, 
-    sans-serif;
+    font-family: proxima-nova, sans-serif;
     font-weight: 600;
     text-align: left;
   }
-  .card-subtitle{
+  .card-subtitle {
     position: absolute;
     bottom: 10%;
     padding-right: 40%;
@@ -27,11 +26,9 @@ border-radius: 0%;
     width: 100%;
     color: #fff;
     font-size: 1em;
-    font-family: proxima-nova, 
-    sans-serif;
+    font-family: proxima-nova, sans-serif;
     font-weight: 300;
     text-align: left;
-
   }
 
   .artists {

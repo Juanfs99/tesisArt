@@ -1,72 +1,214 @@
-@media screen and (max-width: 700px){
-  .menuDesktop{
+@media screen and (max-width: 700px) {
+  .menuDesktop {
     display: none;
   }
-}
-@media screen and (min-width: 700px){
-  .menuPhone{
+  .logoImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    padding-top: 20%;
+  }
+  .textTitle {
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    color: #6361ea;
+    font-family: proxima-nova, sans-serif;
+
+    font-weight: 400;
+
+    font-style: normal;
+  }
+  .textSubTitle {
     display: none;
   }
-}
-#container a {
-  text-decoration: none;
-}
-#container {
-  text-align: center;
-  width: 90%;
-  height: 55vh;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-model-viewer {
-  width: 90%;
-  height: 55vh;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-ion-card {
-  position: relative;
-  text-align: center;
-
-  overflow: hidden;
-
-  .card-title {
-    position: absolute;
-    bottom: 7%;
-    padding-right: 40%;
-    margin-left: 10%;
-    width: 100%;
-    color: #fff;
-    font-size: 1.5em;
-    font-family: proxima-nova,
-    sans-serif;
-    font-weight: 600;
-    text-align: left;
+  #container a {
+    text-decoration: none;
+  }
+  #container {
+    text-align: center;
+    width: 90%;
+    height: 55vh;
+    margin-right: auto;
+    margin-left: auto;
   }
 
-  .artists {
+  model-viewer {
+    width: 90%;
+    height: 55vh;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  ion-card {
     position: relative;
+    text-align: center;
 
-    &::after {
-      content: "";
+    overflow: hidden;
+    .card-title {
       position: absolute;
-      top: 0;
-      left: 0;
+      bottom: 7%;
+      padding-right: 40%;
+      margin-left: 10%;
       width: 100%;
-      height: 100%;
-      background-image: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(255, 255, 255, 0) 100%
-      );
-      opacity: 0.75;
+      color: #fff;
+      font-size: 1.5em;
+      font-family: proxima-nova, sans-serif;
+      font-weight: 600;
+      text-align: left;
     }
-    .img_card_cat {
-      width: 100%;
-      margin-bottom: -5px;
+
+    .artists {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        opacity: 0.75;
+      }
+      .img_card_cat {
+        width: 100%;
+        margin-bottom: -5px;
+      }
     }
   }
+  .findArt {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-left: 5%;
+  }
+  .categories {
+    display: inline-block;
+    margin-top: 5%;
+  }
+}
+@media screen and (min-width: 700px) {
+  .menuPhone {
+    display: none;
+  }
+  .logoImg {
+    display: none;
+  }
+  .row {
+    background-color: #6361ea;
+  }
+  .textTitle {
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    color: white;
+    font-family: proxima-nova, sans-serif;
 
+    font-weight: 800;
+
+    font-style: normal;
+    font-size: 2.5em;
+  }
+  .textSubTitle {
+    text-align: center;
+    margin-top: 10%;
+
+    color: white;
+    font-family: proxima-nova, sans-serif;
+
+    font-weight: 800;
+
+    font-style: normal;
+    font-size: 2.5em;
+  }
+  .column {
+    float: left;
+    width: 50%;
+    padding-bottom: 5%;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  #container a {
+    text-decoration: none;
+  }
+  #container {
+    text-align: center;
+    width: 90%;
+    height: 70vh;
+  }
+
+  model-viewer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 70vh;
+  }
+  .buttonSee {
+    display: none;
+  }
+  .findArt {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    margin-left: 5%;
+    margin-top: 5%;
+  }
+  .categories {
+    display: inline-block;
+    margin-top: 2%;
+    margin-left: 3%;
+  }
+  ion-card {
+    position: relative;
+    text-align: center;
+
+    overflow: hidden;
+
+    .card-title {
+      position: absolute;
+      bottom: 7%;
+      padding-right: 40%;
+      margin-left: 10%;
+      width: 100%;
+      color: #fff;
+      font-size: 1.3em;
+      font-family: proxima-nova, sans-serif;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .artists {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        opacity: 0.75;
+      }
+      .img_card_cat {
+        width: 100%;
+        margin-bottom: -5px;
+      }
+    }
+  }
 }

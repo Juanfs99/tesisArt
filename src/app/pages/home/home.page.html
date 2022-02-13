@@ -7,66 +7,56 @@
 
 </ion-header>
 <ion-content>
-
-  <img src="assets/logo.png" style="
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 40%;
-      padding-top: 20%;
-    " alt="" />
-  <h4 style="
-      text-align: center;
-      padding-top: 10%;
-      padding-bottom: 10%;
-      color: #6361ea;
-      font-family: proxima-nova, sans-serif;
-
-      font-weight: 400;
-
-      font-style: normal;
-    ">
-    See ART in <br />
-    Augmented Reality
-  </h4>
-
-  <div id="container" class="ion-padding">
-    <model-viewer alt="PruebaRobot" src="/assets/mantaraya.glb" ios-src="/assets/mantaraya.usdz" ar unestable-webxr
-      quick-lock-browsers="safari chrome" shadow-intensity="1" interaction-prompt="auto" auto-rotate ar magic-leap
-      camera-controls>
-    </model-viewer>
+  <div class="row">
+    <div class="column">
+      <img class="logoImg" src="assets/logo.png" alt="" />
+      <h3 class="textTitle">
+        See ART in <br />
+        Augmented Reality
+      </h3>
+      <h3 class="textSubTitle">
+        ARt yourself <br>
+        be yourself
+      </h3>
+    </div>
+    <div class="column">
+      <div id="container" class="ion-padding">
+        <model-viewer alt="PruebaRobot" src="/assets/mantaraya.glb" ios-src="/assets/mantaraya.usdz" ar unestable-webxr
+          quick-lock-browsers="safari chrome" shadow-intensity="1" interaction-prompt="auto" auto-rotate ar magic-leap
+          camera-controls>
+        </model-viewer>
+      </div>
+      <ion-row>
+        <div class="ion-padding buttonSee" style="
+            margin-right: auto;
+            margin-left: auto;
+            padding-bottom: 15%;
+            padding-top: 10%;
+          ">
+          <ion-button expand="block" size="large" shape="" color="primary" style="
+              font-family: proxima-nova, sans-serif;
+              font-weight: 600;
+              font-style: normal;
+            ">
+            See in AR
+          </ion-button>
+        </div>
+      </ion-row>
+    </div>
   </div>
 
-  <ion-row>
-    <div class="ion-padding" style="
-        margin-right: auto;
-        margin-left: auto;
-        padding-bottom: 15%;
-        padding-top: 10%;
-      ">
-      <ion-button expand="block" size="large" shape="" color="primary" style="
-          font-family: proxima-nova, sans-serif;
-          font-weight: 600;
-          font-style: normal;
-        ">
-        See in AR
-      </ion-button>
-    </div>
-  </ion-row>
-  <h3 style="
-      font-family: proxima-nova, sans-serif;
-      font-weight: 400;
-      font-style: normal;
-      padding-left: 5%;
 
-    ">
+
+
+
+  <h3 class="findArt">
     Find your <span style="color: #6361ea; font-family: proxima-nova, sans-serif;
     font-weight: 600;">ART</span>
   </h3>
 
 
 
-  <ion-grid style="display: inline-block; padding-top: 5%;">
+  <ion-grid class="categories">
     <ion-row>
       <ion-col size="6" size-lg="3" size-md="4" size-sm="2" *ngFor="let c of categorias" [routerLink]="c.direccion">
 
@@ -96,13 +86,11 @@
 font-weight: 600;">ART</span>ist
   </h3>
 
-
-
-  <ion-grid style="display: inline-block; padding-top: 5%;">
+  <ion-grid class="categories">
     <ion-row>
       <ion-col size="6" size-lg="3" size-md="4" size-sm="2" *ngFor="let a of artistas" [routerLink]="a.direccion">
 
-        <ion-card class="ion-no-margin" style="background-color: none;">
+        <ion-card [routerLink]="a.direccion" class="ion-no-margin" style="background-color: none;">
           <div class="artists">
             <img src="{{a.imagen}}" class="img_card_cat" />
           </div>
@@ -111,11 +99,11 @@ font-weight: 600;">ART</span>ist
 
         </ion-card>
 
-
-
       </ion-col>
 
     </ion-row>
   </ion-grid>
+
+
 
 </ion-content>

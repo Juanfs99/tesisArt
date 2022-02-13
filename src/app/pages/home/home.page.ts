@@ -5,7 +5,7 @@ interface Categorias {
   nombre: string;
   imagen: any;
 }
-interface Artistas{
+interface Artistas {
   direccion: string;
   nombre: string;
   imagen: any;
@@ -17,48 +17,44 @@ interface Artistas{
 })
 export class HomePage implements OnInit {
 
-  
- categorias: Categorias[]=[
-   {
-     direccion: '/sculptures',
-    nombre: 'Sculptures',
-    imagen: 'assets/cuadrado.jpeg',
-   },
-   {
-    direccion: '/paintings',
-   nombre: 'Paintings',
-   imagen: 'assets/cuadrado.jpeg',
-   
-  },{
-    direccion: '/digital',
-   nombre: 'Digital',
-   imagen: 'assets/cuadrado.jpeg',
 
-  },
- ]
- artistas: Artistas[]=[
-   {
-     direccion: '/artistainfo',
-     nombre: 'Roberto',
-     imagen: 'assets/cuadrado.jpeg',
+  categorias: Categorias[] = [
+    {
+      direccion: '/sculptures',
+      nombre: 'Sculptures',
+      imagen: 'assets/cuadrado.jpeg',
+    },
+    {
+      direccion: '/paintings',
+      nombre: 'Paintings',
+      imagen: 'assets/cuadrado.jpeg',
+
+    }, {
+      direccion: '/digital',
+      nombre: 'Digital',
+      imagen: 'assets/cuadrado.jpeg',
+
+    },
+  ];
+  artistas: Artistas[] = [
+    {
+      direccion: '/artistainfo',
+      nombre: 'Roberto',
+      imagen: 'assets/cuadrado.jpeg',
     },
     {
       direccion: '/artistainfo',
       nombre: 'Ana',
       imagen: 'assets/cuadrado.jpeg',
-     },
-     {
+    },
+    {
       direccion: '/artistainfo',
       nombre: 'Juan',
       imagen: 'assets/cuadrado.jpeg',
-     },
-     {
-      direccion: '/artistainfo',
-      nombre: 'Patricia',
-      imagen: 'assets/cuadrado.jpeg',
-     }
- ]
-  constructor( ) { }
+    },
+
+  ];
+  constructor() { }
 
   ngOnInit() {
   }
