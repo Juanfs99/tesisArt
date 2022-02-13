@@ -14,15 +14,8 @@
 <ion-content>
   <div class="row">
     <div class="column">
-      <h3 style="
-      font-family: proxima-nova, sans-serif;
-      font-weight: 400;
-      font-style: normal;
-      padding-left: 5%;
-
-    ">
-        <span style="color: #6361ea; font-family: proxima-nova, sans-serif;
-    font-weight: 600;">ARt</span>
+      <h3 class="textCat">
+        <span>ARt</span>
         Sculptures
       </h3>
       <div id="container" class="ion-padding">
@@ -32,7 +25,7 @@
         </model-viewer>
       </div>
     </div>
-    <div>
+    <div class="column">
       <ion-list *ngFor="let s of sculptures">
         <ion-card class="ion-no-margin" [routerLink]="s.direccion" style="background-color: none;">
           <div class="artists">

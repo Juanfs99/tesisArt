@@ -1,4 +1,15 @@
 @media screen and (max-width: 700px) {
+  .textCat {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-left: 5%;
+    span {
+      color: #6361ea;
+      font-family: proxima-nova, sans-serif;
+      font-weight: 600;
+    }
+  }
   ion-card {
     text-align: center;
 
@@ -63,6 +74,18 @@
   }
 }
 @media screen and (min-width: 700px) {
+  .textCat {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 500;
+    font-size: 2em;
+    text-align: center;
+    span {
+      color: #6361ea;
+      font-family: proxima-nova, sans-serif;
+      font-weight: 600;
+      font-size: 1.5em;
+    }
+  }
   .row {
     margin-top: 5%;
   }

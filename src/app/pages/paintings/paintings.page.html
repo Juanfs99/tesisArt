@@ -1,42 +1,46 @@
-
 <ion-header class="ion-no-border">
-  <ion-toolbar>
+  <ion-toolbar class="menuPhone">
     <ion-buttons slot="start">
       <ion-menu-button menu="first" color="primary"></ion-menu-button>
     </ion-buttons>
-    <ion-buttons slot="end" >
+    <ion-buttons slot="end">
       <ion-button (click)="onClickHome()">
         <ion-icon name="home"></ion-icon>
       </ion-button>
-      
+
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  
 
-  <h3 style="
-      font-family: proxima-nova, sans-serif;
-      font-weight: 400;
-      font-style: normal;
-      padding-left: 5%;
-      
-    ">
-     <span style="color: #6361ea; font-family: proxima-nova, sans-serif;
-    font-weight: 600;">ARt</span>
-    Paintings
-  </h3>
-
-  <ion-list *ngFor="let p of paintings" >
-    <ion-card class="ion-no-margin" [routerLink]="p.direccion"  style="background-color: none;" >
-      <div class="artists">
-        <img src="{{p.imagen}}" class="img_card_cat" />
+  <div class="row">
+    <div class="column">
+      <h3 class="textCat">
+        <span>ARt</span>
+        Paintings
+      </h3>
+      <div id="container" class="ion-padding">
+        <model-viewer alt="PruebaRobot" src="/assets/mantaraya.glb" ios-src="/assets/mantaraya.usdz" ar unestable-webxr
+          quick-lock-browsers="safari chrome" shadow-intensity="1" interaction-prompt="auto" auto-rotate ar magic-leap
+          camera-controls>
+        </model-viewer>
       </div>
-      <!-- <div class="card-title">Sculptures</div> -->
-      <ion-card-title class="card-title">{{p.nombre}}</ion-card-title>
-      <ion-card-subtitle class="card-subtitle">${{p.precio}}</ion-card-subtitle>
+    </div>
+    <div class="column">
+      <ion-list *ngFor="let p of paintings">
+        <ion-card class="ion-no-margin" [routerLink]="p.direccion" style="background-color: none;">
+          <div class="artists">
+            <img src="{{p.imagen}}" class="img_card_cat" />
+          </div>
+          <!-- <div class="card-title">Sculptures</div> -->
+          <ion-card-title class="card-title">{{p.nombre}}</ion-card-title>
+          <ion-card-subtitle class="card-subtitle">${{p.precio}}</ion-card-subtitle>
 
-    </ion-card>
-  </ion-list>
-  
+        </ion-card>
+      </ion-list>
+    </div>
+  </div>
+
+
+
 </ion-content>

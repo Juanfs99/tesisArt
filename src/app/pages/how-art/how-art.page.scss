@@ -1,4 +1,8 @@
-#container a {
+@media screen and (max-width: 700px) {
+  .planesDesktop {
+    display: none;
+  }
+  #container a {
     text-decoration: none;
   }
   #container {
@@ -7,26 +11,76 @@
     height: 57vh;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 12% ;
+    margin-bottom: 12%;
   }
-  
+
   model-viewer {
     width: 90%;
     height: 55vh;
     margin-right: auto;
     margin-left: auto;
   }
-  
-  .planes{
-    
-        text-align: center;
-      
-        overflow: hidden;
-        margin-top: 2%;
-        margin-bottom: 2%;
-        box-shadow:none !important;
-      border-radius: 0%;
-      width: 100%;
-      position: center;
-      object-fit: cover;
+
+  .planes {
+    text-align: center;
+
+    overflow: hidden;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    box-shadow: none !important;
+    border-radius: 0%;
+    width: 100%;
+    position: center;
+    object-fit: cover;
   }
+}
+@media screen and (min-width: 700px) {
+  .planesPhone {
+    display: none;
+  }
+  .cardInfo {
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .column {
+    float: left;
+    width: 50%;
+    padding-bottom: 5%;
+  }
+  .row {
+    margin-top: 5%;
+  }
+  .menuPhone {
+    display: none;
+  }
+  #container a {
+    text-decoration: none;
+  }
+  #container {
+    text-align: center;
+    width: 90%;
+    height: 57vh;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 12%;
+  }
+
+  model-viewer {
+    width: 90%;
+    height: 55vh;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .planes {
+    text-align: center;
+  }
+  .planesDesktop {
+    float: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+}
