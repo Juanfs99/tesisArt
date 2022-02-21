@@ -1,3 +1,4 @@
+import { ScreensizeService } from './../../services/screensize.service';
 import { Component, OnInit } from '@angular/core';
 
 interface Categorias {
@@ -54,7 +55,15 @@ export class HomePage implements OnInit {
     },
 
   ];
-  constructor() { }
+  isDesktop: boolean;
+
+
+  constructor(private screensizeService: ScreensizeService) {
+    this.screensizeService.isDesktopView().subscribe(isDesktop => {
+      console.log('IsDesktop changed', isDesktop);
+      this.isDesktop = isDesktop;
+    });
+  }
 
   ngOnInit() {
   }

@@ -1,189 +1,74 @@
 <ion-app>
-  <ion-menu class="phoneMenu" contentId="main" menuId="first" side="start" type="overlay" autohide="false"
-    style="--min-width:100%">
-    <ion-content>
+  <div *ngIf="!isDesktop">
+    <ion-menu contentId="main" menuId="first" side="start" type="overlay" autohide="false" style="--min-width:100%">
+      <ion-content>
 
 
-      <ion-menu-toggle>
-        <div style="margin-left: 5%; margin-bottom: 20%;" class="header-content">
-          <!-- <img src="assets/cuadrado.jpeg" alt=""> -->
+        <ion-menu-toggle>
+          <div style="margin-left: 5%; margin-bottom: 20%;" class="header-content">
+            <!-- <img src="assets/cuadrado.jpeg" alt=""> -->
 
-          <p>Eres artista?</p>
-          <h2 routerLink="/login">
-            Iniciar sesión
-          </h2>
-
-
+            <p>Eres artista?</p>
+            <h2 routerLink="/login">
+              Iniciar sesión
+            </h2>
 
 
-        </div>
-        <ion-list class="menu-items" lines="none">
-          <ion-item *ngFor="let c of componentes |async" [routerLink]="c.direccion">
-            <ion-icon name="{{c.icono}}"></ion-icon>{{c.nombre}}
-          </ion-item>
-        </ion-list>
-      </ion-menu-toggle>
 
-      <!-- <div class="action-button">
+
+          </div>
+          <ion-list class="menu-items" lines="none">
+            <ion-item *ngFor="let c of componentes |async" [routerLink]="c.direccion">
+              <ion-icon name="{{c.icono}}"></ion-icon>{{c.nombre}}
+            </ion-item>
+          </ion-list>
+        </ion-menu-toggle>
+
+        <!-- <div class="action-button">
         <ion-button>
           <ion-icon slot="start" name="add"></ion-icon>
           Click me
         </ion-button>
       </div> -->
 
-    </ion-content>
-  </ion-menu>
+      </ion-content>
+    </ion-menu>
+  </div>
 
-  <div class="phoneDesktop" menuId="second">
-
-    <head>
-      <title>Navigation Bar with different Icons</title>
-      <!-- change or write your page title with the help of title tags-->
-      <link rel="stylesheet" type="text/css" href="nav.css">
-      <!-- connect css file with html useing link tag -->
-      <link rel="stylesheet" type="text/css"
-        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!-- link this font-awesome icon css link with html file for accessing all fornt awesome
-        icon form boostrapcdn.com -->
-    </head>
-
-    <body>
-      <ul>
-        <!--starting ul tag to create unordered lists.-->
-        <li>
-          <!--The HTML li element is used to represent an item in a list. ... In menus and unordered lists-->
-          <!--the a tag defines a hyperlink, which is used to link from one page to another-->
-          <a href="#">
-            <!-- this anchor text for link your home to another page -->
-            <div class="icon">
-              <i class="fa fa-home" aria-hidden="true"></i>
-              <!-- this is home icon link get form fornt-awesome icon for home button -->
-              <i class="fa fa-home" aria-hidden="true"></i>
-              <!-- copy and paste the home icon link here for hover effect -->
+  <div *ngIf="isDesktop">
+    <ion-header mode="ios" lines="none">
+      <ion-toolbar>
+        <ion-row style="height: auto ;" class="ion-align-items-center">
+          <ion-col style="height: auto ;" size="2">
+            <img src="./assets/logoSide.png" style="height: auto ; width: 70%;" class="logo ion-text-left">
+          </ion-col>
+          <ion-col size="8">
+            <div class="navbar">
+              <ion-button class="logo ion-text-left" *ngFor="let c of componentes |async" [routerLink]="c.direccion"
+                fill="clear" routerLink="" routerDirection="root" routerLinkActive="active-link" class="link" style=" font-family: proxima-nova, sans-serif;
+                font-weight: 500;
+                font-style: normal;
+                padding-left: 2%;
+                font-size: 1em;">
+                <ion-icon name="{{c.icono}}" class="ion-padding"></ion-icon>
+                {{c.nombre}}
+              </ion-button>
             </div>
-            <div class="name"><span data-text="Home">Home</span></div>
-            <!-- we are create first menu item name home -->
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <!-- this anchor text for link your About page to another page -->
-            <div class="icon">
-              <i class="fa fa-file" aria-hidden="true"></i>
-              <!-- this is file icon link get form fornt-awesome icon for about -->
-              <i class="fa fa-file" aria-hidden="true"></i>
-              <!-- copy and paste the file icon link here for hover effect -->
+          </ion-col>
+          <ion-col size="2">
+            <div class="navbar" class="ion-text-center">
+              <ion-button routerLink="/login" routerDirection="root" routerLinkActive="active-link" class="link" style=" font-family: proxima-nova, sans-serif;
+              font-weight: 600;
+              font-style: normal;
+              padding-left: 1%;
+              font-size: 1em;">
+                Login
+              </ion-button>
             </div>
-            <div class="name"><span data-text="About">About</span></div>
-            <!-- we are create second menu item name About -->
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <!-- this anchor text for link your service page to another page -->
-            <div class="icon">
-              <i class="fa fa-cogs" aria-hidden="true"></i>
-              <!-- this is cogs icon link get form fornt-awesome iocn for service menu -->
-              <i class="fa fa-cogs" aria-hidden="true"></i>
-              <!-- copy and paste the cogs icon link here for hover effect -->
-            </div>
-            <div class="name"><span data-text="Services">Services</span></div>
-            <!--- we are create third menu item name services -->
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <!-- this anchor text for link your portfolio page to another page -->
-            <div class="icon">
-              <i class="fa fa-picture-o" aria-hidden="true"></i>
-              <!-- this is picture icon link get form fornt-awesome icon for portfolio -->
-              <i class="fa fa-picture-o" aria-hidden="true"></i>
-              <!-- copy and paste the picture icon link here for hover effect -->
-            </div>
-            <div class="name"><span data-text="Portfolio">Portfolio</span></div>
-            <!-- we are create fourth menu item name portfolio -->
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <!-- this anchor text for link your team page to another page -->
-            <div class="icon">
-              <i class="fa fa-users" aria-hidden="true"></i>
-              <!-- this is picture icon link get form fornt-awesome icon for portfolio -->
-              <i class="fa fa-users" aria-hidden="true"></i>
-              <!-- copy and paste the home icon link here for hover effect -->
-            </div>
-            <div class="name"><span data-text="Team">Team</span></div>
-            <!-- we create first menu item name home -->
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <!-- this anchor text for link your home to another page -->
-            <div class="icon">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-              <!-- this is picture icon link get form fornt-awesome icon for portfolio -->
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-              <!-- copy and paste the home icon link here for hover effect -->
-            </div>
-            <div class="name"><span data-text="Contact">Contact</span></div>
-            <!-- we create first menu item name home -->
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <!-- this anchor text for link your Blog page to another page -->
-            <div class="icon">
-              <i class="fa fa-book" aria-hidden="true"></i>
-              <!-- this is Book icon link get form fornt-awesome icon for Blog -->
-              <i class="fa fa-book" aria-hidden="true"></i>
-              <!-- copy and paste the Book icon link here for hover effect -->
-            </div>
-            <div class="name"><span data-text="Blog">Blog</span></div>
-            <!-- we are create seventh menu item name Blog -->
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <!-- this anchor text for link your cart page to another page -->
-            <div class="icon">
-              <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-              <!-- this is cart icon link get form fornt-awesome icon for cart -->
-              <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-              <!-- copy and paste the cart icon link here for hover effect -->
-            </div>
-            <div class="name"><span data-text="Cart">Cart</span></div>
-            <!-- we are create eight menu item name Cart -->
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <!-- this anchor text for link your Price page to another page -->
-            <div class="icon">
-              <i class="fa fa-usd" aria-hidden="true"></i>
-              <!-- this is usd icon link get form fornt-awesome iocn for Price -->
-              <i class="fa fa-usd" aria-hidden="true"></i>
-              <!-- copy and paste the usd icon link here for hover effect -->
-            </div>
-            <div class="name"><span data-text="Price">Price</span></div>
-            <!-- we are create nineth menu item name Price -->
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <!-- this anchor text for link your login page to another page -->
-            <div class="icon">
-              <i class="fa fa-sign-in" aria-hidden="true"></i>
-              <!-- this is sign in icon link get form fornt-awesome icon for Login -->
-              <i class="fa fa-sign-in" aria-hidden="true"></i>
-              <!-- copy and paste the sign in  icon link here for hover effect -->
-            </div>
-            <div class="name"><span data-text="Login">Login</span></div>
-            <!-- we are create tenth menu item name login panel -->
-          </a>
-        </li>
-      </ul>
-    </body>
+          </ion-col>
+        </ion-row>
+      </ion-toolbar>
+    </ion-header>
   </div>
   <ion-router-outlet id="main"></ion-router-outlet>
 

@@ -13,77 +13,97 @@
 </ion-header>
 
 <ion-content>
-  <img src="assets/logo.png" style="
+
+  <div class="row" style="margin-top: 5%;">
+    <div class="column logoPhone">
+      <img class="logoPhone" src="assets/logo.png" style="
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 40%;
   padding-top: 20%;
 " alt="" />
-  <h4 style="
+    </div>
+    <div class="column logoDesktop">
+      <div id="container" class="ion-padding">
+        <model-viewer alt="PruebaRobot" src="/assets/mantaraya.glb" ios-src="/assets/mantaraya.usdz" ar unestable-webxr
+          quick-lock-browsers="safari chrome" shadow-intensity="1" interaction-prompt="auto" auto-rotate ar magic-leap
+          camera-controls>
+        </model-viewer>
+      </div>
+    </div>
+    <div class="column">
+      <h4 style="
       text-align: center;
       padding-top: 10%;
       color: #6361ea;
       font-family: proxima-nova, sans-serif;
 
-      font-weight: 400;
-
+      font-weight: 600;
+font-size: 1em;
       font-style: normal;
     ">
-    Iniciar Sesión
-  </h4>
-  <form>
-    <ion-grid>
-      <ion-row color="primary" justify-content-center>
-        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-          <div style="text-align: center;">
+        Iniciar Sesión
+      </h4>
+      <form>
+        <ion-grid>
+          <ion-row color="primary" justify-content-center>
+            <ion-col align-self-center size-md="8" size-lg="8" size-xs="12"
+              style="margin-left: auto; margin-right: auto; ">
+              <div style="text-align: center;">
 
 
-          </div>
-          <div class="ion-padding">
-            <ion-item>
-              <ion-icon name="person-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
-              </ion-icon>
+              </div>
+              <div class="ion-padding">
+                <ion-item>
+                  <ion-icon name="person-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
+                  </ion-icon>
 
-              <ion-input name="email" type="email" placeholder="Email"></ion-input>
+                  <ion-input name="email" type="email" placeholder="Email"></ion-input>
 
-            </ion-item>
-            <ion-item>
-              <ion-icon name="lock-open-outline" style="margin-right: 15px; color: #6361ea;"></ion-icon>
+                </ion-item>
+                <ion-item>
+                  <ion-icon name="lock-open-outline" style="margin-right: 15px; color: #6361ea;"></ion-icon>
 
-              <ion-input name="password" type="password" required placeholder="Contraseña">
-              </ion-input>
+                  <ion-input name="password" type="password" required placeholder="Contraseña">
+                  </ion-input>
 
-            </ion-item>
+                </ion-item>
 
-            <ion-button fill="clear" style="display: block;
-
-            margin-left: 5%;
-            width: 55%; padding-bottom: 3px;text-decoration: underline;" (click)="onClickPassword()">Forgot your
-              password?
-            </ion-button>
+                <ion-button fill="clear" style="display: block;
 
 
-          </div>
-          <div class="ion-padding">
+            padding-bottom: 3px;text-decoration: underline;" (click)="onClickPassword()">Forgot your
+                  password?
+                </ion-button>
 
-            <ion-button type="submit" expand="block" (click)="login()">Login</ion-button>
-          </div>
-          <ion-button fill="clear" style="display: block;
+
+              </div>
+              <div class="ion-padding">
+
+                <ion-button type="submit" expand="block" (click)="login()">Login</ion-button>
+              </div>
+              <ion-button fill="clear" style="display: block;
 margin-right: auto;
             margin-left: auto;
             width: 55%; padding-bottom: 3px;text-decoration: underline;" (click)="onClickSignUp()">Crear cuenta
-          </ion-button>
-          <!-- <ion-row>
+              </ion-button>
+              <!-- <ion-row>
             <div style="margin-left: auto; margin-right: auto;">
               <ion-button color="dragonparking" (click)="onClickInquilino()">Inquilino</ion-button>
               <ion-button color="dragonparking" (click)="onClickArrendatario()">Arrendatario</ion-button>
 
             </div>
           </ion-row> -->
-        </ion-col>
+            </ion-col>
 
-      </ion-row>
-    </ion-grid>
-  </form>
+          </ion-row>
+        </ion-grid>
+      </form>
+    </div>
+  </div>
+
+
+
+
 </ion-content>

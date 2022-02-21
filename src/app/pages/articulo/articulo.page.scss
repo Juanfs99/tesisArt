@@ -1,5 +1,5 @@
-
-#container a {
+@media screen and (max-width: 700px) {
+  #container a {
     text-decoration: none;
   }
   #container {
@@ -9,7 +9,7 @@
     margin-right: auto;
     margin-left: auto;
   }
-  
+
   model-viewer {
     width: 90%;
     height: 55vh;
@@ -21,45 +21,110 @@
     height: 200px;
     box-shadow: none;
     border-radius: 12px;
-    
-    img {
-        object-fit: cover;
-        width: 100%;
-        transform: scale(1.1, 1.1) rotate(1deg);
-        transition: 600ms all ease-in-out;
-    }
-}
 
-.swiper-slide-active {
+    img {
+      object-fit: cover;
+      width: 100%;
+      transform: scale(1.1, 1.1) rotate(1deg);
+      transition: 600ms all ease-in-out;
+    }
+  }
+
+  .swiper-slide-active {
     transform: scale(1.05, 1.05);
 
-    .cardImg{
-        img {
-            transform: scale(1, 1);
-        }
+    .cardImg {
+      img {
+        transform: scale(1, 1);
+      }
     }
-}
+  }
 
-.swiper-slide {
+  .swiper-slide {
     transition: 400ms all ease-in-out;
-}
+  }
 
-.cardArtist{
-   
+  .cardArtist {
     padding-top: 60px;
-  
+
     .img-wrapper {
       left: 5%;
       top: 5%;
-    float: left;
+      float: left;
       img {
         border-radius: 100%;
         width: 30%;
         height: 30%;
       }
-  
-      
-        
-      
     }
   }
+}
+@media screen and (min-width: 700px) {
+  .column {
+    float: left;
+    width: 50%;
+    padding-bottom: 5%;
+  }
+  .row {
+    margin-top: 5%;
+  }
+  #container a {
+    text-decoration: none;
+  }
+  #container {
+    text-align: center;
+    width: 90%;
+    height: 55vh;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  model-viewer {
+    width: 90%;
+    height: 55vh;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .cardImg {
+    width: 100%;
+    height: 200px;
+    box-shadow: none;
+    border-radius: 12px;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      transform: scale(1.1, 1.1) rotate(1deg);
+      transition: 600ms all ease-in-out;
+    }
+  }
+
+  .swiper-slide-active {
+    transform: scale(1.05, 1.05);
+
+    .cardImg {
+      img {
+        transform: scale(1, 1);
+      }
+    }
+  }
+
+  .swiper-slide {
+    transition: 400ms all ease-in-out;
+  }
+
+  .cardArtist {
+    padding-top: 60px;
+
+    .img-wrapper {
+      left: 5%;
+      top: 5%;
+      float: left;
+      img {
+        border-radius: 100%;
+        width: 30%;
+        height: 30%;
+      }
+    }
+  }
+}

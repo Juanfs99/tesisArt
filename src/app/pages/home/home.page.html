@@ -1,13 +1,15 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar class="menuPhone">
-    <ion-buttons slot="start">
-      <ion-menu-button menu="first" color="primary"></ion-menu-button>
-    </ion-buttons>
+<ion-header class="ion-no-border" *ngIf="!isDesktop">
+  <ion-toolbar>
+    <div>
+      <ion-buttons slot="start">
+        <ion-menu-button menu="first" color="primary"></ion-menu-button>
+      </ion-buttons>
+    </div>
   </ion-toolbar>
-
 </ion-header>
+
 <ion-content>
-  <div class="row">
+  <div class="row" style="margin-top: 5%;">
     <div class="column">
       <img class="logoImg" src="assets/logo.png" alt="" />
       <h3 class="textTitle">
