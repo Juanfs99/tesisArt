@@ -26,29 +26,33 @@
 
             <ion-item>
 
-              <ion-input disabled="true" name="Nombre" type="text" placeholder="Nombre">
+              <ion-input *ngIf="profile?.name" disabled=" true" name="Nombre" type="text">
                 <ion-icon class="ion-padding" slot="icon-only" name="person-outline" style="color: #6361ea"></ion-icon>
+                {{profile.name}}
               </ion-input>
             </ion-item>
             <ion-item>
-              <ion-input disabled="true" name="Apellido" type="text" placeholder="Apellido">
+              <ion-input *ngIf="profile?.lastname" disabled="true" name="Apellido" type="text">
                 <ion-icon class="ion-padding" slot="icon-only" name="person-outline" style="color: #6361ea"></ion-icon>
-
+                {{profile.lastname}}
               </ion-input>
             </ion-item>
             <ion-item>
-              <ion-input disabled="true" name="Cedula" type="number" placeholder="Número de Cédula">
+              <ion-input *ngIf="profile?.cedula" disabled="true" name="Cedula" type="number">
                 <ion-icon class="ion-padding" slot="icon-only" name="card-outline" style="color: #6361ea"></ion-icon>
+                {{profile.cedula}}
               </ion-input>
             </ion-item>
             <ion-item>
-              <ion-input disabled="true" name="Email" type="email" placeholder="Email">
+              <ion-input *ngIf="profile?.email" disabled="true" name="Email" type="email">
                 <ion-icon class="ion-padding" slot="icon-only" name="mail-outline" style="color: #6361ea"></ion-icon>
+                {{profile.email}}
               </ion-input>
             </ion-item>
             <ion-item>
-              <ion-input disabled="true" name="Telefono" type="number" placeholder="Número Telefónico">
+              <ion-input *ngIf="profile?.phonenumber" disabled="true" name="Telefono" type="number">
                 <ion-icon class="ion-padding" slot="icon-only" name="call-outline" style="color: #6361ea"></ion-icon>
+                {{profile.phonenumber}}
               </ion-input>
             </ion-item>
 

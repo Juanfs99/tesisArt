@@ -46,14 +46,16 @@
               <ion-icon name="person-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
               </ion-icon>
 
-              <ion-input name="name" type="name" placeholder="Nombres"></ion-input>
+              <ion-input name="name" type="name" placeholder="Nombres" formControlName="name"
+                [(ngModel)]="usuario.name"></ion-input>
 
             </ion-item>
             <ion-item>
               <ion-icon name="person-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
               </ion-icon>
 
-              <ion-input name="lastName" type="lastName" placeholder="Apellidos"></ion-input>
+              <ion-input name="lastName" type="lastName" placeholder="Apellidos" formControlName="lastname"
+                [(ngModel)]="usuario.lastname"></ion-input>
 
             </ion-item>
 
@@ -61,21 +63,25 @@
               <ion-icon name="card-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
               </ion-icon>
 
-              <ion-input name="number" type="number" placeholder="Cédula"></ion-input>
+              <ion-input name="number" type="number" placeholder="Cédula" formControlName="cedula"
+                [(ngModel)]="usuario.cedula"></ion-input>
 
             </ion-item>
             <ion-item>
               <ion-icon name="call-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
               </ion-icon>
 
-              <ion-input name="number" type="number" placeholder="Número telefónico"></ion-input>
+              <ion-input name="number" type="number" placeholder="Número telefónico" formControlName="phonenumber"
+                [(ngModel)]="usuario.phonenumber">
+              </ion-input>
 
             </ion-item>
             <ion-item fill="solid" class="ion-margin-bottom">
               <ion-icon name="mail-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
               </ion-icon>
 
-              <ion-input name="email" type="email" placeholder="Email" formControlName="email"></ion-input>
+              <ion-input name="email" type="email" placeholder="Email" formControlName="email"
+                [(ngModel)]="usuario.email"></ion-input>
               <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">Email is invalid
               </ion-note>
 
@@ -84,7 +90,8 @@
             <ion-item fill="solid" class="ion-margin-bottom">
               <ion-icon name="lock-open-outline" style="margin-right: 15px; color: #6361ea;"></ion-icon>
 
-              <ion-input name="password" type="password" required placeholder="Contraseña" formControlName="password">
+              <ion-input name="password" type="password" required placeholder="Contraseña" formControlName="password"
+                [(ngModel)]="usuario.password">
               </ion-input>
               <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">Password needs
                 to be 6 characters</ion-note>

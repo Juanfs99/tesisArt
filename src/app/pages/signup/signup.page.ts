@@ -9,6 +9,16 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./signup.page.scss'],
 })
 export class SignupPage implements OnInit {
+  usuario = {
+    email: '',
+    password: '',
+    name: '',
+    uid: '',
+    lastname: '',
+    cedula: '',
+    phonenumber: '',
+
+  };
   credentials: FormGroup;
 
   constructor(private route: Router,
@@ -27,7 +37,13 @@ export class SignupPage implements OnInit {
     const loading = await this.loadingController.create();
     await loading.present();
 
-    const user = await this.authService.register(this.credentials.value);
+    const user = await this.authService.register(this.credentials.value)
+
+      .then(async () => {
+        const uid = await this.authService.getUid();
+        this.usuario.uid = uid;
+        return await this.authService.addUser(this.usuario);
+      });
     await loading.dismiss();
     if (user) {
       this.route.navigateByUrl('/login', { replaceUrl: true });
@@ -51,11 +67,27 @@ export class SignupPage implements OnInit {
   get password() {
     return this.credentials.get('password');
   }
-
+  get name() {
+    return this.credentials.get('name');
+  }
+  get lastname() {
+    return this.credentials.get('lastname');
+  }
+  get cedula() {
+    return this.credentials.get('cedula');
+  }
+  get phonenumber() {
+    return this.credentials.get('phonenumber');
+  }
   ngOnInit() {
     this.credentials = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
+      name: ['', [Validators.required]],
+      lastname: ['', [Validators.required]],
+      cedula: ['', [Validators.required, Validators.minLength(10)]],
+      phonenumber: ['', [Validators.required, Validators.minLength(7)]],
+
     });
   }
 

@@ -10,7 +10,17 @@ import {
 } from '@angular/fire/storage';
 
 import { Photo } from '@capacitor/camera';
+export interface User {
+  uid: string;
+  email: string;
+  apellido: string;
+  cedula: string;
+  displayName: string;
+  nombre: string;
+  telefono: string;
+  password: string;
 
+}
 
 @Injectable({
   providedIn: 'root'
