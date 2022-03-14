@@ -19,8 +19,7 @@ export class SignupPage implements OnInit {
   onClickHome() {
     this.route.navigate(['/home']);
   }
-  ngOnInit() {
-  }
+
   onClickLogin() {
     this.route.navigate(['/login']);
   }
@@ -45,4 +44,19 @@ export class SignupPage implements OnInit {
     });
     await alert.present();
   }
+  get email() {
+    return this.credentials.get('email');
+  }
+
+  get password() {
+    return this.credentials.get('password');
+  }
+
+  ngOnInit() {
+    this.credentials = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    });
+  }
+
 }

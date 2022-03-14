@@ -32,7 +32,7 @@
     ">
     Únete a ARt
   </h4>
-  <form>
+  <form [formGroup]="credentials" (ngSubmit)="register()">
     <ion-grid>
       <ion-row color="primary" justify-content-center>
         <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
@@ -71,19 +71,23 @@
               <ion-input name="number" type="number" placeholder="Número telefónico"></ion-input>
 
             </ion-item>
-            <ion-item>
+            <ion-item fill="solid" class="ion-margin-bottom">
               <ion-icon name="mail-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
               </ion-icon>
 
-              <ion-input name="email" type="email" placeholder="Email"></ion-input>
+              <ion-input name="email" type="email" placeholder="Email" formControlName="email"></ion-input>
+              <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">Email is invalid
+              </ion-note>
+
 
             </ion-item>
-            <ion-item>
+            <ion-item fill="solid" class="ion-margin-bottom">
               <ion-icon name="lock-open-outline" style="margin-right: 15px; color: #6361ea;"></ion-icon>
 
-              <ion-input name="password" type="password" required placeholder="Contraseña">
+              <ion-input name="password" type="password" required placeholder="Contraseña" formControlName="password">
               </ion-input>
-
+              <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">Password needs
+                to be 6 characters</ion-note>
             </ion-item>
 
 
@@ -92,7 +96,8 @@
           </div>
           <div class="ion-padding">
 
-            <ion-button type="submit" expand="block" (click)="onClickLogin()">Crear cuenta</ion-button>
+            <ion-button type="submit" expand="block" (click)="register()" [disabled]="!credentials.valid">Crear cuenta
+            </ion-button>
           </div>
 
 

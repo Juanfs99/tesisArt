@@ -45,7 +45,7 @@ font-size: 1em;
     ">
         Iniciar Sesión
       </h4>
-      <form>
+      <form [formGroup]="credentials" (ngSubmit)="login()">
         <ion-grid>
           <ion-row color="primary" justify-content-center>
             <ion-col align-self-center size-md="8" size-lg="8" size-xs="12"
@@ -55,19 +55,21 @@ font-size: 1em;
 
               </div>
               <div class="ion-padding">
-                <ion-item>
+                <ion-item fill="solid" class="ion-margin-bottom">
                   <ion-icon name="person-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
                   </ion-icon>
 
-                  <ion-input name="email" type="email" placeholder="Email"></ion-input>
+                  <ion-input name="email" type="email" placeholder="Email" formControlName="email"></ion-input>
+                  <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">Email is invalid
+                  </ion-note>
 
                 </ion-item>
-                <ion-item>
+
+                <ion-item fill="solid" class="ion-margin-bottom">
                   <ion-icon name="lock-open-outline" style="margin-right: 15px; color: #6361ea;"></ion-icon>
-
-                  <ion-input name="password" type="password" required placeholder="Contraseña">
-                  </ion-input>
-
+                  <ion-input type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+                  <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">Password needs
+                    to be 6 characters</ion-note>
                 </ion-item>
 
                 <ion-button fill="clear" style="display: block;
@@ -81,7 +83,8 @@ font-size: 1em;
               </div>
               <div class="ion-padding">
 
-                <ion-button type="submit" expand="block" (click)="login()">Login</ion-button>
+                <ion-button type="submit" expand="block" (click)="login()" [disabled]="!credentials.valid">Login
+                </ion-button>
               </div>
               <ion-button fill="clear" style="display: block;
 margin-right: auto;
