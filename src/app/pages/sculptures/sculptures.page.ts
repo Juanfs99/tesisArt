@@ -1,3 +1,4 @@
+import { DataService } from './../../services/data.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 interface Sculptures {
@@ -13,32 +14,42 @@ interface Sculptures {
 })
 export class SculpturesPage implements OnInit {
 
-  sculptures: Sculptures[]=[
+  sculptures: Sculptures[] = [
     {
       direccion: '/articulo',
-     nombre: 'MantaRaya',
-     imagen: 'assets/cuadrado.jpeg',
-     precio: '3000'
+      nombre: 'MantaRaya',
+      imagen: 'assets/cuadrado.jpeg',
+      precio: '3000'
     },
     {
-     direccion: '/articulo',
-    nombre: 'VidaSolar',
-    imagen: 'assets/cuadrado.jpeg',
-    precio: '3000'
-    
-   },{
-     direccion: '/articulo',
-    nombre: 'SaltoAlto',
-    imagen: 'assets/cuadrado.jpeg',
-    precio: '3000'
-   },
-  ]
+      direccion: '/articulo',
+      nombre: 'VidaSolar',
+      imagen: 'assets/cuadrado.jpeg',
+      precio: '3000',
+    }, {
+      direccion: '/articulo',
+      nombre: 'SaltoAlto',
+      imagen: 'assets/cuadrado.jpeg',
+      precio: '3000'
+    },
+  ];
 
-  constructor(private route: Router) { }
+  notes = [
+
+
+
+
+  ];
+  constructor(private route: Router, private dataService: DataService) {
+    this.dataService.getNotes().subscribe(res => {
+      console.log(res);
+      this.notes = res;
+    });
+  }
 
   ngOnInit() {
   }
-  onClickHome(){
+  onClickHome() {
     this.route.navigate(['/home']);
   }
 

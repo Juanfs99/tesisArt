@@ -26,8 +26,8 @@
       </div>
     </div>
     <div class="column">
-      <ion-list *ngFor="let s of sculptures">
-        <ion-card class="ion-no-margin" [routerLink]="s.direccion" style="background-color: none;">
+      <ion-list *ngFor="let s of notes">
+        <ion-card class="ion-no-margin" [routerLink]="['/articulo', notes.id]" style="background-color: none;">
           <div class="artists">
             <img src="{{s.imagen}}" class="img_card_cat" />
           </div>

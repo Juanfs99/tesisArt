@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "art-in-augmented-reality": {
+      "hosting": {
+        "app": [
+          "art-in-augmented-reality"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "art-in-augmented-reality"
+  }
+}

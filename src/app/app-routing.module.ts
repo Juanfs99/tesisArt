@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+
+
+
+
 const routes: Routes = [
   {
     path: '',
@@ -54,30 +58,31 @@ const routes: Routes = [
   },
   {
     path: 'artistainfo',
-    loadChildren: () => import('./pages/artistainfo/artistainfo.module').then( m => m.ArtistainfoPageModule)
+    loadChildren: () => import('./pages/artistainfo/artistainfo.module').then(m => m.ArtistainfoPageModule)
   },
   {
     path: 'articulo',
-    loadChildren: () => import('./pages/articulo/articulo.module').then( m => m.ArticuloPageModule)
+    loadChildren: () => import('./pages/articulo/articulo.module').then(m => m.ArticuloPageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule),
   },
   {
     path: 'signup',
-    loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupPageModule)
-  },  {
+    loadChildren: () => import('./pages/signup/signup.module').then(m => m.SignupPageModule)
+  },
+  {
     path: 'profile',
-    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
+    loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfilePageModule)
   },
   {
     path: 'myart',
-    loadChildren: () => import('./pages/myart/myart.module').then( m => m.MyartPageModule)
+    loadChildren: () => import('./pages/myart/myart.module').then(m => m.MyartPageModule)
   },
   {
     path: 'forgotpassword',
-    loadChildren: () => import('./pages/forgotpassword/forgotpassword.module').then( m => m.ForgotpasswordPageModule)
+    loadChildren: () => import('./pages/forgotpassword/forgotpassword.module').then(m => m.ForgotpasswordPageModule)
   },
 
 ];
@@ -88,4 +93,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
