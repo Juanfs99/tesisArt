@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {
+  redirectUnauthorizedTo,
+  redirectLoggedInTo,
+  canActivate,
+} from '@angular/fire/auth-guard';
 
-
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['']);
+const redirectLoggedInToProfile = () => redirectLoggedInTo(['profile']);
 
 
 
@@ -67,6 +73,7 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule),
+
   },
   {
     path: 'signup',
@@ -74,11 +81,13 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfilePageModule)
+    loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfilePageModule),
+    ...canActivate(redirectUnauthorizedToLogin),
   },
   {
     path: 'myart',
-    loadChildren: () => import('./pages/myart/myart.module').then(m => m.MyartPageModule)
+    loadChildren: () => import('./pages/myart/myart.module').then(m => m.MyartPageModule),
+    ...canActivate(redirectUnauthorizedToLogin),
   },
   {
     path: 'forgotpassword',

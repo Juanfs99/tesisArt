@@ -5,6 +5,16 @@
 </ion-header>
 
 <ion-content>
+  <div class="preview">
+    <ion-avatar (click)="changeImage()">
+      <img *ngIf="profile?.imageUrl; else placheolder_avatar;" [src]="profile.imageUrl" />
+      <ng-template #placheolder_avatar>
+        <div class="fallback">
+          <p>Select avatar</p>
+        </div>
+      </ng-template>
+    </ion-avatar>
+  </div>
   <form class="ion-padding">
     <ion-grid>
       <ion-row color="primary" justify-content-center>
@@ -13,8 +23,7 @@
 
 
 
-            <img src="assets/cuadrado.jpeg" class="artistimg"
-              style="height:150px; border-radius: 50%; border: 5px solid #6361ea">
+
             <ion-item>
 
               <ion-input disabled="true" name="Nombre" type="text" placeholder="Nombre">
@@ -59,7 +68,7 @@
         <ion-button class="ion-text-capitalize" (click)="onClickMyArt()" color="tertiary">Mi ARte</ion-button>
       </div>
       <div class=" ion-padding" style="margin-left: auto; margin-right: auto;">
-        <ion-button class="ion-text-capitalize">Cerrar sesión</ion-button>
+        <ion-button class="ion-text-capitalize" (click)="logout()">Cerrar sesión</ion-button>
       </div>
     </ion-row>
   </form>
