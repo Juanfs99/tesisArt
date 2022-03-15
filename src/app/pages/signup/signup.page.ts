@@ -17,6 +17,7 @@ export class SignupPage implements OnInit {
     lastname: '',
     cedula: '',
     phonenumber: '',
+    imageUrl: '',
 
   };
   credentials: FormGroup;
@@ -37,6 +38,7 @@ export class SignupPage implements OnInit {
     const loading = await this.loadingController.create();
     await loading.present();
 
+
     const user = await this.authService.register(this.credentials.value)
 
       .then(async () => {
@@ -47,6 +49,7 @@ export class SignupPage implements OnInit {
     await loading.dismiss();
     if (user) {
       this.route.navigateByUrl('/login', { replaceUrl: true });
+      this.showAlert('Usuario Registrado', 'Bienvenido a ART in Augmented Reality');
     } else {
       this.showAlert('Fallo de registro', 'Por favor, intente de nuevo');
     }
@@ -79,6 +82,7 @@ export class SignupPage implements OnInit {
   get phonenumber() {
     return this.credentials.get('phonenumber');
   }
+
   ngOnInit() {
     this.credentials = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
