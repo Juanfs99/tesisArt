@@ -1,23 +1,138 @@
-ion-avatar {
-  width: 128px;
-  height: 128px;
+@media screen and (max-width: 700px) {
+  ion-avatar {
+    width: 150px;
+    height: 150px;
+  }
+
+  .preview {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .fallback {
+    width: 150px;
+    height: 150px;
+    border: 5px solid #6361ea;
+    border-radius: 50%;
+    background: #bfbfbf;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+  }
+  .name {
+    text-align: center;
+
+    color: #6361ea;
+    font-family: proxima-nova, sans-serif;
+
+    font-weight: 600;
+    font-size: 5vw;
+    font-style: normal;
+  }
+
+  .card-body {
+    margin-top: 10px;
+    background-color: #e2e2e2;
+    padding: 20px;
+    height: calc(100vh – (200px + 56px));
+    overflow: hidden;
+
+    .user-meta {
+      .playername {
+        color: #6361ea;
+        font-family: proxima-nova, sans-serif;
+        font-size: 8vw;
+        font-weight: 600;
+      }
+
+      .country {
+        font-family: proxima-nova, sans-serif;
+        font-size: 3vw;
+        color: #949ea6;
+        text-transform: uppercase;
+        margin: 0 auto;
+      }
+    }
+  }
+  .info {
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+  }
 }
 
-.preview {
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-}
+@media screen and (min-width: 700px) {
+  ion-avatar {
+    width: 250px;
+    height: 250px;
+  }
 
-.fallback {
-  width: 128px;
-  height: 128px;
-  border: 5px solid #6361ea;
-  border-radius: 50%;
-  background: #bfbfbf;
+  .preview {
+    margin-top: 5%;
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: center;
+  }
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 500;
+  .fallback {
+    width: 250px;
+    height: 250px;
+    border: 5px solid #6361ea;
+    border-radius: 50%;
+    background: #bfbfbf;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+  }
+  .name {
+    text-align: center;
+
+    color: #6361ea;
+    font-family: proxima-nova, sans-serif;
+
+    font-weight: 600;
+    font-size: 5vw;
+    font-style: normal;
+  }
+
+  .card-body {
+    margin-top: 10px;
+    background-color: #e2e2e2;
+    padding: 20px;
+    height: calc(100vh – (200px + 56px));
+    overflow: hidden;
+
+    .user-meta {
+      .playername {
+        color: #6361ea;
+        font-family: proxima-nova, sans-serif;
+        font-size: 2vw;
+        font-weight: 600;
+      }
+
+      .country {
+        font-family: proxima-nova, sans-serif;
+        font-size: 1.5vw;
+        color: #949ea6;
+        text-transform: uppercase;
+        margin: 0 auto;
+      }
+    }
+  }
+  .info {
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .infoform {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+  }
 }

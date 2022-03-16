@@ -10,65 +10,83 @@
       <img *ngIf="profile?.imageUrl; else placheolder_avatar;" [src]="profile.imageUrl" />
       <ng-template #placheolder_avatar>
         <div class="fallback">
-          <p>Select avatar</p>
+          <p style="text-align: center;">Subir imagen de perfil</p>
         </div>
       </ng-template>
     </ion-avatar>
   </div>
-  <form class="ion-padding">
-    <ion-grid>
-      <ion-row color="primary" justify-content-center>
-        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-          <div class="ion-padding">
-            <ion-item>
-              <ion-input *ngIf="profile?.name" disabled=" true" name="Nombre" type="text">
-                <ion-icon class="ion-padding" slot="icon-only" name="person-outline" style="color: #6361ea"></ion-icon>
-                {{profile.name}}
-              </ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input *ngIf="profile?.lastname" disabled="true" name="Apellido" type="text">
-                <ion-icon class="ion-padding" slot="icon-only" name="person-outline" style="color: #6361ea"></ion-icon>
-                {{profile.lastname}}
-              </ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input *ngIf="profile?.cedula" disabled="true" name="Cedula" type="number">
-                <ion-icon class="ion-padding" slot="icon-only" name="card-outline" style="color: #6361ea"></ion-icon>
-                {{profile.cedula}}
-              </ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input *ngIf="profile?.email" disabled="true" name="Email" type="email">
-                <ion-icon class="ion-padding" slot="icon-only" name="mail-outline" style="color: #6361ea"></ion-icon>
-                {{profile.email}}
-              </ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input *ngIf="profile?.phonenumber" disabled="true" name="Telefono" type="number">
-                <ion-icon class="ion-padding" slot="icon-only" name="call-outline" style="color: #6361ea"></ion-icon>
-                {{profile.phonenumber}}
-              </ion-input>
-            </ion-item>
+
+
+  <div class="card-body">
+    <div class="user-meta ion-text-center">
+      <h3 class="playername" *ngIf="profile?.name && profile?.lastname">{{profile.name}}
+        {{profile.lastname}}</h3>
+      <h5 class="country" *ngIf="profile?.country"> {{profile.country}}</h5>
+
+    </div>
+
+  </div>
 
 
 
+  <div class="infoform">
+    <div>
+      <form>
+
+        <ion-grid>
+
+          <ion-row color="primary" justify-content-center>
+
+            <ion-col align-self-center size-md="12" size-lg="12" size-xs="12">
+              <h5 class="info"> Información</h5>
+              <div class="ion-padding">
+
+                <ion-item>
+
+                  <ion-input style="margin-left: auto; margin-right: auto;" *ngIf="profile?.cedula" disabled="true"
+                    name="Cedula" type="number">
+                    <ion-icon class="ion-padding" slot="icon-only" name="card-outline" style="color: #6361ea">
+                    </ion-icon>
+                    {{profile.cedula}}
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input *ngIf="profile?.email" disabled="true" name="Email" type="email">
+                    <ion-icon class="ion-padding" slot="icon-only" name="mail-outline" style="color: #6361ea">
+                    </ion-icon>
+                    {{profile.email}}
+                  </ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input *ngIf="profile?.phonenumber" disabled="true" name="Telefono" type="number">
+                    <ion-icon class="ion-padding" slot="icon-only" name="call-outline" style="color: #6361ea">
+                    </ion-icon>
+                    {{profile.phonenumber}}
+                  </ion-input>
+                </ion-item>
+
+
+
+              </div>
+            </ion-col>
+
+          </ion-row>
+        </ion-grid>
+
+
+        <ion-row>
+
+
+          <div class="ion-padding" style="margin-left: auto; margin-right: auto;">
+            <ion-button class="ion-text-capitalize" (click)="onClickMyArt()" color="tertiary">Mi ARte</ion-button>
           </div>
-        </ion-col>
+          <div class=" ion-padding" style="margin-left: auto; margin-right: auto;">
+            <ion-button class="ion-text-capitalize" (click)="logout()">Cerrar sesión</ion-button>
+          </div>
+        </ion-row>
+      </form>
+    </div>
 
-      </ion-row>
-    </ion-grid>
+  </div>
 
-
-    <ion-row>
-
-
-      <div class="ion-padding" style="margin-left: auto; margin-right: auto;">
-        <ion-button class="ion-text-capitalize" (click)="onClickMyArt()" color="tertiary">Mi ARte</ion-button>
-      </div>
-      <div class=" ion-padding" style="margin-left: auto; margin-right: auto;">
-        <ion-button class="ion-text-capitalize" (click)="logout()">Cerrar sesión</ion-button>
-      </div>
-    </ion-row>
-  </form>
 </ion-content>

@@ -18,7 +18,7 @@ export class SignupPage implements OnInit {
     cedula: '',
     phonenumber: '',
     imageUrl: '',
-
+    country: '',
   };
   credentials: FormGroup;
 
@@ -82,6 +82,9 @@ export class SignupPage implements OnInit {
   get phonenumber() {
     return this.credentials.get('phonenumber');
   }
+  get country() {
+    return this.credentials.get('country');
+  }
 
   ngOnInit() {
     this.credentials = this.fb.group({
@@ -89,6 +92,7 @@ export class SignupPage implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       name: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
+      country: ['', [Validators.required]],
       cedula: ['', [Validators.required, Validators.minLength(10)]],
       phonenumber: ['', [Validators.required, Validators.minLength(7)]],
 

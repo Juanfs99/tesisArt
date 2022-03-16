@@ -13,104 +13,120 @@
 </ion-header>
 
 <ion-content>
-  <img src="assets/logo.png" style="
+  <div class="row" style="margin-top: 5%;">
+    <div class="column logoPhone">
+      <img src="assets/logo.png" style="
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 40%;
   padding-top: 20%;
 " alt="" />
-  <h4 style="
-      text-align: center;
-      padding-top: 10%;
-      color: #6361ea;
-      font-family: proxima-nova, sans-serif;
 
-      font-weight: 600;
-
-      font-style: normal;
-    ">
-    Únete a ARt
-  </h4>
-  <form [formGroup]="credentials" (ngSubmit)="register()">
-    <ion-grid>
-      <ion-row color="primary" justify-content-center>
-        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-          <div style="text-align: center;">
-
-
-          </div>
-          <div class="ion-padding">
-
-            <ion-item>
-              <ion-icon name="person-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
-              </ion-icon>
-
-              <ion-input name="name" type="name" placeholder="Nombres" formControlName="name"
-                [(ngModel)]="usuario.name"></ion-input>
-
-            </ion-item>
-            <ion-item>
-              <ion-icon name="person-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
-              </ion-icon>
-
-              <ion-input name="lastName" type="lastName" placeholder="Apellidos" formControlName="lastname"
-                [(ngModel)]="usuario.lastname"></ion-input>
-
-            </ion-item>
-
-            <ion-item>
-              <ion-icon name="card-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
-              </ion-icon>
-
-              <ion-input name="number" type="number" placeholder="Cédula" formControlName="cedula"
-                [(ngModel)]="usuario.cedula"></ion-input>
-
-            </ion-item>
-            <ion-item>
-              <ion-icon name="call-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
-              </ion-icon>
-
-              <ion-input name="number" type="number" placeholder="Número telefónico" formControlName="phonenumber"
-                [(ngModel)]="usuario.phonenumber">
-              </ion-input>
-
-            </ion-item>
-            <ion-item fill="solid" class="ion-margin-bottom">
-              <ion-icon name="mail-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
-              </ion-icon>
-
-              <ion-input name="email" type="email" placeholder="Email" formControlName="email"
-                [(ngModel)]="usuario.email"></ion-input>
-              <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">Email is invalid
-              </ion-note>
+    </div>
+    <div class="column logoDesktop">
+      <div id="container" class="ion-padding">
+        <model-viewer alt="PruebaRobot" src="/assets/mantaraya.glb" ios-src="/assets/mantaraya.usdz" ar unestable-webxr
+          quick-lock-browsers="safari chrome" shadow-intensity="1" interaction-prompt="auto" auto-rotate ar magic-leap
+          camera-controls>
+        </model-viewer>
+      </div>
+    </div>
+    <div class="column">
+      <h4 class="titulo">
+        Únete a ARt
+      </h4>
+      <form [formGroup]="credentials" (ngSubmit)="register()">
+        <ion-grid>
+          <ion-row color="primary" justify-content-center>
+            <ion-col align-self-center size-md="8" size-lg="8" size-xs="12"
+              style="margin-left: auto; margin-right: auto; ">
+              <div style="text-align: center;">
 
 
-            </ion-item>
-            <ion-item fill="solid" class="ion-margin-bottom">
-              <ion-icon name="lock-open-outline" style="margin-right: 15px; color: #6361ea;"></ion-icon>
+              </div>
+              <div class="ion-padding">
 
-              <ion-input name="password" type="password" required placeholder="Contraseña" formControlName="password"
-                [(ngModel)]="usuario.password">
-              </ion-input>
-              <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">Password needs
-                to be 6 characters</ion-note>
-            </ion-item>
+                <ion-item>
+                  <ion-icon name="person-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
+                  </ion-icon>
+
+                  <ion-input name="name" type="name" placeholder="Nombres" formControlName="name"
+                    [(ngModel)]="usuario.name"></ion-input>
+
+                </ion-item>
+                <ion-item>
+                  <ion-icon name="person-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
+                  </ion-icon>
+
+                  <ion-input name="lastName" type="lastName" placeholder="Apellidos" formControlName="lastname"
+                    [(ngModel)]="usuario.lastname"></ion-input>
+
+                </ion-item>
+
+                <ion-item>
+                  <ion-icon name="card-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
+                  </ion-icon>
+
+                  <ion-input name="number" type="number" placeholder="Cédula" formControlName="cedula"
+                    [(ngModel)]="usuario.cedula"></ion-input>
+
+                </ion-item>
+                <ion-item>
+                  <ion-icon name="call-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
+                  </ion-icon>
+
+                  <ion-input name="number" type="number" placeholder="Número telefónico" formControlName="phonenumber"
+                    [(ngModel)]="usuario.phonenumber">
+                  </ion-input>
+
+                </ion-item>
+                <ion-item>
+                  <ion-icon name="call-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
+                  </ion-icon>
+
+                  <ion-input name="text" type="text" placeholder="País de residencia" formControlName="country"
+                    [(ngModel)]="usuario.country">
+                  </ion-input>
+
+                </ion-item>
+                <ion-item fill="solid" class="ion-margin-bottom">
+                  <ion-icon name="mail-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
+                  </ion-icon>
+
+                  <ion-input name="email" type="email" placeholder="Email" formControlName="email"
+                    [(ngModel)]="usuario.email"></ion-input>
+                  <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">Email is invalid
+                  </ion-note>
+
+
+                </ion-item>
+                <ion-item fill="solid" class="ion-margin-bottom">
+                  <ion-icon name="lock-open-outline" style="margin-right: 15px; color: #6361ea;"></ion-icon>
+
+                  <ion-input name="password" type="password" required placeholder="Contraseña"
+                    formControlName="password" [(ngModel)]="usuario.password">
+                  </ion-input>
+                  <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">Password needs
+                    to be 6 characters</ion-note>
+                </ion-item>
 
 
 
 
-          </div>
-          <div class="ion-padding">
+              </div>
+              <div class="ion-padding">
 
-            <ion-button expand="block" (click)="register()" [disabled]="!credentials.valid">Crear cuenta
-            </ion-button>
-          </div>
+                <ion-button expand="block" (click)="register()" [disabled]="!credentials.valid">Crear cuenta
+                </ion-button>
+              </div>
 
 
-        </ion-col>
+            </ion-col>
 
-      </ion-row>
-    </ion-grid>
-  </form>
+          </ion-row>
+        </ion-grid>
+      </form>
+    </div>
+  </div>
 </ion-content>

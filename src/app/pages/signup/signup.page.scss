@@ -1,0 +1,57 @@
+@media screen and (max-width: 700px) {
+  .logoDesktop {
+    display: none;
+  }
+  .titulo {
+    text-align: center;
+    padding-top: 10%;
+    color: #6361ea;
+    font-family: proxima-nova, sans-serif;
+
+    font-weight: 600;
+
+    font-style: normal;
+    font-size: 10vw;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .column {
+    float: left;
+    width: 50%;
+    padding-bottom: 5%;
+  }
+  .row {
+    margin-top: 5%;
+  }
+  .logoPhone {
+    display: none;
+  }
+  model-viewer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 70vh;
+  }
+  #container a {
+    text-decoration: none;
+  }
+  #container {
+    text-align: center;
+    width: 90%;
+    height: 70vh;
+  }
+  .form {
+    width: 100%;
+  }
+  .titulo {
+    text-align: center;
+    padding-top: 10%;
+    color: #6361ea;
+    font-family: proxima-nova, sans-serif;
+
+    font-weight: 600;
+    font-size: 2vw;
+    font-style: normal;
+  }
+}
