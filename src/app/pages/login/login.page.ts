@@ -34,7 +34,7 @@ export class LoginPage implements OnInit {
     const user = await this.authService.login(this.credentials.value);
     await loading.dismiss();
     if (user) {
-      this.route.navigateByUrl('/profile', { replaceUrl: true });
+      this.route.navigateByUrl('/home', { replaceUrl: true });
     } else {
       this.showAlert('Fallo de inicio de sesión', 'Por favor, intente de nuevo');
     }

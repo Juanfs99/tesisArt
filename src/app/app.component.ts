@@ -7,7 +7,6 @@ import { Observable } from 'rxjs/internal/Observable';
 import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -15,17 +14,18 @@ import { Platform } from '@ionic/angular';
 })
 export class AppComponent {
   isDesktop: boolean;
+  componentes: Observable<Componentes[]>;
 
   constructor(private dataService: DataService, private route: Router,
     private screensizeService: ScreensizeService,
-    private platform: Platform) {
+    private platform: Platform,
+  ) {
     this.screensizeService.isDesktopView().subscribe(isDesktop => {
       console.log('IsDesktop changed', isDesktop);
       this.isDesktop = isDesktop;
     });
   }
 
-  componentes: Observable<Componentes[]>;
   @HostListener('window:resize', ['$event'])
   private onResize(event) {
     this.screensizeService.onResize(event.target.innerWidth);

@@ -92,7 +92,11 @@ const routes: Routes = [
   {
     path: 'forgotpassword',
     loadChildren: () => import('./pages/forgotpassword/forgotpassword.module').then(m => m.ForgotpasswordPageModule)
+  },  {
+    path: 'subir',
+    loadChildren: () => import('./pages/subir/subir.module').then( m => m.SubirPageModule)
   },
+
 
 ];
 

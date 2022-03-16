@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail, authState } from '@angular/fire/auth';
 import { doc, docData, Firestore, setDoc, collection, collectionData } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
@@ -53,10 +53,10 @@ export class AuthService {
   }
   async getUid() {
     const user = await this.auth.currentUser;
-    if (user === null) {
-      return null;
-    } else {
+    if (user) {
       return user.uid;
+    } else {
+      return null;
     }
   }
 

@@ -23,6 +23,15 @@ export class ProfilePage implements OnInit {
   async logout() {
     await this.authService.logout();
     this.route.navigateByUrl('/login', { replaceUrl: true });
+    this.showAlert('Sesión finalizada');
+
+  }
+  async showAlert(header) {
+    const alert = await this.alertController.create({
+      header,
+      buttons: ['OK'],
+    });
+    await alert.present();
   }
   async changeImage() {
     const image = await Camera.getPhoto({

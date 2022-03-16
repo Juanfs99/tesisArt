@@ -20,6 +20,7 @@ export interface User {
   telefono: string;
   password: string;
   country: string;
+  user: 'artist';
 }
 
 @Injectable({
