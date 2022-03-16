@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from '@angular/fire/auth';
 import { doc, docData, Firestore, setDoc, collection, collectionData } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
@@ -63,5 +63,17 @@ export class AuthService {
 
   logout() {
     return signOut(this.auth);
+  }
+
+  async cambiarcontrasena(email: string) {
+    try {
+      const user = await sendPasswordResetEmail(
+        this.auth,
+        email,
+      );
+      return user;
+    } catch (e) {
+      return null;
+    }
   }
 }
