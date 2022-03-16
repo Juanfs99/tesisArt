@@ -3,6 +3,7 @@ import { Component, HostListener } from '@angular/core';
 import { DataService } from './services/data.service';
 import { Componentes } from 'src/assets/interfaces/interfaces';
 import { Observable } from 'rxjs/internal/Observable';
+import { AuthService } from './services/auth.service';
 
 import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
@@ -19,6 +20,7 @@ export class AppComponent {
   constructor(private dataService: DataService, private route: Router,
     private screensizeService: ScreensizeService,
     private platform: Platform,
+    private auth: AuthService,
   ) {
     this.screensizeService.isDesktopView().subscribe(isDesktop => {
       console.log('IsDesktop changed', isDesktop);

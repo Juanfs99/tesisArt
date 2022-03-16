@@ -73,6 +73,7 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule),
+    ...canActivate(redirectLoggedInToProfile),
 
   },
   {
@@ -92,9 +93,10 @@ const routes: Routes = [
   {
     path: 'forgotpassword',
     loadChildren: () => import('./pages/forgotpassword/forgotpassword.module').then(m => m.ForgotpasswordPageModule)
-  },  {
+  },
+  {
     path: 'subir',
-    loadChildren: () => import('./pages/subir/subir.module').then( m => m.SubirPageModule)
+    loadChildren: () => import('./pages/subir/subir.module').then(m => m.SubirPageModule)
   },
 
 

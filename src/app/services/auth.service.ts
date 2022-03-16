@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail, authState } from '@angular/fire/auth';
+import {
+  Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail,
+
+} from '@angular/fire/auth';
 import { doc, docData, Firestore, setDoc, collection, collectionData } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
@@ -59,6 +62,7 @@ export class AuthService {
       return null;
     }
   }
+
 
 
   logout() {

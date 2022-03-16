@@ -26,6 +26,10 @@ export class ProfilePage implements OnInit {
     this.showAlert('Sesión finalizada');
 
   }
+
+  onClickHome() {
+    this.route.navigate(['/home']);
+  }
   async showAlert(header) {
     const alert = await this.alertController.create({
       header,
