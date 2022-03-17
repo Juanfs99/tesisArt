@@ -1,5 +1,6 @@
 import { ScreensizeService } from './../../services/screensize.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface Categorias {
   direccion: string;
@@ -58,13 +59,16 @@ export class HomePage implements OnInit {
   isDesktop: boolean;
 
 
-  constructor(private screensizeService: ScreensizeService) {
+  constructor(private screensizeService: ScreensizeService,
+    private route: Router,) {
     this.screensizeService.isDesktopView().subscribe(isDesktop => {
       console.log('IsDesktop changed', isDesktop);
       this.isDesktop = isDesktop;
     });
   }
-
+  onClickLogin() {
+    this.route.navigate(['/login']);
+  }
   ngOnInit() {
   }
 

@@ -1,31 +1,34 @@
-[{
+[
+  {
+    "funcion": "",
     "icono": "home-outline",
     "nombre": "Home",
     "direccion": "/home"
-},
-{
+  },
+  {
+    "funcion": "false",
     "icono": "body-outline",
     "nombre": "Sculptures",
     "direccion": "/sculptures"
-},
-{
+  },
+  {
     "icono": "brush-outline",
     "nombre": "Paintings",
     "direccion": "/paintings"
-},
-{
+  },
+  {
     "icono": "earth-outline",
     "nombre": "Digital",
     "direccion": "/digital"
-},
-{
+  },
+  {
     "icono": "trophy-outline",
     "nombre": "Top Artists",
     "direccion": "/artists"
-},
-{
+  },
+  {
     "icono": "help-circle-outline",
     "nombre": "How to Art?",
     "direccion": "/how-art"
-}
+  }
 ]

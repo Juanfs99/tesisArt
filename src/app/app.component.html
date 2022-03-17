@@ -54,16 +54,35 @@
                 <ion-icon name="{{c.icono}}" class="ion-padding"></ion-icon>
                 {{c.nombre}}
               </ion-button>
+              <ion-button *ngIf="login === true" class="logo ion-text-left" (click)="onClickMyArt()" fill="clear"
+                routerLink="" routerDirection="root" routerLinkActive="active-link" class="link" style=" font-family: proxima-nova, sans-serif;
+              font-weight: 500;
+              font-style: normal;
+              padding-left: 2%;
+              font-size: 1em;">
+                <ion-icon name="color-palette-outline"></ion-icon>
+
+                MyART
+              </ion-button>
             </div>
           </ion-col>
           <ion-col size="2">
             <div class="navbar" class="ion-text-center">
-              <ion-button routerLink="/login" routerDirection="root" routerLinkActive="active-link" class="link" style=" font-family: proxima-nova, sans-serif;
+              <ion-button *ngIf="login === false" routerLink="/login" routerDirection="root"
+                routerLinkActive="active-link" class="link" style=" font-family: proxima-nova, sans-serif;
               font-weight: 600;
               font-style: normal;
               padding-left: 1%;
               font-size: 1em;">
                 Login
+              </ion-button>
+              <ion-button *ngIf="login === true" routerLink="/profile" routerDirection="root"
+                routerLinkActive="active-link" class="link" style=" font-family: proxima-nova, sans-serif;
+              font-weight: 600;
+              font-style: normal;
+              padding-left: 1%;
+              font-size: 1em;">
+                Perfil
               </ion-button>
             </div>
           </ion-col>

@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import {
   Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail,
-
+  authState
 } from '@angular/fire/auth';
 import { doc, docData, Firestore, setDoc, collection, collectionData } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-
 
 export interface CrearUsuario {
   uid: string;
@@ -16,7 +15,9 @@ export interface CrearUsuario {
 })
 export class AuthService {
 
-  constructor(private auth: Auth, private firestore: Firestore,) { }
+  constructor(private auth: Auth, private firestore: Firestore,) {
+
+  }
 
   async register({ email, password }) {
     try {
@@ -80,4 +81,5 @@ export class AuthService {
       return null;
     }
   }
+
 }
