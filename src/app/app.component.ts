@@ -27,6 +27,7 @@ export class AppComponent {
     private platform: Platform,
     private auth: AuthService,
     private authFire: Auth,
+
   ) {
     this.screensizeService.isDesktopView().subscribe(isDesktop => {
       console.log('IsDesktop changed', isDesktop);
@@ -36,12 +37,16 @@ export class AppComponent {
     authState(this.authFire).subscribe((response) => {
       if (response) {
         console.log('esta logeado');
+        console.log(response);
+
         this.login = true;
+
       } else {
         console.log('no esta loguead');
         this.login = false;
       }
     });
+
   }
 
   @HostListener('window:resize', ['$event'])

@@ -1,12 +1,10 @@
 [
   {
-    "funcion": "",
     "icono": "home-outline",
     "nombre": "Home",
     "direccion": "/home"
   },
   {
-    "funcion": "false",
     "icono": "body-outline",
     "nombre": "Sculptures",
     "direccion": "/sculptures"
