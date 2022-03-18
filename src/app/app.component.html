@@ -5,12 +5,41 @@
 
 
         <ion-menu-toggle>
-          <div style="margin-left: 5%; margin-bottom: 20%;" class="header-content">
-            <!-- <img src="assets/cuadrado.jpeg" alt=""> -->
 
-            <p>Eres artista?</p>
+          <div style="margin-left: 5%; " class="header-content">
+            <ion-item *ngIf="login === true" lines="none">
 
-            <h2 routerLink="/login">
+
+              <img slot="start" style="height: 100px; width: 100px; margin-top: 5%;" *ngIf="profile?.imageUrl"
+                [src]="profile.imageUrl" />
+
+
+              <ion-label>
+                <ion-button *ngIf="login === true" routerLink="/profile" routerDirection="root"
+                  routerLinkActive="active-link" class="link" style=" font-family: proxima-nova, sans-serif;
+                    font-weight: 600;
+                    font-style: normal;
+
+                    font-size: 1em; margin-top: 10%;">
+                  Perfil
+                </ion-button>
+
+
+                <div style=" margin-top: 4%;" *ngIf="login === true">
+                  <p style="font-size: 4vw; font-weight: 500;" *ngIf="profile?.name && profile?.lastname">
+                    {{profile.name}}
+                    {{profile.lastname}}</p>
+                </div>
+              </ion-label>
+
+            </ion-item>
+            <p *ngIf="login === false">Eres artista?</p>
+
+
+
+
+
+            <h2 *ngIf="login === false" routerLink="/login">
               Iniciar sesión
             </h2>
 
@@ -18,10 +47,10 @@
 
 
           </div>
-          <ion-list class="menu-items" lines="none">
-            <ion-item *ngFor="let c of componentes |async" [routerLink]="c.direccion">
-              <ion-icon name="{{c.icono}}"></ion-icon>{{c.nombre}}
-            </ion-item>
+          <div *ngIf="login === true" style="   background-color: #6361ea; height: 20px; margin-top: 10px; "></div>
+
+          <ion-list class="menu-items" style="margin-top: 20%;" lines="none">
+
             <ion-item routerLink="/home">
               <ion-icon name="home-outline"></ion-icon>Home
             </ion-item>
@@ -43,7 +72,7 @@
             <ion-item *ngIf="login === true" routerLink="/myart">
               <ion-icon name="color-palette-outline"></ion-icon>My ART
             </ion-item>
-            <ion-item routerLink="/subir">
+            <ion-item *ngIf="login === true" routerLink="/subir">
               <ion-icon name="cloud-upload-outline"></ion-icon>Upload ART
             </ion-item>
           </ion-list>

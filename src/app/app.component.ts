@@ -11,6 +11,9 @@ import {
   Auth, signOut,
   authState
 } from '@angular/fire/auth';
+import { AvatarService } from './services/avatar.service';
+import { doc, docData, Firestore, setDoc, updateDoc } from '@angular/fire/firestore';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -20,13 +23,16 @@ export class AppComponent {
   login: boolean;
   isDesktop: boolean;
   componentes: Observable<Componentes[]>;
-
+  profile = null;
+  uid = '';
 
   constructor(private dataService: DataService, private route: Router,
     private screensizeService: ScreensizeService,
     private platform: Platform,
     private auth: AuthService,
     private authFire: Auth,
+    private avatarService: AvatarService,
+    private firestore: Firestore,
 
   ) {
     this.screensizeService.isDesktopView().subscribe(isDesktop => {
@@ -37,15 +43,23 @@ export class AppComponent {
     authState(this.authFire).subscribe((response) => {
       if (response) {
         console.log('esta logeado');
-        console.log(response);
+
 
         this.login = true;
+
+        this.avatarService.getUserProfile().subscribe((data) => {
+          this.profile = data;
+
+
+        });
+
 
       } else {
         console.log('no esta loguead');
         this.login = false;
       }
     });
+
 
   }
 

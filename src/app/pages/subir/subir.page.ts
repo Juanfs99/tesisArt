@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-subir',
@@ -7,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubirPage implements OnInit {
 
-  constructor() { }
-
+  constructor(private route: Router,) { }
+  onClickHome() {
+    this.route.navigate(['/home']);
+  }
   ngOnInit() {
   }
 

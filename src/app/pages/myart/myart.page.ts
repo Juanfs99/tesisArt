@@ -35,5 +35,7 @@ export class MyartPage implements OnInit {
 
   ngOnInit() {
   }
-
+  onClickHome() {
+    this.route.navigate(['/home']);
+  }
 }
