@@ -1,8 +1,11 @@
 import { Observable } from 'rxjs/internal/Observable';
-import { Firestore, addDoc, collection, doc, collectionData, docData, deleteDoc, updateDoc } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, doc, collectionData, docData, deleteDoc, updateDoc, setDoc } from '@angular/fire/firestore';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Componentes } from 'src/assets/interfaces/interfaces';
+import { Auth, authState } from '@angular/fire/auth';
+
+
 
 
 export interface Note {
@@ -10,14 +13,42 @@ export interface Note {
   title: string;
   text: string;
 }
+export interface CrearObra {
+  uid: string;
+  nombre: string;
+  userUid: string;
+}
 @Injectable({
   providedIn: 'root'
 })
-
-
 export class DataService {
 
-  constructor(private http: HttpClient, private firestore: Firestore) { }
+  constructor(private http: HttpClient, private firestore: Firestore,
+    private auth: Auth,) { }
+
+  addObra(crearObra: CrearObra) {
+    const user = this.auth.currentUser;
+
+    const obra = collection(this.firestore, `obras/` + crearObra.userUid);
+    return addDoc(obra, crearObra)
+      .then((data) => {
+        console.log(data);
+        return true;
+      })
+      .catch(error => {
+        console.log(error);
+        return false;
+      });
+  }
+  async getUid() {
+    const user = await this.auth.currentUser;
+    if (user) {
+      return user.uid;
+    } else {
+      return null;
+    }
+  }
+
   getMenuOptions() {
     return this.http.get<Componentes[]>('/assets/data/menu-options.json');
 

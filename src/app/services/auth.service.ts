@@ -67,6 +67,8 @@ export class AuthService {
 
 
   logout() {
+
+    window.location.reload();
     return signOut(this.auth);
   }
 

@@ -20,6 +20,7 @@ export interface User {
   telefono: string;
   password: string;
   country: string;
+  frase: string;
   user: 'artist';
 }
 
@@ -58,5 +59,9 @@ export class AvatarService {
     } catch (e) {
       return null;
     }
+  }
+  uploadModel() {
+    const user = this.auth.currentUser;
+    const path = `uploads/${user.uid}/modelos/modelo.png`;
   }
 }

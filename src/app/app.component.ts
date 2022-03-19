@@ -57,6 +57,7 @@ export class AppComponent {
       } else {
         console.log('no esta loguead');
         this.login = false;
+
       }
     });
 

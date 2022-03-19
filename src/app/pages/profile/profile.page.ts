@@ -22,7 +22,7 @@ export class ProfilePage implements OnInit {
   }
   async logout() {
     await this.authService.logout();
-    this.route.navigateByUrl('/login', { replaceUrl: true });
+    this.route.navigateByUrl('/home', { replaceUrl: true });
     this.showAlert('Sesión finalizada');
 
   }
