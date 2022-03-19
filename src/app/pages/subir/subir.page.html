@@ -13,7 +13,7 @@
 </ion-header>
 <ion-content>
   <div>
-    <form [formGroup]="credentials">
+    <form [formGroup]="obras">
       <ion-grid>
         <ion-row color=" primary" justify-content-center>
           <ion-col align-self-center size-md="8" size-lg="8" size-xs="12"
@@ -25,8 +25,7 @@
                 <ion-icon name="person-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
                 </ion-icon>
 
-                <ion-input [(ngModel)]="obra.nombre" formControlName="nombre" name="name" type="name"
-                  placeholder="Nombres"></ion-input>
+                <ion-input formControlName="nombre" name="name" type="name" placeholder="Nombres"></ion-input>
 
               </ion-item>
 

@@ -14,9 +14,8 @@ export interface Note {
   text: string;
 }
 export interface CrearObra {
-  uid: string;
   nombre: string;
-  userUid: string;
+  uid: string;
 }
 @Injectable({
   providedIn: 'root'
@@ -29,7 +28,8 @@ export class DataService {
   addObra(crearObra: CrearObra) {
     const user = this.auth.currentUser;
 
-    const obra = collection(this.firestore, `obras/` + crearObra.userUid);
+    const obra = collection(this.firestore, `obras/`);
+    crearObra.uid = user.uid;
     return addDoc(obra, crearObra)
       .then((data) => {
         console.log(data);

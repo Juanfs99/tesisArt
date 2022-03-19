@@ -11,12 +11,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./subir.page.scss'],
 })
 export class SubirPage implements OnInit {
-  obra = {
-    nombre: '',
-    uid: '',
-    userUid: '',
-  };
-  credentials: FormGroup;
+
+  obras: FormGroup;
 
   constructor(private route: Router,
     private loadingController: LoadingController,
@@ -34,21 +30,17 @@ export class SubirPage implements OnInit {
   async crearObra() {
     const loading = await this.loadingController.create();
     await loading.present();
-
-
-    const obras = await this.dataService.addObra(this.credentials.value)
-      .then(async () => {
-        const uid = await this.dataService.getUid();
-        this.obra.userUid = uid;
-        return await this.dataService.addObra(this.obra);
+    this.dataService.addObra(this.obras.value)
+      .then(async (obras) => {
+        if (obras) {
+          loading.dismiss();
+          this.showAlert('Obra Registrada', 'Esta obra entrará en revisión');
+        } else {
+          loading.dismiss();
+          this.showAlert('Fallo de registro', 'Por favor, intente de nuevo');
+        }
       });
-    if (obras) {
-      loading.dismiss();
-      this.showAlert('Obra Registrada', 'Esta obra entrará en revisión');
-    } else {
-      loading.dismiss();
-      this.showAlert('Fallo de registro', 'Por favor, intente de nuevo');
-    }
+
   }
   async showAlert(header, message) {
     const alert = await this.alertController.create({
@@ -59,11 +51,12 @@ export class SubirPage implements OnInit {
     await alert.present();
   }
   get nombre() {
-    return this.credentials.get('nombre');
+    return this.obras.get('nombre');
   }
+
   ngOnInit() {
-    this.credentials = this.fb.group({
-      nombre: ['', [Validators.required, Validators.email]],
+    this.obras = this.fb.group({
+      nombre: ['', [Validators.required]],
     });
   }
 }
