@@ -35,6 +35,7 @@ export class SubirPage implements OnInit {
         if (obras) {
           loading.dismiss();
           this.showAlert('Obra Registrada', 'Esta obra entrará en revisión');
+          this.route.navigate(['/myArt']);
         } else {
           loading.dismiss();
           this.showAlert('Fallo de registro', 'Por favor, intente de nuevo');
@@ -53,10 +54,33 @@ export class SubirPage implements OnInit {
   get nombre() {
     return this.obras.get('nombre');
   }
+  get material() {
+    return this.obras.get('material');
+  }
+  get concepto() {
+    return this.obras.get('concepto');
+  }
+  get dimensiones() {
+    return this.obras.get('dimensiones');
+  }
 
+  get precio() {
+    return this.obras.get('precio');
+  }
+
+  get modeloObra() {
+    return this.obras.get('modeloObra');
+  }
   ngOnInit() {
     this.obras = this.fb.group({
       nombre: ['', [Validators.required]],
+      concepto: ['', [Validators.required]],
+
+      material: ['', [Validators.required]],
+      dimensiones: ['', [Validators.required]],
+      precio: ['', [Validators.required]],
+      modeloObra: ['', [Validators.required]],
+
     });
   }
 }

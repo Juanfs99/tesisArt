@@ -12,6 +12,10 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <h3 class="textCat">
+    <span>Subir</span>
+    tu obra
+  </h3>
   <div>
     <form [formGroup]="obras">
       <ion-grid>
@@ -20,23 +24,80 @@
             style="margin-left: auto; margin-right: auto; ">
 
             <div class="ion-padding">
+              <ion-label style="margin-left: 5%; font-size: 17px; color: #56B4E5; margin-top: 2%;" position="stacked">
+                Nombre de la obra
+              </ion-label>
+              <ion-item style="margin-bottom: 5%;">
 
-              <ion-item>
+
                 <ion-icon name="person-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
                 </ion-icon>
 
-                <ion-input formControlName="nombre" name="name" type="name" placeholder="Nombres"></ion-input>
+                <ion-input formControlName="nombre" name="name" type="name" placeholder="Nombre"></ion-input>
+
+              </ion-item>
+              <div>
+                <ion-label style="margin-left: 5%; font-size: 17px; color: #56B4E5; margin-top: 2%;" position="stacked">
+                  Concepto de la obra
+                </ion-label>
+                <ion-item style="margin-bottom: 5%;">
+                  <ion-icon name="bulb-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
+                  </ion-icon>
+
+                  <ion-input formControlName="concepto" name="name" type="name" placeholder="Concepto de la obra">
+                  </ion-input>
+
+                </ion-item>
+              </div>
+
+              <ion-label style="margin-left: 5%; font-size: 17px; color: #56B4E5; margin-top: 2%;" position="stacked">
+                Materiales de la obra
+              </ion-label>
+              <ion-item style="margin-bottom: 5%;">
+                <ion-icon name="hammer-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
+                </ion-icon>
+
+                <ion-input formControlName="material" name="name" type="name" placeholder="Materiales"></ion-input>
+
+              </ion-item>
+              <ion-label style="margin-left: 5%; font-size: 17px; color: #56B4E5; margin-top: 2%;" position="stacked">
+                Dimensiones de la obra
+              </ion-label>
+              <ion-item style="margin-bottom: 5%;">
+                <ion-icon name="expand-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
+                </ion-icon>
+
+                <ion-input formControlName="dimensiones" name="name" type="name" placeholder="Dimensiones"></ion-input>
 
               </ion-item>
 
+              <ion-label style="margin-left: 5%; font-size: 17px; color: #56B4E5; margin-top: 2%;" position="stacked">
+                Precio de la obra
+              </ion-label>
+              <ion-item style="margin-bottom: 5%;">
+                <ion-icon name="cash-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
+                </ion-icon>
 
+                <ion-input formControlName="precio" name="name" type="name" placeholder="Precio"></ion-input>
 
+              </ion-item>
+              <ion-label style="margin-left: 5%; font-size: 17px; color: #56B4E5; margin-top: 2%;" position="stacked">
+                Sube tu obra en 3D
+              </ion-label>
+              <ion-item style="margin-bottom: 5%;">
+                <ion-icon name="cloud-upload-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
+                </ion-icon>
+
+                <!-- <ion-input formControlName="modeloObra" name="name" type="file" placeholder="Archivos FBX">
+                </ion-input> -->
+                <input type="file" class="custom-file-input">
+              </ion-item>
 
 
             </div>
             <div class="ion-padding">
 
-              <ion-button expand="block" (click)="crearObra()">Crear Obra
+              <ion-button expand="block" (click)="crearObra()" [disabled]="!obras.valid">Crear Obra
               </ion-button>
             </div>
 
