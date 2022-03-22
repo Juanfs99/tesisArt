@@ -4,8 +4,11 @@
     <ion-buttons slot="start">
       <ion-menu-button menu="first" color="primary"></ion-menu-button>
     </ion-buttons>
-    <ion-button slot="end" (click)="onClickLogin()">
+    <ion-button *ngIf="login === false" slot="end" (click)="onClickLogin()">
       Login
+    </ion-button>
+    <ion-button *ngIf="login === true" slot="end" (click)="onClickProfile()">
+      Perfil
     </ion-button>
 
   </ion-toolbar>
@@ -15,38 +18,28 @@
   <div class="row" style="margin-top: 5%;">
     <div class="column">
       <img class="logoImg" src="assets/logo.png" alt="" />
-      <h3 class="textTitle">
-        See ART in <br />
-        Augmented Reality
-      </h3>
-      <h3 class="textSubTitle">
-        ARt yourself <br>
-        be yourself
-      </h3>
+      <div style="margin-top: 10%;">
+        <h3 class="textTitle">
+          Experimenta ART en <br />
+          Realidad Aumentada
+        </h3>
+        <h3 class="textSubTitle">
+          ART yourself <br>
+          be yourself
+        </h3>
+      </div>
+
     </div>
     <div class="column">
       <div id="container" class="ion-padding">
-        <model-viewer alt="PruebaRobot" src="/assets/mantaraya.glb" ios-src="/assets/mantaraya.usdz" ar unestable-webxr
-          quick-lock-browsers="safari chrome" shadow-intensity="1" interaction-prompt="auto" auto-rotate ar magic-leap
-          camera-controls>
+        <model-viewer alt="Logo"
+          src="https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/AppComponentes%2FModelos%2FLogo3D%2Flogo3D.glb?alt=media&token=adde45f0-e96c-4fdb-b401-a7cef87f32a0"
+          ios-src="https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/AppComponentes%2FModelos%2FLogo3D%2Flogo3D.usdz?alt=media&token=47757493-b976-44bd-96f2-a545cf7e0484"
+          ar unestable-webxr quick-lock-browsers="safari chrome" shadow-intensity="1" interaction-prompt="auto"
+          auto-rotate ar magic-leap camera-controls>
         </model-viewer>
       </div>
-      <ion-row>
-        <div class="ion-padding buttonSee" style="
-            margin-right: auto;
-            margin-left: auto;
-            padding-bottom: 15%;
-            padding-top: 10%;
-          ">
-          <ion-button expand="block" size="large" shape="" color="primary" style="
-              font-family: proxima-nova, sans-serif;
-              font-weight: 600;
-              font-style: normal;
-            ">
-            See in AR
-          </ion-button>
-        </div>
-      </ion-row>
+
     </div>
   </div>
 
@@ -55,7 +48,7 @@
 
 
   <h3 class="findArt">
-    Find your <span style="color: #6361ea; font-family: proxima-nova, sans-serif;
+    Encuentra tu <span style="color: #6361ea; font-family: proxima-nova, sans-serif;
     font-weight: 600;">ART</span>
   </h3>
 
@@ -79,16 +72,9 @@
     </ion-row>
   </ion-grid>
 
-  <h3 style="
-  font-family: proxima-nova, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  padding-left: 5%;
-  padding-top: 5%;
-
-">
+  <h3 class="topArtists">
     Top <span style="color: #6361ea; font-family: proxima-nova, sans-serif;
-font-weight: 600;">ART</span>ist
+font-weight: 600;">ART</span>istas
   </h3>
 
   <ion-grid class="categories">

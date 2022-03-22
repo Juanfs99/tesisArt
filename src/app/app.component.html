@@ -52,31 +52,31 @@
           <ion-list class="menu-items" style="margin-top: 20%;" lines="none">
 
             <ion-item routerLink="/home">
-              <ion-icon name="home-outline"></ion-icon>Home
+              <ion-icon name="home-outline"></ion-icon>Inicio
             </ion-item>
             <ion-item *ngIf="login === false" routerLink="/sculptures">
-              <ion-icon name="body-outline"></ion-icon>Sculptures
+              <ion-icon name="body-outline"></ion-icon>Esculturas
             </ion-item>
             <ion-item *ngIf="login === false" routerLink="/paintings">
-              <ion-icon name="brush-outline"></ion-icon>Paintings
+              <ion-icon name="brush-outline"></ion-icon>Pinturas
             </ion-item>
             <ion-item *ngIf="login === false" routerLink="/digital">
-              <ion-icon name="earth-outline"></ion-icon>Digital ART
+              <ion-icon name="earth-outline"></ion-icon>ART Digital
             </ion-item>
             <ion-item *ngIf="login === false" routerLink="/artists">
-              <ion-icon name="trophy-outline"></ion-icon>Top Artists
+              <ion-icon name="trophy-outline"></ion-icon>Top Artistas
             </ion-item>
             <ion-item *ngIf="login === false" routerLink="/how-art">
-              <ion-icon name="help-circle-outline"></ion-icon>How to ART
+              <ion-icon name="help-circle-outline"></ion-icon>¿Cómo estar en ART?
             </ion-item>
             <ion-item *ngIf="login === true" routerLink="/how-art">
-              <ion-icon name="help-circle-outline"></ion-icon>How to ART
+              <ion-icon name="help-circle-outline"></ion-icon>¿Cómo estar en ART?
             </ion-item>
             <ion-item *ngIf="login === true" routerLink="/myart">
-              <ion-icon name="color-palette-outline"></ion-icon>My ART
+              <ion-icon name="color-palette-outline"></ion-icon>Mi ART
             </ion-item>
             <ion-item *ngIf="login === true" routerLink="/subir">
-              <ion-icon name="cloud-upload-outline"></ion-icon>Upload ART
+              <ion-icon name="cloud-upload-outline"></ion-icon>Subir ART
             </ion-item>
           </ion-list>
         </ion-menu-toggle>
@@ -109,7 +109,7 @@
                 padding-left: 2%;
                 font-size: 1em;">
                 <ion-icon name="home-outline" class="ion-padding"></ion-icon>
-                Home
+                Inicio
               </ion-button>
               <ion-button *ngIf="login === false" class="logo ion-text-left" routerLink="/sculptures" fill="clear"
                 routerDirection="root" routerLinkActive="active-link" class="link" style=" font-family: proxima-nova, sans-serif;
@@ -118,7 +118,7 @@
               padding-left: 2%;
               font-size: 1em;">
                 <ion-icon name="body-outline" class="ion-padding"></ion-icon>
-                Sculptures
+                Esculturas
               </ion-button>
               <ion-button *ngIf="login === false" class="logo ion-text-left" routerLink="/paintings" fill="clear"
                 routerDirection="root" routerLinkActive="active-link" class="link" style=" font-family: proxima-nova, sans-serif;
@@ -127,7 +127,7 @@
               padding-left: 2%;
               font-size: 1em;">
                 <ion-icon name="brush-outline" class="ion-padding"></ion-icon>
-                Paintings
+                Pinturas
               </ion-button>
               <ion-button *ngIf="login === false" class="logo ion-text-left" routerLink="/digital" fill="clear"
                 routerDirection="root" routerLinkActive="active-link" class="link" style=" font-family: proxima-nova, sans-serif;
@@ -136,7 +136,7 @@
               padding-left: 2%;
               font-size: 1em;">
                 <ion-icon name="earth-outline" class="ion-padding"></ion-icon>
-                Digital ART
+                ART Digital
               </ion-button>
               <ion-button class="logo ion-text-left" routerLink="/artists" fill="clear" routerDirection="root"
                 routerLinkActive="active-link" class="link" style=" font-family: proxima-nova, sans-serif;
@@ -145,7 +145,7 @@
             padding-left: 2%;
             font-size: 1em;">
                 <ion-icon name="trophy-outline" class="ion-padding"></ion-icon>
-                Top Artist
+                Top Artistas
               </ion-button>
               <ion-button class="logo ion-text-left" routerLink="/how-art" fill="clear" routerDirection="root"
                 routerLinkActive="active-link" class="link" style=" font-family: proxima-nova, sans-serif;
@@ -154,7 +154,7 @@
           padding-left: 2%;
           font-size: 1em;">
                 <ion-icon name="help-circle-outline" class="ion-padding"></ion-icon>
-                How to ART
+                ¿Cómo estar en ART?
               </ion-button>
               <ion-button *ngIf="login === true" class="logo ion-text-left" routerLink="/myart" fill="clear"
                 routerDirection="root" routerLinkActive="active-link" class="link" style=" font-family: proxima-nova, sans-serif;
@@ -164,7 +164,7 @@
               font-size: 1em;">
                 <ion-icon name="color-palette-outline"></ion-icon>
 
-                MyART
+                Mi ART
               </ion-button>
               <ion-button *ngIf="login === true" class="logo ion-text-left" fill="clear" routerLink="/subir"
                 routerDirection="root" routerLinkActive="active-link" class="link" style=" font-family: proxima-nova, sans-serif;
@@ -174,7 +174,7 @@
             font-size: 1em;">
                 <ion-icon name="cloud-upload-outline"></ion-icon>
 
-                Upload ART
+                Subir ART
               </ion-button>
             </div>
           </ion-col>
