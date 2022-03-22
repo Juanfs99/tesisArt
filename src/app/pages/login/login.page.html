@@ -16,32 +16,29 @@
 
   <div class="row" style="margin-top: 5%;">
     <div class="column logoPhone">
-      <img class="logoPhone" src="assets/logo.png" style="
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
-  padding-top: 20%;
-" alt="" />
+
+      <div id="container" class="ion-padding">
+        <model-viewer alt="Logo"
+          src="https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/AppComponentes%2FModelos%2FLogo3D%2Flogo3D.glb?alt=media&token=adde45f0-e96c-4fdb-b401-a7cef87f32a0"
+          ios-src="https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/AppComponentes%2FModelos%2FLogo3D%2Flogo3D.usdz?alt=media&token=47757493-b976-44bd-96f2-a545cf7e0484"
+          ar unestable-webxr quick-lock-browsers="safari chrome" shadow-intensity="1" interaction-prompt="auto"
+          auto-rotate ar magic-leap camera-controls>
+        </model-viewer>
+      </div>
     </div>
     <div class="column logoDesktop">
       <div id="container" class="ion-padding">
-        <model-viewer alt="PruebaRobot" src="/assets/mantaraya.glb" ios-src="/assets/mantaraya.usdz" ar unestable-webxr
-          quick-lock-browsers="safari chrome" shadow-intensity="1" interaction-prompt="auto" auto-rotate ar magic-leap
-          camera-controls>
+        <model-viewer alt="Logo"
+          src="https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/AppComponentes%2FModelos%2FLogo3D%2Flogo3D.glb?alt=media&token=adde45f0-e96c-4fdb-b401-a7cef87f32a0"
+          ios-src="https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/AppComponentes%2FModelos%2FLogo3D%2Flogo3D.usdz?alt=media&token=47757493-b976-44bd-96f2-a545cf7e0484"
+          ar unestable-webxr quick-lock-browsers="safari chrome" shadow-intensity="1" interaction-prompt="auto"
+          auto-rotate ar magic-leap camera-controls>
         </model-viewer>
       </div>
     </div>
     <div class="column">
-      <h4 style="
-      text-align: center;
-      padding-top: 10%;
-      color: #6361ea;
-      font-family: proxima-nova, sans-serif;
+      <h4 class="textoIniciar" style="
 
-      font-weight: 600;
-font-size: 1em;
-      font-style: normal;
     ">
         Iniciar Sesión
       </h4>
@@ -59,7 +56,8 @@ font-size: 1em;
                   <ion-icon name="person-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
                   </ion-icon>
 
-                  <ion-input name="email" type="email" placeholder="Email" formControlName="email"></ion-input>
+                  <ion-input class="formText" name="email" type="email" placeholder="Email" formControlName="email">
+                  </ion-input>
                   <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">Email is invalid
                   </ion-note>
 
@@ -67,26 +65,26 @@ font-size: 1em;
 
                 <ion-item fill="solid" class="ion-margin-bottom">
                   <ion-icon name="lock-open-outline" style="margin-right: 15px; color: #6361ea;"></ion-icon>
-                  <ion-input type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+                  <ion-input class="formText" type="password" placeholder="Contraseña" formControlName="password">
+                  </ion-input>
                   <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">Password needs
                     to be 6 characters</ion-note>
                 </ion-item>
 
-                <ion-button fill="clear" style="display: block;
+                <ion-button class="formText" fill="clear" style="display: block;
 
 
-            padding-bottom: 3px;text-decoration: underline;" (click)="onClickPassword()">Forgot your
-                  password?
+            padding-bottom: 3px;text-decoration: underline;" (click)="onClickPassword()">¿Olvidaste tu contraseña?
                 </ion-button>
 
 
               </div>
               <div class="ion-padding">
 
-                <ion-button expand="block" (click)="login()" [disabled]="!credentials.valid">Login
+                <ion-button expand="block" (click)="login()" [disabled]="!credentials.valid">Iniciar Sesión
                 </ion-button>
               </div>
-              <ion-button fill="clear" style="display: block;
+              <ion-button class="formText" fill="clear" style="display: block;
 margin-right: auto;
             margin-left: auto;
             width: 55%; padding-bottom: 3px;text-decoration: underline;" (click)="onClickSignUp()">Crear cuenta

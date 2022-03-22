@@ -35,7 +35,7 @@ export class SubirPage implements OnInit {
         if (obras) {
           loading.dismiss();
           this.showAlert('Obra Registrada', 'Esta obra entrará en revisión');
-          this.route.navigate(['/myArt']);
+
         } else {
           loading.dismiss();
           this.showAlert('Fallo de registro', 'Por favor, intente de nuevo');

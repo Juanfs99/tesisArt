@@ -2,8 +2,39 @@
   .logoDesktop {
     display: none;
   }
+  #container a {
+    text-decoration: none;
+  }
+  #container {
+    text-align: center;
+    width: 70%;
+    height: 50vh;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  model-viewer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 40vh;
+  }
+  .textoIniciar {
+    text-align: center;
+    color: #6361ea;
+    font-family: proxima-nova, sans-serif;
+    font-weight: 600;
+    font-size: 5vw;
+    font-style: normal;
+  }
+  .formText {
+    font-size: 4vw;
+  }
 }
 @media screen and (min-width: 700px) {
+  .formText {
+    font-size: 1vw;
+  }
   .column {
     float: left;
     width: 50%;
@@ -22,6 +53,7 @@
     text-align: center;
     width: 90%;
     height: 70vh;
+    margin-left: 10%;
   }
 
   model-viewer {
@@ -29,5 +61,14 @@
     margin-right: auto;
     width: 90%;
     height: 70vh;
+  }
+  .textoIniciar {
+    margin-top: 10%;
+    text-align: center;
+    color: #6361ea;
+    font-family: proxima-nova, sans-serif;
+    font-weight: 600;
+    font-size: 3vw;
+    font-style: normal;
   }
 }
