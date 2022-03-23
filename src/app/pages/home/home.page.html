@@ -15,10 +15,18 @@
 </ion-header>
 
 <ion-content>
-  <div class="row" style="margin-top: 5%;">
+  <div class="row" style="margin-top:5%;">
     <div class="column">
-      <img class="logoImg" src="assets/logo.png" alt="" />
-      <div style="margin-top: 10%;">
+
+      <div id="container" class="ion-padding logoImg">
+        <model-viewer alt="Logo"
+          src="https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/AppComponentes%2FModelos%2FLogo3D%2Flogo3D.glb?alt=media&token=adde45f0-e96c-4fdb-b401-a7cef87f32a0"
+          ios-src="https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/AppComponentes%2FModelos%2FLogo3D%2Flogo3D.usdz?alt=media&token=47757493-b976-44bd-96f2-a545cf7e0484"
+          ar unestable-webxr quick-lock-browsers="safari chrome" shadow-intensity="1" interaction-prompt="auto"
+          auto-rotate ar magic-leap camera-controls>
+        </model-viewer>
+      </div>
+      <div style="margin-top: 5%;">
         <h3 class="textTitle">
           Experimenta ART en <br />
           Realidad Aumentada
@@ -31,10 +39,10 @@
 
     </div>
     <div class="column">
-      <div id="container" class="ion-padding">
+      <div id="container" class="ion-padding logoDesktop">
         <model-viewer alt="Logo"
-          src="https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/AppComponentes%2FModelos%2FLogo3D%2Flogo3D.glb?alt=media&token=adde45f0-e96c-4fdb-b401-a7cef87f32a0"
-          ios-src="https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/AppComponentes%2FModelos%2FLogo3D%2Flogo3D.usdz?alt=media&token=47757493-b976-44bd-96f2-a545cf7e0484"
+          src="https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/AppComponentes%2FModelos%2FLogo3D%2FlogoBlanco.glb?alt=media&token=51eb925d-4c0d-49c9-b753-ecbd425d40d8"
+          ios-src="https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/AppComponentes%2FModelos%2FLogo3D%2FlogBlanco.usdz?alt=media&token=8d0874cb-e02a-46a9-8122-c51d11229021"
           ar unestable-webxr quick-lock-browsers="safari chrome" shadow-intensity="1" interaction-prompt="auto"
           auto-rotate ar magic-leap camera-controls>
         </model-viewer>
@@ -72,9 +80,9 @@
     </ion-row>
   </ion-grid>
 
-  <h3 class="topArtists">
+  <h3 class="findArt">
     Top <span style="color: #6361ea; font-family: proxima-nova, sans-serif;
-font-weight: 600;">ART</span>istas
+    font-weight: 600;">ART</span>istas
   </h3>
 
   <ion-grid class="categories">

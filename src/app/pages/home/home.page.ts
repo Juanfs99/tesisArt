@@ -47,17 +47,17 @@ export class HomePage implements OnInit {
     {
       direccion: '/artistainfo',
       nombre: 'Roberto',
-      imagen: 'assets/cuadrado.jpeg',
+      imagen: 'https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/uploads%2FHgWCw1EhzGSCvDFWtLeh1xNQYmL2%2Fprofile.png?alt=media&token=35f846cc-bbbf-4f02-8744-a5074b231227',
     },
     {
       direccion: '/artistainfo',
       nombre: 'Ana',
-      imagen: 'assets/cuadrado.jpeg',
+      imagen: 'https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/uploads%2FHgWCw1EhzGSCvDFWtLeh1xNQYmL2%2Fprofile.png?alt=media&token=35f846cc-bbbf-4f02-8744-a5074b231227',
     },
     {
       direccion: '/artistainfo',
       nombre: 'Juan',
-      imagen: 'assets/cuadrado.jpeg',
+      imagen: 'https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/uploads%2FHgWCw1EhzGSCvDFWtLeh1xNQYmL2%2Fprofile.png?alt=media&token=35f846cc-bbbf-4f02-8744-a5074b231227',
     },
 
   ];
