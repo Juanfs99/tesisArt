@@ -16,103 +16,70 @@
     <span>Subir</span>
     tu obra
   </h3>
+  <h4 class="textCat">Espacios disponibles: <span>3</span></h4>
 
-  <!--Lo comentado es el formulario para subir obra sin modal-->
-  <!-- <div>
-    <form [formGroup]="obras">
-      <ion-grid>
-        <ion-row color=" primary" justify-content-center>
-          <ion-col align-self-center size-md="8" size-lg="8" size-xs="12"
-            style="margin-left: auto; margin-right: auto; ">
-
-            <div class="ion-padding">
-              <ion-label style="margin-left: 5%; font-size: 17px; color: #56B4E5; margin-top: 2%;" position="stacked">
-                Nombre de la obra
-              </ion-label>
-              <ion-item style="margin-bottom: 5%;">
-
-
-                <ion-icon name="person-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
-                </ion-icon>
-
-                <ion-input formControlName="nombre" name="name" type="name" placeholder="Nombre"></ion-input>
-
-              </ion-item>
-              <div>
-                <ion-label style="margin-left: 5%; font-size: 17px; color: #56B4E5; margin-top: 2%;" position="stacked">
-                  Concepto de la obra
-                </ion-label>
-                <ion-item style="margin-bottom: 5%;">
-                  <ion-icon name="bulb-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
-                  </ion-icon>
-
-                  <ion-input formControlName="concepto" name="name" type="name" placeholder="Concepto de la obra">
-                  </ion-input>
-
-                </ion-item>
-              </div>
-
-              <ion-label style="margin-left: 5%; font-size: 17px; color: #56B4E5; margin-top: 2%;" position="stacked">
-                Materiales de la obra
-              </ion-label>
-              <ion-item style="margin-bottom: 5%;">
-                <ion-icon name="hammer-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
-                </ion-icon>
-
-                <ion-input formControlName="material" name="name" type="name" placeholder="Materiales"></ion-input>
-
-              </ion-item>
-              <ion-label style="margin-left: 5%; font-size: 17px; color: #56B4E5; margin-top: 2%;" position="stacked">
-                Dimensiones de la obra
-              </ion-label>
-              <ion-item style="margin-bottom: 5%;">
-                <ion-icon name="expand-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
-                </ion-icon>
-
-                <ion-input formControlName="dimensiones" name="name" type="name" placeholder="Dimensiones"></ion-input>
-
-              </ion-item>
-
-              <ion-label style="margin-left: 5%; font-size: 17px; color: #56B4E5; margin-top: 2%;" position="stacked">
-                Precio de la obra
-              </ion-label>
-              <ion-item style="margin-bottom: 5%;">
-                <ion-icon name="cash-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
-                </ion-icon>
-
-                <ion-input formControlName="precio" name="name" type="name" placeholder="Precio"></ion-input>
-
-              </ion-item>
-              <ion-label style="margin-left: 5%; font-size: 17px; color: #56B4E5; margin-top: 2%;" position="stacked">
-                Sube tu obra en 3D
-              </ion-label>
-              <ion-item style="margin-bottom: 5%;">
-                <ion-icon name="cloud-upload-outline" class="icon-login" style="margin-right: 15px; color: #6361ea;">
-                </ion-icon>
-
-                <!-- <ion-input formControlName="modeloObra" name="name" type="file" placeholder="Archivos FBX">
-                </ion-input> -->
-  <!-- <input type="file" class="custom-file-input">
-  </ion-item>
-
-
-  </div>
   <div class="ion-padding">
 
-    <ion-button expand="block" (click)="crearObra()">Crear Obra
+    <ion-button expand="block" (click)="abrirModalSubir()">Subir Obra
     </ion-button>
   </div>
+  <h2 style="color: #6361ea; font-weight: 600; text-align: center;">Subscripciones</h2>
+
+  <ion-list class="planesPhone">
+    <ion-card class="planes ion-no-margin" style="background-color: #56B4E5">
+      <ion-card-header>
+        <ion-card-title class="ion-padding" style="color: white;">PLAN POR OBRA</ion-card-title>
+      </ion-card-header>
+      <ion-card-content style="color: white;">
+        <ion-card style="height: auto; width: 30%; float: left; margin-bottom: auto; margin-top: auto;">
+
+          <ion-card-title class="ion-padding" style="color:#6361ea ;">$5</ion-card-title>
+        </ion-card>
+        El plan por obra te permite subir tu modelo 3D y se te cobrará mensualmente mientras la obra esté exhibida
+        <div>
+          <ion-button class="ion-padding botonesComprar">Comprar
+          </ion-button>
+        </div>
+
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="planes ion-no-margin" style="background-color: #FDB807">
+      <ion-card-header>
+        <ion-card-title class="ion-padding" style="color: white;">PLAN MENSUAL</ion-card-title>
+
+      </ion-card-header>
+      <ion-card-content style="color: white;">
+        <ion-card style="height: auto; width: 30%; float: left; margin-bottom: auto; margin-top: auto; ">
+
+          <ion-card-title class="ion-padding" style="color:#6361ea ;">$15</ion-card-title>
+        </ion-card>
+
+        El plan mensual te permite tener 5 obras activas y se te cobrará mensualmente
+        <div>
+          <ion-button class="ion-padding botonesComprar">Comprar
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="planes ion-no-margin" style="background-color: #E05497">
+      <ion-card-header>
+        <ion-card-title class="ion-padding" style="color: white; ">PLAN GALERIA</ion-card-title>
+
+      </ion-card-header>
+      <ion-card-content style="color: white;">
+        <ion-card style="height: auto; width: 30%; float: left;margin-bottom: auto; margin-top: auto;">
+
+          <ion-card-title class="ion-padding" style="color:#6361ea ;">$65</ion-card-title>
+        </ion-card>
+        El plan corporativo te permite tener 15 obras activas y se te cobrará mensualmente
+        <div>
+          <ion-button class="ion-padding botonesComprar">Comprar
+          </ion-button>
+        </div>
+      </ion-card-content>
+
+    </ion-card>
+  </ion-list>
 
 
-  </ion-col>
-
-  </ion-row>
-  </ion-grid>
-  </form>
-  </div> -->
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="abrirModalSubir()">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
 </ion-content>
