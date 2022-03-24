@@ -2,24 +2,6 @@
   .planesDesktop {
     display: none;
   }
-  #container a {
-    text-decoration: none;
-  }
-  #container {
-    text-align: center;
-    width: 90%;
-    height: 57vh;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 12%;
-  }
-
-  model-viewer {
-    width: 90%;
-    height: 55vh;
-    margin-right: auto;
-    margin-left: auto;
-  }
 
   .planes {
     text-align: center;
@@ -48,5 +30,75 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 5%;
+  }
+  .subscripciones {
+    color: #6361ea;
+    font-weight: 600;
+    text-align: center;
+  }
+  .textCatPri {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-left: 5%;
+    font-size: 8vw;
+    span {
+      color: #6361ea;
+      font-family: proxima-nova, sans-serif;
+      font-weight: 600;
+    }
+  }
+}
+@media screen and (min-width: 700px) {
+  .planesPhone {
+    display: none;
+  }
+  .textCat {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-left: 5%;
+    font-size: 1.3vw;
+    span {
+      color: #6361ea;
+      font-family: proxima-nova, sans-serif;
+      font-weight: 600;
+    }
+  }
+
+  .planesDesktop {
+    float: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .botonesComprar {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    font-size: 1vw;
+  }
+  .cardInfo {
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .planes {
+    text-align: center;
+  }
+  ion-card-content {
+    font-size: 1vw;
+  }
+  .subirObra {
+    font-size: 1.3vw;
+  }
+  .subscripciones {
+    color: #6361ea;
+    font-weight: 600;
+    text-align: center;
+    font-size: 2vw;
+    margin-top: 3%;
   }
 }

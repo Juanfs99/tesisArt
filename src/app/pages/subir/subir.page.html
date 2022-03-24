@@ -12,26 +12,33 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <h3 class="textCat">
-    <span>Subir</span>
-    tu obra
-  </h3>
+  <div style="margin-top: 7%;">
+    <h3 class="textCatPri">
+      <span>Subir</span>
+      tu obra
+    </h3>
+  </div>
+
   <h4 class="textCat">Espacios disponibles: <span>3</span></h4>
 
   <div class="ion-padding">
 
-    <ion-button expand="block" (click)="abrirModalSubir()">Subir Obra
+    <ion-button size="large" expand="block" (click)="abrirModalSubir()">
+      <div class="subirObra">
+        Subir Obra
+
+      </div>
     </ion-button>
   </div>
-  <h2 style="color: #6361ea; font-weight: 600; text-align: center;">Subscripciones</h2>
+  <h2 class="subscripciones">Subscripciones</h2>
 
   <ion-list class="planesPhone">
     <ion-card class="planes ion-no-margin" style="background-color: #56B4E5">
       <ion-card-header>
-        <ion-card-title class="ion-padding" style="color: white;">PLAN POR OBRA</ion-card-title>
+        <ion-card-title class="ion-padding" style="color: white; ">PLAN POR OBRA</ion-card-title>
       </ion-card-header>
       <ion-card-content style="color: white;">
-        <ion-card style="height: auto; width: 30%; float: left; margin-bottom: auto; margin-top: auto;">
+        <ion-card style="height: auto; width: 30%; float: left; margin-bottom: 10%;">
 
           <ion-card-title class="ion-padding" style="color:#6361ea ;">$5</ion-card-title>
         </ion-card>
@@ -40,7 +47,6 @@
           <ion-button class="ion-padding botonesComprar">Comprar
           </ion-button>
         </div>
-
       </ion-card-content>
     </ion-card>
     <ion-card class="planes ion-no-margin" style="background-color: #FDB807">
@@ -49,7 +55,7 @@
 
       </ion-card-header>
       <ion-card-content style="color: white;">
-        <ion-card style="height: auto; width: 30%; float: left; margin-bottom: auto; margin-top: auto; ">
+        <ion-card style="height: auto; width: 30%; float: left; margin-bottom: 10%;">
 
           <ion-card-title class="ion-padding" style="color:#6361ea ;">$15</ion-card-title>
         </ion-card>
@@ -67,7 +73,7 @@
 
       </ion-card-header>
       <ion-card-content style="color: white;">
-        <ion-card style="height: auto; width: 30%; float: left;margin-bottom: auto; margin-top: auto;">
+        <ion-card style="height: auto; width: 30%; float: left; margin-bottom: 10%;">
 
           <ion-card-title class="ion-padding" style="color:#6361ea ;">$65</ion-card-title>
         </ion-card>
@@ -77,9 +83,72 @@
           </ion-button>
         </div>
       </ion-card-content>
-
     </ion-card>
   </ion-list>
 
+  <!-- PLANES DESKTOP -->
+  <div class="planesDesktop">
+    <div>
+      <ion-card class="planes " style="background-color: #56B4E5">
+        <ion-card-header>
+          <ion-card-title class="ion-padding" style="color: white; font-size: 1.5vw; font-weight: 600;">PLAN POR OBRA
+          </ion-card-title>
 
+        </ion-card-header>
+        <ion-card-content style="color: white;">
+          <ion-card style="height: auto; width: 30%; float: left; margin-bottom: 10%;">
+
+            <ion-card-title class="ion-padding" style="color:#6361ea ;">$5</ion-card-title>
+          </ion-card>
+
+          El plan por obra te permite tener 1 obra activa y se te cobrará mensualmente
+          <div>
+            <ion-button class="ion-padding botonesComprar">Comprar
+            </ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <div>
+      <ion-card class="planes " style="background-color: #FDB807">
+        <ion-card-header>
+          <ion-card-title class="ion-padding" style="color: white; font-size: 1.5vw; font-weight: 600;">PLAN MENSUAL
+          </ion-card-title>
+
+        </ion-card-header>
+        <ion-card-content style="color: white;">
+          <ion-card style="height: auto; width: 30%; float: left; margin-bottom: 10%;">
+
+            <ion-card-title class="ion-padding" style="color:#6361ea ;">$15</ion-card-title>
+          </ion-card>
+
+          El plan mensual te permite tener 5 obras activas y se te cobrará mensualmente
+          <div>
+            <ion-button class="ion-padding botonesComprar">Comprar
+            </ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <div>
+      <ion-card class="planes " style="background-color: #E05497">
+        <ion-card-header>
+          <ion-card-title class="ion-padding" style="color: white; font-size: 1.5vw; font-weight: 600; ">PLAN GALERIA
+          </ion-card-title>
+
+        </ion-card-header>
+        <ion-card-content style="color: white;">
+          <ion-card style="height: auto; width: 30%; float: left; margin-bottom: 10%;">
+
+            <ion-card-title class="ion-padding" style="color:#6361ea ;">$65</ion-card-title>
+          </ion-card>
+          El plan corporativo te permite tener 15 obras activas y se te cobrará mensualmente
+          <div>
+            <ion-button class="ion-padding botonesComprar">Comprar
+            </ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
 </ion-content>
