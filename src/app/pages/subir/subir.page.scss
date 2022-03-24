@@ -50,6 +50,19 @@
   }
 }
 @media screen and (min-width: 700px) {
+  .textCatPri {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-left: 5%;
+    font-size: 2vw;
+    margin-bottom: 3%;
+    span {
+      color: #6361ea;
+      font-family: proxima-nova, sans-serif;
+      font-weight: 600;
+    }
+  }
   .planesPhone {
     display: none;
   }

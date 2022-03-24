@@ -100,7 +100,7 @@
             <img src="./assets/logoSide.png" style="height: auto ; width: 70%;" class="logo ion-text-left">
           </ion-col>
           <ion-col size="8">
-            <div class="navbar">
+            <div class="navbar" style="margin-left: 15%; margin-right: auto; font-size: 20px;">
 
               <ion-button class="logo ion-text-left" routerLink="/home" fill="clear" routerDirection="root"
                 routerLinkActive="active-link" class="link" style=" font-family: proxima-nova, sans-serif;
@@ -138,8 +138,8 @@
                 <ion-icon name="earth-outline" class="ion-padding"></ion-icon>
                 ART Digital
               </ion-button>
-              <ion-button class="logo ion-text-left" routerLink="/artists" fill="clear" routerDirection="root"
-                routerLinkActive="active-link" class="link" style=" font-family: proxima-nova, sans-serif;
+              <ion-button *ngIf="login === false" class="logo ion-text-left" routerLink="/artists" fill="clear"
+                routerDirection="root" routerLinkActive="active-link" class="link" style=" font-family: proxima-nova, sans-serif;
             font-weight: 500;
             font-style: normal;
             padding-left: 2%;
