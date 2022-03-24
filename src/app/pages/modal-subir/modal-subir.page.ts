@@ -5,13 +5,13 @@ import { AvatarService } from '../../services/avatar.service';
 import { DataService } from '../../services/data.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
-import { ModalSubirPage } from '../modal-subir/modal-subir.page';
+
 @Component({
-  selector: 'app-subir',
-  templateUrl: './subir.page.html',
-  styleUrls: ['./subir.page.scss'],
+  selector: 'app-modal-subir',
+  templateUrl: './modal-subir.page.html',
+  styleUrls: ['./modal-subir.page.scss'],
 })
-export class SubirPage implements OnInit {
+export class ModalSubirPage implements OnInit {
 
   obras: FormGroup;
 
@@ -25,10 +25,6 @@ export class SubirPage implements OnInit {
 
 
   ) { }
-  onClickHome() {
-    this.route.navigate(['/home']);
-  }
-
   async crearObra() {
     const loading = await this.loadingController.create();
     await loading.present();
@@ -37,24 +33,16 @@ export class SubirPage implements OnInit {
         if (obras) {
           loading.dismiss();
           this.showAlert('Obra Registrada', 'Esta obra entrará en revisión');
+          this.dismissModal();
 
         } else {
           loading.dismiss();
           this.showAlert('Fallo de registro', 'Por favor, intente de nuevo');
+          this.dismissModal();
         }
       });
 
   }
-  async abrirModalSubir() {
-    const modal = await this.modalCtrl.create({
-      component: ModalSubirPage,
-
-
-    });
-    await modal.present();
-
-  }
-
   async showAlert(header, message) {
     const alert = await this.alertController.create({
       header,
@@ -94,5 +82,8 @@ export class SubirPage implements OnInit {
       modeloObra: ['', [Validators.required]],
 
     });
+  }
+  dismissModal() {
+    this.modalCtrl.dismiss();
   }
 }

@@ -1,24 +1,13 @@
-<ion-header class="ion-no-border">
+<ion-content>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button menu="first" color="primary"></ion-menu-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button (click)="onClickHome()">
-        <ion-icon name="home"></ion-icon>
-      </ion-button>
 
+    <ion-buttons slot="start">
+      <ion-icon style="color: #6361ea;" name="chevron-back-outline"></ion-icon>
+
+      <ion-button color="primary" (click)="dismissModal()">Cerrar</ion-button>
     </ion-buttons>
   </ion-toolbar>
-</ion-header>
-<ion-content>
-  <h3 class="textCat">
-    <span>Subir</span>
-    tu obra
-  </h3>
-
-  <!--Lo comentado es el formulario para subir obra sin modal-->
-  <!-- <div>
+  <div>
     <form [formGroup]="obras">
       <ion-grid>
         <ion-row color=" primary" justify-content-center>
@@ -92,27 +81,22 @@
 
                 <!-- <ion-input formControlName="modeloObra" name="name" type="file" placeholder="Archivos FBX">
                 </ion-input> -->
-  <!-- <input type="file" class="custom-file-input">
-  </ion-item>
+                <input type="file" class="custom-file-input">
+              </ion-item>
 
 
+            </div>
+            <div class="ion-padding">
+
+              <ion-button expand="block" (click)="crearObra()">Crear Obra
+              </ion-button>
+            </div>
+
+
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </form>
   </div>
-  <div class="ion-padding">
-
-    <ion-button expand="block" (click)="crearObra()">Crear Obra
-    </ion-button>
-  </div>
-
-
-  </ion-col>
-
-  </ion-row>
-  </ion-grid>
-  </form>
-  </div> -->
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="abrirModalSubir()">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
 </ion-content>

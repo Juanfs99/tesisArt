@@ -97,7 +97,11 @@ const routes: Routes = [
   {
     path: 'subir',
     loadChildren: () => import('./pages/subir/subir.module').then(m => m.SubirPageModule)
+  },  {
+    path: 'modal-subir',
+    loadChildren: () => import('./pages/modal-subir/modal-subir.module').then( m => m.ModalSubirPageModule)
   },
+
 
 
 ];
