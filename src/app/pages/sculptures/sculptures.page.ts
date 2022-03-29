@@ -1,6 +1,8 @@
 import { DataService } from './../../services/data.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 interface Sculptures {
   direccion: string;
   nombre: string;

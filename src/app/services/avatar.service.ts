@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Auth } from '@angular/fire/auth';
-import { doc, docData, Firestore, setDoc, updateDoc } from '@angular/fire/firestore';
+import { doc, docData, Firestore, setDoc, updateDoc, collection, collectionData } from '@angular/fire/firestore';
 import {
   getDownloadURL,
   ref,
@@ -40,6 +40,21 @@ export class AvatarService {
     const userDocRef = doc(this.firestore, `users/${user.uid}`);
     return docData(userDocRef, { idField: 'id' });
   }
+  async getObrasUsers() {
+    const user = this.auth.currentUser;
+    const userDocRef = collection(this.firestore, `obras`);
+    const result = await new Promise<Array<any>>((resolve, reject) => {
+      collectionData(userDocRef, { idField: 'id' }).subscribe(obras => {
+        resolve(obras);
+      },
+        err => {
+          console.log(err);
+          reject(err);
+        });
+    });
+    return result.filter(obra => obra.uid === user.uid);
+
+  };
 
   async uploadImage(cameraFile: Photo) {
     const user = this.auth.currentUser;
@@ -60,8 +75,6 @@ export class AvatarService {
       return null;
     }
   }
-  uploadModel() {
-    const user = this.auth.currentUser;
-    const path = `uploads/${user.uid}/modelos/modelo.png`;
-  }
+
+
 }

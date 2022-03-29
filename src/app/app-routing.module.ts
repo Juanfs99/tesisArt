@@ -17,11 +17,7 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
-  {
-    path: 'inicio',
-    loadChildren: () =>
-      import('./pages/inicio/inicio.module').then((m) => m.InicioPageModule),
-  },
+
   {
     path: 'home',
     loadChildren: () =>
@@ -97,9 +93,10 @@ const routes: Routes = [
   {
     path: 'subir',
     loadChildren: () => import('./pages/subir/subir.module').then(m => m.SubirPageModule)
-  },  {
+  },
+  {
     path: 'modal-subir',
-    loadChildren: () => import('./pages/modal-subir/modal-subir.module').then( m => m.ModalSubirPageModule)
+    loadChildren: () => import('./pages/modal-subir/modal-subir.module').then(m => m.ModalSubirPageModule)
   },
 
 

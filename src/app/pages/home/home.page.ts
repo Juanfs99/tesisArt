@@ -29,16 +29,19 @@ export class HomePage implements OnInit {
     {
       direccion: '/sculptures',
       nombre: 'Esculturas',
+      // eslint-disable-next-line max-len
       imagen: 'https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/AppComponentes%2FImagenes%2FsculptureCat.jpg?alt=media&token=f00b3792-a957-4214-8982-124b326cfe4d',
     },
     {
       direccion: '/paintings',
       nombre: 'Pinturas',
+      // eslint-disable-next-line max-len
       imagen: 'https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/AppComponentes%2FImagenes%2FpinturaCat.jpg?alt=media&token=21e1cd85-45ad-4ecb-83cc-53b2e67ee129',
 
     }, {
       direccion: '/digital',
       nombre: 'Digital',
+      // eslint-disable-next-line max-len
       imagen: 'https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/AppComponentes%2FImagenes%2FdigitalCat.jpg?alt=media&token=4777931b-79d6-4ab8-9075-8c9610ec3c48',
 
     },
@@ -47,17 +50,20 @@ export class HomePage implements OnInit {
     {
       direccion: '/artistainfo',
       nombre: 'Roberto',
-      imagen: 'https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/uploads%2FHgWCw1EhzGSCvDFWtLeh1xNQYmL2%2Fprofile.png?alt=media&token=35f846cc-bbbf-4f02-8744-a5074b231227',
+      // eslint-disable-next-line max-len
+      imagen: 'https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/uploads%2FHgWCw1EhzGSCvDFWtLeh1xNQYmL2%2Fprofile.png?alt=media&token=8ce19c9c-01c8-4e97-8646-0c55f9853e2f',
     },
     {
       direccion: '/artistainfo',
       nombre: 'Ana',
-      imagen: 'https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/uploads%2FHgWCw1EhzGSCvDFWtLeh1xNQYmL2%2Fprofile.png?alt=media&token=35f846cc-bbbf-4f02-8744-a5074b231227',
+      // eslint-disable-next-line max-len
+      imagen: 'https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/uploads%2FHgWCw1EhzGSCvDFWtLeh1xNQYmL2%2Fprofile.png?alt=media&token=8ce19c9c-01c8-4e97-8646-0c55f9853e2f',
     },
     {
       direccion: '/artistainfo',
       nombre: 'Juan',
-      imagen: 'https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/uploads%2FHgWCw1EhzGSCvDFWtLeh1xNQYmL2%2Fprofile.png?alt=media&token=35f846cc-bbbf-4f02-8744-a5074b231227',
+      // eslint-disable-next-line max-len
+      imagen: 'https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/uploads%2FHgWCw1EhzGSCvDFWtLeh1xNQYmL2%2Fprofile.png?alt=media&token=8ce19c9c-01c8-4e97-8646-0c55f9853e2f',
     },
 
   ];

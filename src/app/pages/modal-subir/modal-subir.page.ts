@@ -68,22 +68,44 @@ export class ModalSubirPage implements OnInit {
     return this.obras.get('precio');
   }
 
-  get modeloObra() {
-    return this.obras.get('modeloObra');
+  get modeloObraFBX() {
+    return this.obras.get('modeloObraFBX');
+  }
+  get modeloObraUSDZ() {
+    return this.obras.get('modeloObraUSDZ');
+  }
+  get modeloObraGLB() {
+    return this.obras.get('modeloObraGLB');
   }
   ngOnInit() {
     this.obras = this.fb.group({
       nombre: ['', [Validators.required]],
       concepto: ['', [Validators.required]],
-
       material: ['', [Validators.required]],
       dimensiones: ['', [Validators.required]],
       precio: ['', [Validators.required]],
-      modeloObra: ['', [Validators.required]],
-
+      modeloObraFBX: [null, [Validators.required]],
+      modeloObraUSDZ: '',
+      modeloObraGLB: '',
+      fbx: null,
     });
   }
   dismissModal() {
     this.modalCtrl.dismiss();
+  }
+  onFileChange(event) {
+
+    const reader = new FileReader();
+    if (event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        console.log('"hola"');
+
+        this.obras.patchValue({
+          fbx: reader.result
+        });
+      };
+    }
   }
 }

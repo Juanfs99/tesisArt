@@ -15,31 +15,30 @@ interface Digital {
 })
 export class DigitalPage implements OnInit {
 
-  digital: Digital[]=[
+  digital: Digital[] = [
     {
       direccion: '/articulo',
-     nombre: 'MantaRaya',
-     imagen: 'assets/cuadrado.jpeg',
-     precio: '3000'
+      nombre: 'MantaRaya',
+      imagen: 'assets/cuadrado.jpeg',
+      precio: '3000'
     },
     {
-     direccion: '/articulo',
-    nombre: 'VidaSolar',
-    imagen: 'assets/cuadrado.jpeg',
-    precio: '3000'
-    
-   },{
-     direccion: '/articulo',
-    nombre: 'SaltoAlto',
-    imagen: 'assets/cuadrado.jpeg',
-    precio: '3000'
-   },
-  ]
-  constructor( private route: Router) { }
+      direccion: '/articulo',
+      nombre: 'VidaSolar',
+      imagen: 'assets/cuadrado.jpeg',
+      precio: '3000'
+    }, {
+      direccion: '/articulo',
+      nombre: 'SaltoAlto',
+      imagen: 'assets/cuadrado.jpeg',
+      precio: '3000'
+    },
+  ];
+  constructor(private route: Router) { }
 
   ngOnInit() {
   }
-  onClickHome(){
+  onClickHome() {
     this.route.navigate(['/home']);
   }
 }

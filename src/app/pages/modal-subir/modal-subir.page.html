@@ -81,7 +81,8 @@
 
                 <!-- <ion-input formControlName="modeloObra" name="name" type="file" placeholder="Archivos FBX">
                 </ion-input> -->
-                <input type="file" class="custom-file-input">
+                <input type="file" formControlName="modeloObraFBX" accept=".fbx" class="custom-file-input"
+                  (change)="onFileChange($event)">
               </ion-item>
 
 

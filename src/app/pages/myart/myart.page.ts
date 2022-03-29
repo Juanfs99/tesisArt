@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-interface myArt {
+import { AvatarService } from '../../services/avatar.service';
+
+interface MyArt {
   direccion: string;
   nombre: string;
   imagen: any;
@@ -12,7 +14,7 @@ interface myArt {
   styleUrls: ['./myart.page.scss'],
 })
 export class MyartPage implements OnInit {
-  digital: myArt[] = [
+  digital: MyArt[] = [
     {
       direccion: '/articulo',
       nombre: 'MantaRaya',
@@ -30,10 +32,14 @@ export class MyartPage implements OnInit {
       imagen: 'assets/cuadrado.jpeg',
       precio: '3000'
     },
-  ]
-  constructor(private route: Router) { }
+  ];
+  constructor(private route: Router,
+    private avService: AvatarService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    const obras = await this.avService.getObrasUsers();
+    console.log(obras);
+
   }
   onClickHome() {
     this.route.navigate(['/home']);

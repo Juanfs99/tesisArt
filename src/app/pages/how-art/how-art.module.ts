@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -15,6 +15,8 @@ import { HowArtPage } from './how-art.page';
     IonicModule,
     HowArtPageRoutingModule
   ],
-  declarations: [HowArtPage]
+  declarations: [HowArtPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+
 })
-export class HowArtPageModule {}
+export class HowArtPageModule { }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -15,6 +15,8 @@ import { ArticuloPage } from './articulo.page';
     IonicModule,
     ArticuloPageRoutingModule
   ],
-  declarations: [ArticuloPage]
+  declarations: [ArticuloPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+
 })
-export class ArticuloPageModule {}
+export class ArticuloPageModule { }

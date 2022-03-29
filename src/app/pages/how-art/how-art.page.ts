@@ -7,13 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./how-art.page.scss'],
 })
 export class HowArtPage implements OnInit {
-
-  
   constructor(private route: Router) { }
 
   ngOnInit() {
   }
-  onClickHome(){
+  onClickHome() {
     this.route.navigate(['/home']);
   }
 

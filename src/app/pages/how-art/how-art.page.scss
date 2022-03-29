@@ -15,6 +15,24 @@
     position: center;
     object-fit: cover;
   }
+  #container a {
+    text-decoration: none;
+  }
+  #container {
+    text-align: center;
+    width: 90%;
+    height: 57vh;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 12%;
+  }
+
+  model-viewer {
+    width: 90%;
+    height: 55vh;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 @media screen and (min-width: 700px) {
   .planesPhone {

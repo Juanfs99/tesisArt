@@ -33,7 +33,7 @@ export class PaintingsPage implements OnInit {
       imagen: 'assets/cuadrado.jpeg',
       precio: '3000',
     },
-  ]
+  ];
 
   constructor(private route: Router) { }
 

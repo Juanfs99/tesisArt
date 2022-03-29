@@ -4,8 +4,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Componentes } from 'src/assets/interfaces/interfaces';
 import { Auth, authState } from '@angular/fire/auth';
-
-
+import {
+  getDownloadURL,
+  ref,
+  Storage,
+  uploadString,
+} from '@angular/fire/storage';
+import { Photo } from '@capacitor/camera';
 
 
 export interface Note {
@@ -15,7 +20,16 @@ export interface Note {
 }
 export interface CrearObra {
   nombre: string;
+  concepto: string;
+  material: string;
+  dimensiones: string;
+  precio: string;
+  modeloObraFBX: any;
+  modeloObraUSDZ: string;
+  modeloObraGLB: string;
+  fbx: any;
   uid: string;
+
 }
 @Injectable({
   providedIn: 'root'
@@ -23,13 +37,27 @@ export interface CrearObra {
 export class DataService {
 
   constructor(private http: HttpClient, private firestore: Firestore,
-    private auth: Auth,) { }
+    private auth: Auth, private storage: Storage,
+  ) { }
 
-  addObra(crearObra: CrearObra) {
+  async addObra(crearObra: CrearObra) {
+
     const user = this.auth.currentUser;
-
     const obra = collection(this.firestore, `obras/`);
     crearObra.uid = user.uid;
+    const timeStamp = Math.floor(Date.now() / 1000);
+    const uri = crearObra.modeloObraFBX;
+    const modeloNombre = timeStamp + '_' + uri.replace(/.*[\/\\]/, '');
+    crearObra.fbx = crearObra.fbx.split(',')[1];
+    const ruta = `modelos/${crearObra.uid}/${modeloNombre}`;
+    const storageRef = ref(this.storage, ruta);
+    try {
+      await uploadString(storageRef, crearObra.fbx, 'base64');
+
+      const modeloUrl = await getDownloadURL(storageRef);
+      crearObra.modeloObraFBX = modeloUrl;
+      delete crearObra.fbx;
+    } catch (error) { };
     return addDoc(obra, crearObra)
       .then((data) => {
         console.log(data);
@@ -39,6 +67,7 @@ export class DataService {
         console.log(error);
         return false;
       });
+
   }
   async getUid() {
     const user = await this.auth.currentUser;
@@ -49,6 +78,10 @@ export class DataService {
     }
   }
 
+  async uploadModel(modelFile: any) {
+    const user = this.auth.currentUser;
+
+  }
   getMenuOptions() {
     return this.http.get<Componentes[]>('/assets/data/menu-options.json');
 
