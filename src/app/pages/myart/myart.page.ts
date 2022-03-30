@@ -34,11 +34,14 @@ export class MyartPage implements OnInit {
     },
   ];
   constructor(private route: Router,
-    private avService: AvatarService) { }
+    private avService: AvatarService) {
+
+  }
 
   async ngOnInit() {
     const obras = await this.avService.getObrasUsers();
     console.log(obras);
+
 
   }
   onClickHome() {

@@ -77,6 +77,9 @@ export class ModalSubirPage implements OnInit {
   get modeloObraGLB() {
     return this.obras.get('modeloObraGLB');
   }
+  get imagenObra() {
+    return this.obras.get('imagenObra');
+  }
   ngOnInit() {
     this.obras = this.fb.group({
       nombre: ['', [Validators.required]],
@@ -88,6 +91,9 @@ export class ModalSubirPage implements OnInit {
       modeloObraUSDZ: '',
       modeloObraGLB: '',
       fbx: null,
+      imagenObra: [null, [Validators.required]],
+      imagen: null,
+
     });
   }
   dismissModal() {
@@ -104,6 +110,21 @@ export class ModalSubirPage implements OnInit {
 
         this.obras.patchValue({
           fbx: reader.result
+        });
+      };
+    }
+  }
+  onFileChangeImg(event) {
+
+    const reader = new FileReader();
+    if (event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        console.log('"img"');
+
+        this.obras.patchValue({
+          imagen: reader.result
         });
       };
     }

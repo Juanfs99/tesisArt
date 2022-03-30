@@ -35,3 +35,31 @@
 .custom-file-input:active::before {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
+
+/////////////////////////
+
+.custom-file-inputImg::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-inputImg::before {
+  content: "Select image";
+  display: inline-block;
+  background: linear-gradient(to top, #f9f9f9, #e3e3e3);
+  border: 1px solid #6361ea;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  //white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+  color: #6361ea;
+}
+.custom-file-inputImg:hover::before {
+  border-color: #6361ea;
+}
+.custom-file-inputImg:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}

@@ -48,9 +48,14 @@ export class SignupPage implements OnInit {
       });
     await loading.dismiss();
     if (user) {
-      this.route.navigateByUrl('/login', { replaceUrl: true });
-      this.authService.logout();
       this.showAlert('Usuario Registrado', 'Bienvenido a ART in Augmented Reality');
+      window.location.reload();
+
+      this.authService.logout();
+      this.route.navigateByUrl('/login', { replaceUrl: true });
+
+
+
     } else {
       this.showAlert('Fallo de registro', 'Por favor, intente de nuevo');
     }

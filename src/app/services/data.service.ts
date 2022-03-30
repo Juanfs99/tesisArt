@@ -29,6 +29,8 @@ export interface CrearObra {
   modeloObraGLB: string;
   fbx: any;
   uid: string;
+  imagenObra: any;
+  imagen: any;
 
 }
 @Injectable({
@@ -46,6 +48,14 @@ export class DataService {
     const obra = collection(this.firestore, `obras/`);
     crearObra.uid = user.uid;
     const timeStamp = Math.floor(Date.now() / 1000);
+    //IMAGEN//
+    const uriImg = crearObra.imagenObra;
+    const modeloImg = timeStamp + '_' + uriImg.replace(/.*[\/\\]/, '');
+    crearObra.imagen = crearObra.imagen.split(',')[1];
+    const rutaImg = `imagenesObras/${crearObra.uid}/${modeloImg}`;
+    const storageRefImg = ref(this.storage, rutaImg);
+
+    //MODELO//
     const uri = crearObra.modeloObraFBX;
     const modeloNombre = timeStamp + '_' + uri.replace(/.*[\/\\]/, '');
     crearObra.fbx = crearObra.fbx.split(',')[1];
@@ -53,11 +63,16 @@ export class DataService {
     const storageRef = ref(this.storage, ruta);
     try {
       await uploadString(storageRef, crearObra.fbx, 'base64');
-
       const modeloUrl = await getDownloadURL(storageRef);
       crearObra.modeloObraFBX = modeloUrl;
       delete crearObra.fbx;
+
+      await uploadString(storageRefImg, crearObra.imagen, 'base64');
+      const imagenUrl = await getDownloadURL(storageRefImg);
+      crearObra.imagenObra = imagenUrl;
+      delete crearObra.imagen;
     } catch (error) { };
+
     return addDoc(obra, crearObra)
       .then((data) => {
         console.log(data);
