@@ -20,13 +20,19 @@
     </h3>
   </div>
 
-  <h4 class="textCat">Espacios disponibles: <span>3</span></h4>
+  <h4 class="textCat">Espacios disponibles: <span>{{puestos}}</span></h4>
 
   <div class="ion-padding">
 
-    <ion-button size="large" expand="block" (click)="abrirModalSubir()">
+    <ion-button id="subir" size="large" expand="block" (click)="abrirModalSubir()">
       <div class="subirObra">
         Subir Obra
+
+      </div>
+    </ion-button>
+    <ion-button size="large" expand="block" (click)="addPunto()">
+      <div class="subirObra">
+        add
 
       </div>
     </ion-button>
@@ -58,15 +64,17 @@
       <ion-card-content style="color: white;">
         <ion-card style="height: auto; width: 30%; float: left; margin-bottom: 10%;">
 
-          <ion-card-title class="ion-padding" style="color:#6361ea ;">$15</ion-card-title>
+          <ion-card-title class="ion-padding" style="color:#6361ea ;">$20</ion-card-title>
         </ion-card>
 
         El plan mensual te permite tener 5 obras activas y se te cobrará mensualmente
         <div>
-          <ion-button size="large" class="ion-padding botonesComprar">Comprar
+          <ion-button size="large" class="ion-padding botonesComprar" (click)="abrirModalMensual()">Comprar
           </ion-button>
         </div>
+
       </ion-card-content>
+
     </ion-card>
     <ion-card class="planes ion-no-margin" style="background-color: #E05497">
       <ion-card-header>
@@ -76,7 +84,7 @@
       <ion-card-content style="color: white;">
         <ion-card style="height: auto; width: 30%; float: left; margin-bottom: 10%;">
 
-          <ion-card-title class="ion-padding" style="color:#6361ea ;">$65</ion-card-title>
+          <ion-card-title class="ion-padding" style="color:#6361ea ;">$40</ion-card-title>
         </ion-card>
         El plan corporativo te permite tener 15 obras activas y se te cobrará mensualmente
         <div>
@@ -104,7 +112,7 @@
 
           El plan por obra te permite tener 1 obra activa y se te cobrará mensualmente
           <div>
-            <ion-button class="ion-padding botonesComprar" size="large">Comprar
+            <ion-button class="ion-padding botonesComprar" size="large" (click)="abrirModalObra()">Comprar
             </ion-button>
           </div>
         </ion-card-content>
@@ -120,12 +128,12 @@
         <ion-card-content style="color: white;">
           <ion-card style="height: auto; width: 30%; float: left; margin-bottom: 10%;">
 
-            <ion-card-title class="ion-padding" style="color:#6361ea ;">$15</ion-card-title>
+            <ion-card-title class="ion-padding" style="color:#6361ea ;">$20</ion-card-title>
           </ion-card>
 
           El plan mensual te permite tener 5 obras activas y se te cobrará mensualmente
           <div>
-            <ion-button class="ion-padding botonesComprar" size="large">Comprar
+            <ion-button class="ion-padding botonesComprar" size="large" (click)="abrirModalMensual()">Comprar
             </ion-button>
           </div>
         </ion-card-content>
@@ -141,11 +149,11 @@
         <ion-card-content style="color: white;">
           <ion-card style="height: auto; width: 30%; float: left; margin-bottom: 10%;">
 
-            <ion-card-title class="ion-padding" style="color:#6361ea ;">$65</ion-card-title>
+            <ion-card-title class="ion-padding" style="color:#6361ea ;">$40</ion-card-title>
           </ion-card>
           El plan corporativo te permite tener 15 obras activas y se te cobrará mensualmente
           <div>
-            <ion-button class="ion-padding botonesComprar" size="large">Comprar
+            <ion-button class="ion-padding botonesComprar" size="large" (click)="abrirModalGaleria()">Comprar
             </ion-button>
           </div>
         </ion-card-content>

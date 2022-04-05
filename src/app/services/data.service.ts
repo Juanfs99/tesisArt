@@ -12,7 +12,18 @@ import {
 } from '@angular/fire/storage';
 import { Photo } from '@capacitor/camera';
 
-
+export interface Obra {
+  id?: string;
+  nombre: string;
+  precio: string;
+  dimensiones: string;
+  concepto: string;
+  material: string;
+  modeloObraFBX: string;
+  modeloObraGLB: string;
+  modeloObraUSDZ: string;
+  uid: string;
+}
 export interface Note {
   id?: string;
   title: string;

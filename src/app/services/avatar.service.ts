@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/internal/Observable';
 import { Injectable } from '@angular/core';
 
 import { Auth } from '@angular/fire/auth';
@@ -10,6 +11,9 @@ import {
 } from '@angular/fire/storage';
 
 import { Photo } from '@capacitor/camera';
+export interface Obras {
+  nombre: string;
+}
 export interface User {
   uid: string;
   email: string;

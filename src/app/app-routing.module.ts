@@ -101,6 +101,19 @@ const routes: Routes = [
     path: 'modal-subir',
     loadChildren: () => import('./pages/modal-subir/modal-subir.module').then(m => m.ModalSubirPageModule)
   },
+  {
+    path: 'modal-mensual',
+    loadChildren: () => import('./pages/modal-mensual/modal-mensual.module').then(m => m.ModalMensualPageModule)
+  },
+  {
+    path: 'modal-galeria',
+    loadChildren: () => import('./pages/modal-galeria/modal-galeria.module').then(m => m.ModalGaleriaPageModule)
+  },
+  {
+    path: 'modalpor-obra',
+    loadChildren: () => import('./pages/modalpor-obra/modalpor-obra.module').then(m => m.ModalporObraPageModule)
+  },
+
 
 
 

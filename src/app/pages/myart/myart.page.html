@@ -13,27 +13,39 @@
 </ion-header>
 
 <ion-content>
-  <h3 style="
-  font-family: proxima-nova, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  padding-left: 5%;
-
-">My
-    <span style="color: #6361ea; font-family: proxima-nova, sans-serif;
+  <div class="row" style="margin-top: 10%;">
+    <div class="column">
+      <h3 class="textCat">My
+        <span style="color: #6361ea; font-family: proxima-nova, sans-serif;
 font-weight: 600;">ARt</span>
 
-  </h3>
-
-  <ion-list *ngFor="let d of digital">
-    <ion-card [routerLink]="d.direccion" class="ion-no-margin" style="background-color: none;">
-      <div class="artists">
-        <img src="{{d.imagen}}" class="img_card_cat" />
+      </h3>
+      <div id="container" class="ion-padding">
+        <model-viewer alt="Careta"
+          src="https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/AppComponentes%2FModelos%2FModelosVariosFree%2Fcareta.glb?alt=media&token=d08de058-d59b-4a31-bcd2-569092822cbd"
+          ios-src="https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/AppComponentes%2FModelos%2FModelosVariosFree%2Fcareta.usdz?alt=media&token=ad8f2c2f-3a55-420f-ada7-582f1775de50"
+          ar unestable-webxr quick-lock-browsers="safari chrome" shadow-intensity="1" interaction-prompt="auto"
+          auto-rotate ar magic-leap camera-controls>
+        </model-viewer>
       </div>
-      <!-- <div class="card-title">Sculptures</div> -->
-      <ion-card-title class="card-title">{{d.nombre}}</ion-card-title>
-      <ion-card-subtitle class="card-subtitle">${{d.precio}}</ion-card-subtitle>
+    </div>
+    <div class="column">
+      <ion-list *ngFor="let obra of misObras">
+        <ion-card routerLink="/articulo" [queryParams]="{id: '${obra.id}'}" class="ion-no-margin"
+          style="background-color: none;">
+          <div class="artists">
 
-    </ion-card>
-  </ion-list>
+            <img src="{{obra.imagenObra}}" class="img_card_cat" />
+          </div>
+          <!-- <div class="card-title">Sculptures</div> -->
+          <ion-card-title class="card-title">{{obra.nombre}}</ion-card-title>
+
+          <ion-card-subtitle class="card-subtitle">${{obra.precio}}</ion-card-subtitle>
+
+        </ion-card>
+      </ion-list>
+    </div>
+  </div>
+
+
 </ion-content>

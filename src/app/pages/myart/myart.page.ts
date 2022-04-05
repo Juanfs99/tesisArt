@@ -1,47 +1,28 @@
+import { DataService, Obra } from './../../services/data.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { AvatarService } from '../../services/avatar.service';
 
-interface MyArt {
-  direccion: string;
-  nombre: string;
-  imagen: any;
-  precio: any;
-}
+
 @Component({
   selector: 'app-myart',
   templateUrl: './myart.page.html',
   styleUrls: ['./myart.page.scss'],
 })
 export class MyartPage implements OnInit {
-  digital: MyArt[] = [
-    {
-      direccion: '/articulo',
-      nombre: 'MantaRaya',
-      imagen: 'assets/cuadrado.jpeg',
-      precio: '3000'
-    },
-    {
-      direccion: '/articulo',
-      nombre: 'VidaSolar',
-      imagen: 'assets/cuadrado.jpeg',
-      precio: '3000'
-    }, {
-      direccion: '/articulo',
-      nombre: 'SaltoAlto',
-      imagen: 'assets/cuadrado.jpeg',
-      precio: '3000'
-    },
-  ];
+  misObras = [];
+  value = this.misObras;
   constructor(private route: Router,
-    private avService: AvatarService) {
+    private avService: AvatarService,
+    private nav: NavController,
+    private dataService: DataService) {
 
   }
-
   async ngOnInit() {
     const obras = await this.avService.getObrasUsers();
     console.log(obras);
-
+    this.misObras = obras;
 
   }
   onClickHome() {

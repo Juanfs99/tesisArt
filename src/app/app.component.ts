@@ -14,6 +14,7 @@ import {
 import { AvatarService } from './services/avatar.service';
 import { doc, docData, Firestore, setDoc, updateDoc } from '@angular/fire/firestore';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -39,7 +40,6 @@ export class AppComponent {
       console.log('IsDesktop changed', isDesktop);
       this.isDesktop = isDesktop;
     });
-
     authState(this.authFire).subscribe((response) => {
       if (response) {
         console.log('esta logeado');
@@ -68,6 +68,7 @@ export class AppComponent {
   private onResize(event) {
     this.screensizeService.onResize(event.target.innerWidth);
   };
+  // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
   ngOnInit() {
     this.componentes = this.dataService.getMenuOptions();
     this.screensizeService.onResize(this.platform.width());
