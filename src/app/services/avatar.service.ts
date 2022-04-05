@@ -11,23 +11,33 @@ import {
 } from '@angular/fire/storage';
 
 import { Photo } from '@capacitor/camera';
-export interface Obras {
-  nombre: string;
-}
-export interface User {
-  uid: string;
-  email: string;
-  apellido: string;
-  cedula: string;
-  displayName: string;
-  nombre: string;
-  telefono: string;
-  password: string;
-  country: string;
-  frase: string;
+
+export interface Users {
+  uid: any;
+  email: any;
+  lastname: any;
+  cedula: any;
+  displayName: any;
+  name: any;
+  phonenumber: any;
+  password: any;
+  country: any;
+  frase: any;
+  imageUrl: any;
   user: 'artist';
 }
-
+export interface Obras {
+  id?: string;
+  nombre: string;
+  dimensiones: any;
+  concepto: any;
+  imagenObra: any;
+  material: any;
+  modeloObraGLB: any;
+  modeloObraUSDZ: any;
+  precio: any;
+  uid: any;
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -58,6 +68,15 @@ export class AvatarService {
     });
     return result.filter(obra => obra.uid === user.uid);
 
+  };
+
+  getObraById(id): Observable<Obras> {
+    const obraDocRef = doc(this.firestore, `obras/${id}`);
+    return docData(obraDocRef, { idField: 'id' }) as Observable<Obras>;
+  };
+  getUserById(uid): Observable<Users> {
+    const userDocRef = doc(this.firestore, `users/${uid}`);
+    return docData(userDocRef, { idField: 'uid' }) as Observable<Users>;
   };
 
   async uploadImage(cameraFile: Photo) {

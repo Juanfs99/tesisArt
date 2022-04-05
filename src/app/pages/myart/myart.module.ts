@@ -1,4 +1,4 @@
-import { NgModule, OnInit } from '@angular/core';
+import { NgModule, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -14,7 +14,9 @@ import { MyartPage } from './myart.page';
     IonicModule,
     MyartPageRoutingModule
   ],
-  declarations: [MyartPage]
+  declarations: [MyartPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+
 })
 export class MyartPageModule {
 }

@@ -9,27 +9,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="obra">
   <div class="row">
     <div class="column">
-      <h4 style="
-      text-align: center;
-      padding-top: 10%;
-      padding-bottom: 10%;
-      color: #6361ea;
-      font-family: proxima-nova, sans-serif;
-
-      font-weight: 600;
-
-      font-style: normal;
-    ">
-        Nombre de escultura
+      <h4 class="titulo">
+        {{obra.nombre}}
       </h4>
 
       <div id="container" class="ion-padding">
-        <model-viewer alt="PruebaRobot" src="/assets/mantaraya.glb" ios-src="/assets/mantaraya.usdz" ar unestable-webxr
-          quick-lock-browsers="safari chrome" shadow-intensity="1" interaction-prompt="auto" auto-rotate ar magic-leap
-          camera-controls>
+        <model-viewer alt="PruebaRobot" src="{{obra.modeloObraGLB}}" ios-src="{{obra.modeloObraUSDZ}}" ar
+          unestable-webxr quick-lock-browsers="safari chrome" shadow-intensity="1" interaction-prompt="auto" auto-rotate
+          ar magic-leap camera-controls>
         </model-viewer>
       </div>
 
@@ -37,17 +27,18 @@
     </div>
 
     <div class="column">
-      <ion-card>
+      <ion-card class="cardPhone">
         <ion-card-header>
 
           <ion-card-title style="text-align: center; color: #6361ea;" class="ion-padding">Información</ion-card-title>
           <h5 style="color: black; font-weight: 600;">Material</h5>
           <ion-card-content>
-            Obra creada con materiales reciclados, tecnología desechada
+            {{obra.material}}
           </ion-card-content>
           <h5 style="color: black; font-weight: 600;">Dimensiones</h5>
           <ion-card-content>
-            1.2 metros de alto, 2 metros de ancho y 3 metros de profundidad
+            {{obra.dimensiones}}
+
           </ion-card-content>
         </ion-card-header>
       </ion-card>
@@ -56,52 +47,27 @@
 
         <ion-slide>
           <ion-card class="cardImg">
-            <img src="assets/cuadrado.jpeg">
-          </ion-card>
-        </ion-slide>
-
-        <ion-slide>
-          <ion-card class="cardImg">
-            <img src="assets/cuadrado.jpeg">
-          </ion-card>
-        </ion-slide>
-
-        <ion-slide>
-          <ion-card class="cardImg">
-            <img src="assets/cuadrado.jpeg">
-          </ion-card>
-        </ion-slide>
-
-        <ion-slide>
-          <ion-card class="cardImg">
-            <img src="assets/cuadrado.jpeg">
-          </ion-card>
-        </ion-slide>
-
-        <ion-slide>
-          <ion-card class="cardImg">
-            <img src="assets/cuadrado.jpeg">
+            <img src="{{obra.imagenObra}}">
           </ion-card>
         </ion-slide>
 
 
       </ion-slides>
 
-
+      <h2 class="artista">Artista creador de la obra</h2>
       <ion-card>
         <ion-card-header>
-          <img src="assets/cuadrado.jpeg"
-            style="float: left; height: 30%; width: 30%; margin-right: 8%; border-radius: 100%;" alt="">
-          <ion-card-title>Nombre del artista</ion-card-title>
-          <ion-card-subtitle>Quito / Ecuador</ion-card-subtitle>
-          <ion-card-subtitle style="float: none;">Telf. 098765432</ion-card-subtitle>
+          <img src="{{user.imageUrl}}"
+            style="float: left; height: 25%; width: 25%; margin-right: 8%; border-radius: 100%;" alt="">
+          <ion-card-title class="userName">{{user.name}} {{user.lastname}}</ion-card-title>
+
+          <ion-card-subtitle class="info">{{user.country}}</ion-card-subtitle>
+          <ion-card-subtitle class="info2">0{{user.phonenumber}}</ion-card-subtitle>
+
+
 
         </ion-card-header>
-        <ion-card-content>
-          <p>Andres es un artista independiente que le gusta hacer obras de arte para personas que aprecian el arte de
-            una
-            manera diferente</p>
-        </ion-card-content>
+
       </ion-card>
     </div>
   </div>

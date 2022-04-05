@@ -31,15 +31,15 @@ font-weight: 600;">ARt</span>
     </div>
     <div class="column">
       <ion-list *ngFor="let obra of misObras">
-        <ion-card routerLink="/articulo" [queryParams]="{id: '${obra.id}'}" class="ion-no-margin"
-          style="background-color: none;">
+        <ion-card routerLink="/articulo/{{obra.uid}}/{{obra.id}}" class="ion-no-margin" style="background-color: none;">
+
           <div class="artists">
 
             <img src="{{obra.imagenObra}}" class="img_card_cat" />
           </div>
           <!-- <div class="card-title">Sculptures</div> -->
           <ion-card-title class="card-title">{{obra.nombre}}</ion-card-title>
-
+          {{obra.id}}
           <ion-card-subtitle class="card-subtitle">${{obra.precio}}</ion-card-subtitle>
 
         </ion-card>

@@ -63,7 +63,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/artistainfo/artistainfo.module').then(m => m.ArtistainfoPageModule)
   },
   {
-    path: 'articulo',
+    path: 'articulo/:uid/:id',
     loadChildren: () => import('./pages/articulo/articulo.module').then(m => m.ArticuloPageModule)
   },
   {
@@ -102,10 +102,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/modal-subir/modal-subir.module').then(m => m.ModalSubirPageModule)
   },
   {
-    path: 'modal-mensual',
-    loadChildren: () => import('./pages/modal-mensual/modal-mensual.module').then(m => m.ModalMensualPageModule)
-  },
-  {
     path: 'modal-galeria',
     loadChildren: () => import('./pages/modal-galeria/modal-galeria.module').then(m => m.ModalGaleriaPageModule)
   },
@@ -113,6 +109,11 @@ const routes: Routes = [
     path: 'modalpor-obra',
     loadChildren: () => import('./pages/modalpor-obra/modalpor-obra.module').then(m => m.ModalporObraPageModule)
   },
+  {
+    path: 'modal-mensual',
+    loadChildren: () => import('./pages/modal-mensual/modal-mensual.module').then(m => m.ModalMensualPageModule)
+  },
+
 
 
 

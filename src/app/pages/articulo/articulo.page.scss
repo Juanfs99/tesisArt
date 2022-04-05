@@ -58,8 +58,84 @@
       }
     }
   }
+
+  .titulo {
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    color: #6361ea;
+    font-family: proxima-nova, sans-serif;
+
+    font-weight: 600;
+    font-size: 6vw;
+    font-style: normal;
+  }
+  .artista {
+    font-size: 5vw;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 3%;
+  }
+  .cardPhone {
+    margin-top: 10%;
+  }
+  .info {
+    margin-top: 2%;
+    font-size: 4vw;
+    font-weight: 600;
+    color: black;
+  }
+  .info2 {
+    font-size: 4vw;
+    font-weight: 600;
+    color: black;
+    float: none;
+  }
+  .userName {
+    font-size: 5vw;
+    font-weight: 600;
+    color: #6361ea;
+    margin-top: 3%;
+  }
 }
 @media screen and (min-width: 700px) {
+  .info {
+    margin-top: 2%;
+    font-size: 1.5vw;
+    font-weight: 600;
+    color: black;
+  }
+  .info2 {
+    font-size: 1.5vw;
+    font-weight: 600;
+    color: black;
+    float: none;
+  }
+  .titulo {
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    color: #6361ea;
+    font-family: proxima-nova, sans-serif;
+
+    font-weight: 600;
+    font-size: 2vw;
+    font-style: normal;
+  }
+  .artista {
+    font-size: 1.7vw;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 3%;
+  }
+  .userName {
+    font-size: 1.5vw;
+    font-weight: 600;
+    color: #6361ea;
+    margin-top: 5%;
+  }
   .column {
     float: left;
     width: 50%;
@@ -87,7 +163,7 @@
   }
   .cardImg {
     width: 100%;
-    height: 200px;
+    height: 400px;
     box-shadow: none;
     border-radius: 12px;
 
