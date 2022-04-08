@@ -24,6 +24,20 @@
     </ion-avatar>
   </div>
 
+  <div>
+
+    <input type="file" (change)="fileChangeEvent($event)" />
+
+    <image-cropper style="height: 500px; width: 500px;" [imageChangedEvent]="imageChangedEvent"
+      [maintainAspectRatio]="true" [aspectRatio]="1 / 1" format="png" (imageCropped)="imageCropped($event)"
+      (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()">
+    </image-cropper>
+
+    <ion-button (click)="sendCroppedImg()" expand="block" fill="clear" shape="round">
+      Subir imagen
+    </ion-button>
+  </div>
+
 
   <div class="card-body">
     <div class="user-meta ion-text-center">

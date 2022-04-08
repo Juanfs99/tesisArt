@@ -1,7 +1,8 @@
+import { AvatarService } from './../../services/avatar.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-interface Artistas{
+interface Artistas {
   direccion: string;
   nombre: string;
   imagen: any;
@@ -14,33 +15,19 @@ interface Artistas{
 })
 export class ArtistsPage implements OnInit {
 
-  artistas: Artistas[]=[
-    {
-      direccion: '/artistainfo',
-      nombre: 'Roberto',
-      imagen: 'assets/cuadrado.jpeg',
-     },
-     {
-       direccion: '/artistainfo',
-       nombre: 'Ana',
-       imagen: 'assets/cuadrado.jpeg',
-      },
-      {
-       direccion: '/artistainfo',
-       nombre: 'Juan',
-       imagen: 'assets/cuadrado.jpeg',
-      },
-      {
-       direccion: '/artistainfo',
-       nombre: 'Patricia',
-       imagen: 'assets/cuadrado.jpeg',
-      }
-  ]
-  constructor(private route: Router) { }
+  artistas = [];
+
+  constructor(private route: Router,
+    private avService: AvatarService) {
+    this.avService.getUsers().subscribe(res => {
+      this.artistas = res;
+
+    });
+  }
 
   ngOnInit() {
   }
-  onClickHome(){
+  onClickHome() {
     this.route.navigate(['/home']);
   }
 

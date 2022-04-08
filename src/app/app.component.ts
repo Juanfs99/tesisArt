@@ -37,14 +37,10 @@ export class AppComponent {
 
   ) {
     this.screensizeService.isDesktopView().subscribe(isDesktop => {
-      console.log('IsDesktop changed', isDesktop);
       this.isDesktop = isDesktop;
     });
     authState(this.authFire).subscribe((response) => {
       if (response) {
-        console.log('esta logeado');
-
-
         this.login = true;
 
         this.avatarService.getUserProfile().subscribe((data) => {
@@ -55,7 +51,6 @@ export class AppComponent {
 
 
       } else {
-        console.log('no esta loguead');
         this.login = false;
 
       }

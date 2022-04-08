@@ -59,7 +59,7 @@ const routes: Routes = [
       import('./pages/digital/digital.module').then((m) => m.DigitalPageModule),
   },
   {
-    path: 'artistainfo',
+    path: 'artistainfo/:uid',
     loadChildren: () => import('./pages/artistainfo/artistainfo.module').then(m => m.ArtistainfoPageModule)
   },
   {

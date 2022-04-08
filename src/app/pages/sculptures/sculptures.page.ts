@@ -44,7 +44,6 @@ export class SculpturesPage implements OnInit {
   ];
   constructor(private route: Router, private dataService: DataService) {
     this.dataService.getNotes().subscribe(res => {
-      console.log(res);
       this.notes = res;
     });
   }

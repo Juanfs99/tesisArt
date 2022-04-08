@@ -29,9 +29,9 @@
       <ion-row>
         <ion-col size="6" size-lg="3" size-md="4" size-sm="2" *ngFor="let a of artistas" [routerLink]="a.direccion">
 
-          <ion-card class="ion-no-margin" style="background-color: none;">
+          <ion-card class="ion-no-margin" routerLink="/artistainfo/{{a.uid}}" style="background-color: none;">
             <div class="artists">
-              <img src="{{a.imagen}}" class="img_card_cat" />
+              <img src="{{a.imageUrl}}" class="img_card_cat" />
             </div>
             <!-- <div class="card-title">Sculptures</div> -->
             <ion-card-title class="card-title">{{a.nombre}}</ion-card-title>

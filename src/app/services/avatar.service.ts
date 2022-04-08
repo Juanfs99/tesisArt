@@ -62,22 +62,48 @@ export class AvatarService {
         resolve(obras);
       },
         err => {
-          console.log(err);
           reject(err);
         });
     });
     return result.filter(obra => obra.uid === user.uid);
 
   };
+  async getObrasUsers2(uid) {
+    const user = uid;
+    const userDocRef = collection(this.firestore, `obras`);
+    const result = await new Promise<Array<any>>((resolve, reject) => {
+      collectionData(userDocRef, { idField: 'id' }).subscribe(obras => {
+        resolve(obras);
+      },
+        err => {
+          console.log(err);
+          reject(err);
+        });
+    });
+    return result.filter(obra => obra.uid === user);
+
+  };
+
+  getUserById(uid): Observable<Users> {
+    const userDocRef = doc(this.firestore, `users/${uid}`);
+    return docData(userDocRef, { idField: 'uid' }) as Observable<Users>;
+  };
+
+
+  getUsers(): Observable<Users[]> {
+    const usersRef = collection(this.firestore, 'users');
+    return collectionData(usersRef, { idField: 'id' }) as Observable<Users[]>;
+  }
+
 
   getObraById(id): Observable<Obras> {
     const obraDocRef = doc(this.firestore, `obras/${id}`);
     return docData(obraDocRef, { idField: 'id' }) as Observable<Obras>;
   };
-  getUserById(uid): Observable<Users> {
-    const userDocRef = doc(this.firestore, `users/${uid}`);
-    return docData(userDocRef, { idField: 'uid' }) as Observable<Users>;
-  };
+  getObras(): Observable<Obras[]> {
+    const obrasRef = collection(this.firestore, 'obras');
+    return collectionData(obrasRef, { idField: 'id' }) as Observable<Obras[]>;
+  }
 
   async uploadImage(cameraFile: Photo) {
     const user = this.auth.currentUser;
@@ -98,6 +124,24 @@ export class AvatarService {
       return null;
     }
   }
+  async uploadImageCropped(base64: string) {
+    const user = this.auth.currentUser;
+    const path = `uploads/${user.uid}/profile.png`;
+    const storageRef = ref(this.storage, path);
+    const clean64 = base64.split(',')[1];
+    try {
+      await uploadString(storageRef, clean64, 'base64');
 
+      const imageUrl = await getDownloadURL(storageRef);
+
+      const userDocRef = doc(this.firestore, `users/${user.uid}`);
+      await updateDoc(userDocRef, {
+        imageUrl,
+      });
+      return true;
+    } catch (e) {
+      return null;
+    }
+  }
 
 }

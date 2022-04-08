@@ -9,24 +9,24 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="obra">
+<ion-content>
   <div class="row">
     <div class="column">
-      <h4 class="titulo">
+      <h4 *ngIf="obra" class="titulo">
         {{obra.nombre}}
       </h4>
 
       <div id="container" class="ion-padding">
-        <model-viewer alt="PruebaRobot" src="{{obra.modeloObraGLB}}" ios-src="{{obra.modeloObraUSDZ}}" ar
-          unestable-webxr quick-lock-browsers="safari chrome" shadow-intensity="1" interaction-prompt="auto" auto-rotate
-          ar magic-leap camera-controls>
+        <model-viewer alt="articulo" #modelViewer src="" ios-src="" ar unestable-webxr
+          quick-lock-browsers="safari chrome" shadow-intensity="1" interaction-prompt="auto" auto-rotate ar magic-leap
+          camera-controls>
         </model-viewer>
       </div>
 
 
     </div>
 
-    <div class="column">
+    <div class="column" *ngIf="obra, users">
       <ion-card class="cardPhone">
         <ion-card-header>
 

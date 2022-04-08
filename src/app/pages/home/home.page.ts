@@ -77,12 +77,10 @@ export class HomePage implements OnInit {
     private authFire: Auth,
     private avatarService: AvatarService,) {
     this.screensizeService.isDesktopView().subscribe(isDesktop => {
-      console.log('IsDesktop changed', isDesktop);
       this.isDesktop = isDesktop;
     });
     authState(this.authFire).subscribe((response) => {
       if (response) {
-        console.log('esta logeado');
 
 
         this.login = true;
@@ -95,7 +93,6 @@ export class HomePage implements OnInit {
 
 
       } else {
-        console.log('no esta loguead');
         this.login = false;
 
       }

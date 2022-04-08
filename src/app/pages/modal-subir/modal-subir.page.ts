@@ -106,7 +106,6 @@ export class ModalSubirPage implements OnInit {
       const [file] = event.target.files;
       reader.readAsDataURL(file);
       reader.onload = () => {
-        console.log('"hola"');
 
         this.obras.patchValue({
           fbx: reader.result
@@ -121,7 +120,6 @@ export class ModalSubirPage implements OnInit {
       const [file] = event.target.files;
       reader.readAsDataURL(file);
       reader.onload = () => {
-        console.log('"img"');
 
         this.obras.patchValue({
           imagen: reader.result

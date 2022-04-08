@@ -1,5 +1,5 @@
 import { AvatarService, Obras, Users } from './../../services/avatar.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, AfterViewInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
@@ -7,7 +7,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './articulo.page.html',
   styleUrls: ['./articulo.page.scss'],
 })
-export class ArticuloPage implements OnInit, OnDestroy {
+export class ArticuloPage implements OnInit, OnDestroy, AfterViewInit {
+  @ViewChild('modelViewer') modelViewer;
   obra: Obras = null;
   user: Users = null;
   uid;
@@ -27,7 +28,6 @@ export class ArticuloPage implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.sub = this.activatedroute.paramMap.subscribe(params => {
-      console.log(params);
       this.id = params.get('id');
       this.uid = params.get('uid');
     });
@@ -39,19 +39,24 @@ export class ArticuloPage implements OnInit, OnDestroy {
 
     this.avService.getUserById(this.uid).subscribe(res => {
       this.user = res;
-      console.log(this.user.uid);
     });
   }
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
-
+  ngAfterViewInit() {
+    const waitTimer = setInterval(() => {
+      if (this.obra) {
+        this.modelViewer.nativeElement.src = this.obra.modeloObraGLB;
+        this.modelViewer.nativeElement['ios-src'] = this.obra.modeloObraUSDZ;
+        clearInterval(waitTimer);
+      }
+    }, 100);
+  }
 
   onClickBack() {
     // eslint-disable-next-line no-underscore-dangle
     this._location.back();
-
-
   }
 
 }
