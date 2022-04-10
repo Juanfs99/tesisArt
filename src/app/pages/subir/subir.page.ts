@@ -16,24 +16,31 @@ import { ModalGaleriaPage } from '../modal-galeria/modal-galeria.page';
   styleUrls: ['./subir.page.scss'],
 })
 export class SubirPage implements OnInit {
+  profile = null;
 
-  puestos = 0;
   obras: FormGroup;
-
   constructor(private route: Router,
 
     private modalCtrl: ModalController,
+    private avatarService: AvatarService,
 
 
-  ) { }
+  ) {
 
+    this.avatarService.getUserProfile().subscribe((data) => {
+      this.profile = data;
+    });
+
+  }
+  ngOnInit() {
+
+  }
 
   onClickHome() {
     this.route.navigate(['/home']);
   }
-  addPunto() {
-    this.puestos++;
-  }
+
+
 
   async abrirModalSubir() {
     const modal = await this.modalCtrl.create({
@@ -45,6 +52,8 @@ export class SubirPage implements OnInit {
 
   }
   async abrirModalMensual() {
+
+
     const modal = await this.modalCtrl.create({
       component: ModalMensualPage,
       cssClass: 'my-custom-modal-css'
@@ -73,7 +82,5 @@ export class SubirPage implements OnInit {
   }
 
 
-  ngOnInit() {
-    ;
-  }
+
 }

@@ -95,7 +95,8 @@ const routes: Routes = [
   },
   {
     path: 'subir',
-    loadChildren: () => import('./pages/subir/subir.module').then(m => m.SubirPageModule)
+    loadChildren: () => import('./pages/subir/subir.module').then(m => m.SubirPageModule),
+    ...canActivate(redirectUnauthorizedToLogin),
   },
   {
     path: 'modal-subir',
@@ -113,6 +114,11 @@ const routes: Routes = [
     path: 'modal-mensual',
     loadChildren: () => import('./pages/modal-mensual/modal-mensual.module').then(m => m.ModalMensualPageModule)
   },
+  {
+    path: 'modal-imagen',
+    loadChildren: () => import('./pages/modal-imagen/modal-imagen.module').then(m => m.ModalImagenPageModule)
+  },
+
 
 
 

@@ -14,8 +14,8 @@
 
 <ion-content>
   <div class="preview">
-    <ion-avatar (click)="changeImage()">
-      <img *ngIf="profile?.imageUrl; else placheolder_avatar;" [src]="profile.imageUrl" />
+    <ion-avatar>
+      <img *ngIf="profile?.imageUrl" [src]="profile.imageUrl" />
       <ng-template #placheolder_avatar>
         <div class="fallback">
           <p style="text-align: center;">Subir imagen de perfil</p>
@@ -23,20 +23,13 @@
       </ng-template>
     </ion-avatar>
   </div>
-
-  <div>
-
-    <input type="file" (change)="fileChangeEvent($event)" />
-
-    <image-cropper style="height: 500px; width: 500px;" [imageChangedEvent]="imageChangedEvent"
-      [maintainAspectRatio]="true" [aspectRatio]="1 / 1" format="png" (imageCropped)="imageCropped($event)"
-      (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()">
-    </image-cropper>
-
-    <ion-button (click)="sendCroppedImg()" expand="block" fill="clear" shape="round">
-      Subir imagen
+  <ion-row>
+    <ion-button (click)="abrirModalImagen()" class="modal" size="large" expand="block">
+      Cambiar foto de perfil
     </ion-button>
-  </div>
+  </ion-row>
+
+
 
 
   <div class="card-body">

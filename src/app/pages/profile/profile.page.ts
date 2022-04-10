@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController, LoadingController } from '@ionic/angular';
+import { AlertController, LoadingController, ModalController } from '@ionic/angular';
 import { AuthService } from '../../services/auth.service';
 import { AvatarService } from '../../services/avatar.service';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { ImageCroppedEvent } from 'ngx-image-cropper';
-
+import { ModalImagenPage } from '../modal-imagen/modal-imagen.page';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -19,10 +19,22 @@ export class ProfilePage implements OnInit {
     private avatarService: AvatarService,
     private authService: AuthService,
     private loadingController: LoadingController,
-    private alertController: AlertController) {
+    private alertController: AlertController,
+    private modalCtrl: ModalController,
+  ) {
     this.avatarService.getUserProfile().subscribe((data) => {
       this.profile = data;
     });
+  }
+
+  async abrirModalImagen() {
+    const modal = await this.modalCtrl.create({
+      component: ModalImagenPage,
+      cssClass: 'my-custom-modal-css'
+
+    });
+    await modal.present();
+
   }
   async logout() {
     await this.authService.logout();
@@ -42,76 +54,15 @@ export class ProfilePage implements OnInit {
     await alert.present();
   }
 
-  fileChangeEvent(event: any): void {
-    this.imageChangedEvent = event;
-  }
-  imageCropped(event: ImageCroppedEvent) {
-    this.croppedImage = event.base64;
-  }
-  imageLoaded() {
-    // show cropper
-  }
-  cropperReady() {
-    // cropper ready
-  }
-  loadImageFailed() {
-    // show message
-  }
 
-  async changeImage() {
-    const image = await Camera.getPhoto({
-      quality: 90,
-      allowEditing: false,
-      width: 100,
-      height: 100,
-      resultType: CameraResultType.Base64,
-      source: CameraSource.Photos, // Camera, Photos or Prompt!
-    });
 
-    if (image) {
-      const loading = await this.loadingController.create();
-      await loading.present();
 
-      const result = await this.avatarService.uploadImage(image);
-      loading.dismiss();
-
-      if (!result) {
-        const alert = await this.alertController.create({
-          header: 'Upload failed',
-          message: 'There was a problem uploading your avatar.',
-          buttons: ['OK'],
-        });
-        await alert.present();
-      }
-    }
-  }
   ngOnInit() {
   }
   onClickMyArt() {
     this.route.navigate(['/myart']);
   }
-  async sendCroppedImg() {
-    //const image = this.croppedImage;
 
-    const image = this.croppedImage;
-
-    if (image) {
-      const loading = await this.loadingController.create();
-      await loading.present();
-
-      const result = await this.avatarService.uploadImageCropped(image);
-      loading.dismiss();
-
-      if (!result) {
-        const alert = await this.alertController.create({
-          header: 'Upload failed',
-          message: 'There was a problem uploading your avatar.',
-          buttons: ['OK'],
-        });
-        await alert.present();
-      }
-    }
-  }
 
 
 }

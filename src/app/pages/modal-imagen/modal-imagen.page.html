@@ -1,0 +1,39 @@
+<ion-content>
+  <ion-toolbar>
+
+    <ion-buttons slot="end">
+      <ion-icon style="color: #6361ea;" name="close-outline"></ion-icon>
+
+      <ion-button color="primary" (click)="dismissModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <div>
+    <h1 class="titulo">Cambiar imagen de perfil</h1>
+
+
+
+
+
+    <div style="text-align: center;">
+      <div class="file-select" id="src-file1">
+        <input type="file" name="src-file1" aria-label="Archivo" (change)="fileChangeEvent($event)">
+      </div>
+
+    </div>
+
+
+
+    <image-cropper class="cropper" [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true"
+      [aspectRatio]="1 / 1" format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
+      (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()">
+    </image-cropper>
+
+
+    <ion-row>
+      <ion-button (click)="sendCroppedImg()" style="margin-right: auto; margin-left: auto;" size="large" expand="block">
+        Subir imagen
+      </ion-button>
+    </ion-row>
+  </div>
+</ion-content>

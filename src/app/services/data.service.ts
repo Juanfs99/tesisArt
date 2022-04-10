@@ -108,6 +108,9 @@ export class DataService {
     const user = this.auth.currentUser;
 
   }
+
+
+
   getMenuOptions() {
     return this.http.get<Componentes[]>('/assets/data/menu-options.json');
 

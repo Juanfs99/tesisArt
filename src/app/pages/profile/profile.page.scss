@@ -1,9 +1,13 @@
 @media screen and (max-width: 700px) {
   ion-avatar {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
   }
-
+  .modal {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7%;
+  }
   .preview {
     margin-top: 50px;
     display: flex;
@@ -69,7 +73,10 @@
     width: 250px;
     height: 250px;
   }
-
+  .modal {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .preview {
     margin-top: 5%;
     margin-bottom: 2%;
@@ -78,8 +85,8 @@
   }
 
   .fallback {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     border: 5px solid #6361ea;
     border-radius: 50%;
     background: #bfbfbf;

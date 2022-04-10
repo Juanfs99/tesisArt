@@ -25,6 +25,7 @@ export interface Users {
   frase: any;
   imageUrl: any;
   user: 'artist';
+  puntos: string;
 }
 export interface Obras {
   id?: string;
@@ -50,7 +51,12 @@ export class AvatarService {
 
 
   getUserProfile() {
+    console.log(this.auth);
+
     const user = this.auth.currentUser;
+    console.log(user.uid);
+
+
     const userDocRef = doc(this.firestore, `users/${user.uid}`);
     return docData(userDocRef, { idField: 'id' });
   }
@@ -105,25 +111,26 @@ export class AvatarService {
     return collectionData(obrasRef, { idField: 'id' }) as Observable<Obras[]>;
   }
 
-  async uploadImage(cameraFile: Photo) {
-    const user = this.auth.currentUser;
-    const path = `uploads/${user.uid}/profile.png`;
-    const storageRef = ref(this.storage, path);
+  // async uploadImage(cameraFile: Photo) {
+  //   const user = this.auth.currentUser;
+  //   const path = `uploads/${user.uid}/profile.png`;
+  //   const storageRef = ref(this.storage, path);
 
-    try {
-      await uploadString(storageRef, cameraFile.base64String, 'base64');
+  //   try {
+  //     await uploadString(storageRef, cameraFile.base64String, 'base64');
 
-      const imageUrl = await getDownloadURL(storageRef);
+  //     const imageUrl = await getDownloadURL(storageRef);
 
-      const userDocRef = doc(this.firestore, `users/${user.uid}`);
-      await updateDoc(userDocRef, {
-        imageUrl,
-      });
-      return true;
-    } catch (e) {
-      return null;
-    }
-  }
+  //     const userDocRef = doc(this.firestore, `users/${user.uid}`);
+  //     await updateDoc(userDocRef, {
+  //       imageUrl,
+  //     });
+  //     return true;
+  //   } catch (e) {
+  //     return null;
+  //   }
+  // }
+
   async uploadImageCropped(base64: string) {
     const user = this.auth.currentUser;
     const path = `uploads/${user.uid}/profile.png`;
@@ -143,5 +150,11 @@ export class AvatarService {
       return null;
     }
   }
-
+  async updatePuntos(puntos: string) {
+    const user = this.auth.currentUser;
+    const userDocRef = doc(this.firestore, `users/${user.uid}`);
+    await updateDoc(userDocRef, {
+      puntos
+    });
+  };
 }

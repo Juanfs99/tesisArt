@@ -14,7 +14,7 @@ import { ModalController } from '@ionic/angular';
 export class ModalSubirPage implements OnInit {
 
   obras: FormGroup;
-
+  profile = null;
   constructor(private route: Router,
     private loadingController: LoadingController,
     private avatarService: AvatarService,
@@ -24,7 +24,18 @@ export class ModalSubirPage implements OnInit {
     private modalCtrl: ModalController,
 
 
-  ) { }
+  ) {
+    this.avatarService.getUserProfile().subscribe((data) => {
+      this.profile = data;
+    });
+  }
+  async updatePuntoObra() {
+    const puntos = -1;
+    const puntosActuales = this.profile.puntos;
+    const suma = puntos + puntosActuales;
+    const puntosMensual = suma;
+    await this.avatarService.updatePuntos(puntosMensual);
+  }
   async crearObra() {
     const loading = await this.loadingController.create();
     await loading.present();
@@ -32,6 +43,7 @@ export class ModalSubirPage implements OnInit {
       .then(async (obras) => {
         if (obras) {
           loading.dismiss();
+          this.updatePuntoObra();
           this.showAlert('Obra Registrada', 'Esta obra entrará en revisión');
           this.dismissModal();
 

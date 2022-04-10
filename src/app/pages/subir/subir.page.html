@@ -20,26 +20,28 @@
     </h3>
   </div>
 
-  <h4 class="textCat">Espacios disponibles: <span>{{puestos}}</span></h4>
+  <h4 class="textCat">Espacios disponibles:
+    <span *ngIf="profile?.puntos">
+      {{profile.puntos}}</span>
+    <span *ngIf="!profile?.puntos">
+      No tienes espacios disponibles</span>
+  </h4>
 
   <div class="ion-padding">
 
-    <ion-button id="subir" size="large" expand="block" (click)="abrirModalSubir()">
+    <ion-button *ngIf="profile?.puntos" [disabled]="!profile.puntos" id="subir" size="large" expand="block"
+      (click)="abrirModalSubir()">
       <div class="subirObra">
         Subir Obra
 
       </div>
     </ion-button>
-    <ion-button size="large" expand="block" (click)="addPunto()">
-      <div class="subirObra">
-        add
 
-      </div>
-    </ion-button>
+
   </div>
-  <h2 class="subscripciones">Subscripciones</h2>
+  <h2 *ngIf="!profile?.puntos" class="subscripciones">Subscripciones</h2>
 
-  <ion-list class="planesPhone">
+  <ion-list *ngIf="!profile?.puntos" class="planesPhone">
     <ion-card class="planes ion-no-margin" style="background-color: #56B4E5">
       <ion-card-header>
         <ion-card-title class="ion-padding" style="color: white; font-weight: 600; ">PLAN POR OBRA</ion-card-title>
@@ -51,7 +53,7 @@
         </ion-card>
         El plan por obra te permite subir tu modelo 3D y se te cobrará mensualmente mientras la obra esté exhibida
         <div>
-          <ion-button size="large" class="ion-padding botonesComprar">Comprar
+          <ion-button size="large" class="ion-padding botonesComprar" (click)="abrirModalObra()">Comprar
           </ion-button>
         </div>
       </ion-card-content>
@@ -88,7 +90,7 @@
         </ion-card>
         El plan corporativo te permite tener 15 obras activas y se te cobrará mensualmente
         <div>
-          <ion-button size="large" class="ion-padding botonesComprar">Comprar
+          <ion-button size="large" class="ion-padding botonesComprar" (click)="abrirModalGaleria()">Comprar
           </ion-button>
         </div>
       </ion-card-content>
@@ -96,7 +98,7 @@
   </ion-list>
 
   <!-- PLANES DESKTOP -->
-  <div class="planesDesktop">
+  <div *ngIf="!profile?.puntos" class="planesDesktop">
     <div>
       <ion-card class="planes " style="background-color: #56B4E5">
         <ion-card-header>
