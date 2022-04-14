@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AvatarService } from './../../services/avatar.service';
 
 interface Paintings {
   direccion: string;
@@ -15,27 +16,15 @@ interface Paintings {
 })
 export class PaintingsPage implements OnInit {
 
-  paintings: Paintings[] = [
-    {
-      direccion: '/articulo',
-      nombre: 'MantaRaya',
-      imagen: 'assets/cuadrado.jpeg',
-      precio: '3000'
-    },
-    {
-      direccion: '/articulo',
-      nombre: 'VidaSolar',
-      imagen: 'assets/cuadrado.jpeg',
-      precio: '3000',
-    }, {
-      direccion: '/articulo',
-      nombre: 'SaltoAlto',
-      imagen: 'assets/cuadrado.jpeg',
-      precio: '3000',
-    },
-  ];
+  obras = [];
 
-  constructor(private route: Router) { }
+  constructor(private route: Router,
+    private avService: AvatarService) {
+    this.avService.getObras().subscribe((data) => {
+      this.obras = data;
+
+    });
+  }
 
   ngOnInit() {
   }

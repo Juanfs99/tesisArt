@@ -27,14 +27,14 @@
       </div>
     </div>
     <div class="column">
-      <ion-list *ngFor="let p of paintings">
-        <ion-card class="ion-no-margin" [routerLink]="p.direccion" style="background-color: none;">
+      <ion-list *ngFor="let o of obras">
+        <ion-card class="ion-no-margin" routerLink="/articulo/{{o.uid}}/{{o.id}}" style="background-color: none;">
           <div class="artists">
-            <img src="{{p.imagen}}" class="img_card_cat" />
+            <img src="{{o.imagenObra}}" class="img_card_cat" />
           </div>
           <!-- <div class="card-title">Sculptures</div> -->
-          <ion-card-title class="card-title">{{p.nombre}}</ion-card-title>
-          <ion-card-subtitle class="card-subtitle">${{p.precio}}</ion-card-subtitle>
+          <ion-card-title class="card-title">{{o.nombre}}</ion-card-title>
+          <ion-card-subtitle class="card-subtitle">${{o.precio}}</ion-card-subtitle>
 
         </ion-card>
       </ion-list>

@@ -12,6 +12,9 @@ import { ModalImagenPage } from '../modal-imagen/modal-imagen.page';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
+  usuario = {
+    frase: '',
+  };
   profile = null;
   imageChangedEvent: any = '';
   croppedImage: any = '';
@@ -25,8 +28,16 @@ export class ProfilePage implements OnInit {
     this.avatarService.getUserProfile().subscribe((data) => {
       this.profile = data;
     });
-  }
 
+  }
+  getValue(val: any) {
+    this.usuario.frase = val;
+
+  }
+  async updateFrase() {
+    const fraseUsuario = this.usuario.frase;
+    await this.avatarService.updateFrase(fraseUsuario);
+  }
   async abrirModalImagen() {
     const modal = await this.modalCtrl.create({
       component: ModalImagenPage,
@@ -54,7 +65,9 @@ export class ProfilePage implements OnInit {
     await alert.present();
   }
 
+  actualizarFrase() {
 
+  }
 
 
   ngOnInit() {

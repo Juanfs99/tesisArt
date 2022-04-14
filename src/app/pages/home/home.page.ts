@@ -24,6 +24,7 @@ interface Artistas {
 })
 export class HomePage implements OnInit {
 
+  artistas = [];
 
   categorias: Categorias[] = [
     {
@@ -46,27 +47,7 @@ export class HomePage implements OnInit {
 
     },
   ];
-  artistas: Artistas[] = [
-    {
-      direccion: '/artistainfo',
-      nombre: 'Roberto',
-      // eslint-disable-next-line max-len
-      imagen: 'https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/uploads%2FHgWCw1EhzGSCvDFWtLeh1xNQYmL2%2Fprofile.png?alt=media&token=8ce19c9c-01c8-4e97-8646-0c55f9853e2f',
-    },
-    {
-      direccion: '/artistainfo',
-      nombre: 'Ana',
-      // eslint-disable-next-line max-len
-      imagen: 'https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/uploads%2FHgWCw1EhzGSCvDFWtLeh1xNQYmL2%2Fprofile.png?alt=media&token=8ce19c9c-01c8-4e97-8646-0c55f9853e2f',
-    },
-    {
-      direccion: '/artistainfo',
-      nombre: 'Juan',
-      // eslint-disable-next-line max-len
-      imagen: 'https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/uploads%2FHgWCw1EhzGSCvDFWtLeh1xNQYmL2%2Fprofile.png?alt=media&token=8ce19c9c-01c8-4e97-8646-0c55f9853e2f',
-    },
 
-  ];
   isDesktop: boolean;
   login: boolean;
 
@@ -96,6 +77,10 @@ export class HomePage implements OnInit {
         this.login = false;
 
       }
+    });
+    this.avatarService.getUsers().subscribe(res => {
+      this.artistas = res;
+
     });
   }
   onClickLogin() {

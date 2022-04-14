@@ -157,4 +157,11 @@ export class AvatarService {
       puntos
     });
   };
+  async updateFrase(frase: string) {
+    const user = this.auth.currentUser;
+    const userDocRef = doc(this.firestore, `users/${user.uid}`);
+    await updateDoc(userDocRef, {
+      frase
+    });
+  };
 }

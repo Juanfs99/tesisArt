@@ -21,6 +21,7 @@ export class SignupPage implements OnInit {
     imageUrl: 'https://firebasestorage.googleapis.com/v0/b/art-in-augmented-reality.appspot.com/o/AppComponentes%2FImagenes%2Favatar-01.jpg?alt=media&token=505907d3-2ad4-4335-a3d3-a02f020de44b',
     country: '',
     puntos: '1',
+    frase: '¡Escribre tu frase aquí!'
   };
   credentials: FormGroup;
 

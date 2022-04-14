@@ -67,18 +67,54 @@
       }
     }
   }
+  .nombre {
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 3%;
+    color: #6361ea;
+    font-family: proxima-nova, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 5vw;
+  }
+  .pais {
+    text-align: center;
+    color: #444444;
+    font-family: proxima-nova, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 4vw;
+  }
 }
 @media screen and (min-width: 700px) {
+  .nombre {
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 3%;
+    color: #6361ea;
+    font-family: proxima-nova, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2vw;
+  }
+  .pais {
+    text-align: center;
+    color: #444444;
+    font-family: proxima-nova, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5vw;
+  }
   .column {
     float: left;
     width: 50%;
     padding-bottom: 5%;
   }
   .row {
-    margin-top: 5%;
+    margin-top: 3%;
   }
   .artistimg {
-    height: 200px;
+    height: 300px;
     border-radius: 50%;
     border: 5px solid #6361ea;
     display: block;

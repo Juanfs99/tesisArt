@@ -59,6 +59,13 @@
         text-transform: uppercase;
         margin: 0 auto;
       }
+      .frase {
+        margin-top: 5%;
+        font-family: proxima-nova, sans-serif;
+        font-size: 2.9vw;
+        color: #949ea6;
+        margin: 0 auto;
+      }
     }
   }
   .info {
@@ -66,9 +73,19 @@
     text-align: center;
     text-transform: uppercase;
   }
+  .frase {
+    margin-top: 3%;
+    margin-bottom: 2%;
+    color: black;
+  }
 }
 
 @media screen and (min-width: 700px) {
+  .frase {
+    margin-top: 10%;
+    margin-bottom: 2%;
+    color: black;
+  }
   ion-avatar {
     width: 250px;
     height: 250px;
@@ -127,6 +144,12 @@
         font-size: 1.5vw;
         color: #949ea6;
         text-transform: uppercase;
+        margin: 0 auto;
+      }
+      .frase {
+        font-family: proxima-nova, sans-serif;
+        font-size: 1.4vw;
+        color: #949ea6;
         margin: 0 auto;
       }
     }

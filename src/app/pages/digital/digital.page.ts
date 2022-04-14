@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AvatarService } from './../../services/avatar.service';
 
 
 interface Digital {
@@ -15,26 +16,13 @@ interface Digital {
 })
 export class DigitalPage implements OnInit {
 
-  digital: Digital[] = [
-    {
-      direccion: '/articulo',
-      nombre: 'MantaRaya',
-      imagen: 'assets/cuadrado.jpeg',
-      precio: '3000'
-    },
-    {
-      direccion: '/articulo',
-      nombre: 'VidaSolar',
-      imagen: 'assets/cuadrado.jpeg',
-      precio: '3000'
-    }, {
-      direccion: '/articulo',
-      nombre: 'SaltoAlto',
-      imagen: 'assets/cuadrado.jpeg',
-      precio: '3000'
-    },
-  ];
-  constructor(private route: Router) { }
+  obras = [];
+  constructor(private route: Router,
+    private avService: AvatarService) {
+    this.avService.getObras().subscribe((data) => {
+      this.obras = data;
+    });
+  }
 
   ngOnInit() {
   }

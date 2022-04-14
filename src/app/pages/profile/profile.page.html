@@ -37,7 +37,20 @@
       <h3 class="playername" *ngIf="profile?.name && profile?.lastname">{{profile.name}}
         {{profile.lastname}}</h3>
       <h5 class="country" *ngIf="profile?.country"> {{profile.country}}</h5>
+      <div class="frase">
 
+        <ion-input (keyup)="getValue(box.value)" #box name="frase" *ngIf="profile?.frase" type="text"
+          placeholder="'{{profile.frase}}'">
+
+        </ion-input>
+      </div>
+
+
+      <ion-row>
+        <ion-button (click)="updateFrase()" class="modal" size="medium">
+          Actualizar frase
+        </ion-button>
+      </ion-row>
     </div>
 
   </div>
