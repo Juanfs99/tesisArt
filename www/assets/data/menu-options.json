@@ -1,17 +1,17 @@
 [
   {
     "icono": "home-outline",
-    "nombre": "Home",
+    "nombre": "Inicio",
     "direccion": "/home"
   },
   {
     "icono": "body-outline",
-    "nombre": "Sculptures",
+    "nombre": "Esculturas",
     "direccion": "/sculptures"
   },
   {
     "icono": "brush-outline",
-    "nombre": "Paintings",
+    "nombre": "Pinturas",
     "direccion": "/paintings"
   },
   {
@@ -21,12 +21,12 @@
   },
   {
     "icono": "trophy-outline",
-    "nombre": "Top Artists",
+    "nombre": "ARTistas",
     "direccion": "/artists"
   },
   {
     "icono": "help-circle-outline",
-    "nombre": "How to Art?",
+    "nombre": "¿Cómo estar en ART?",
     "direccion": "/how-art"
   }
 ]
