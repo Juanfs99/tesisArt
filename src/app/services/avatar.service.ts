@@ -25,7 +25,7 @@ export interface Users {
   frase: any;
   imageUrl: any;
   user: 'artist';
-  puntos: string;
+  puntos: number;
 }
 export interface Obras {
   id?: string;
