@@ -16,10 +16,10 @@ export interface Users {
   uid: any;
   email: any;
   lastname: any;
-  cedula: any;
+  cedula: number;
   displayName: any;
   name: any;
-  phonenumber: any;
+  phonenumber: number;
   password: any;
   country: any;
   frase: any;
