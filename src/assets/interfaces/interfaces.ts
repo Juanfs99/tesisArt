@@ -1,5 +1,5 @@
 export interface Componentes {
-    icono: string;
-    nombre: string;
-    direccion: string;
-  }
+  icono: string;
+  nombre: string;
+  direccion: string;
+}

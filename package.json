@@ -1,8 +1,7 @@
 {
-  "name": "prototipo1",
+  "name": "ART in Augmented Reality",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "JuanFernandoBerrazueta",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
